@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang = "en"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+	layout:decorator="layout">
+<head>
+<title>Services : Create</title>
+<script src="../../js/jquery-1.7.2.js"></script>
+</head>
+<body>
+	<h2 layout:fragment="header">创建服务</h2>
+	<div layout:fragment="content" class="container">
+		<form id="messageForm" th:action="@{/(resource)}" th:object="${message}"
+			action="#" method="post">
+			<div th:if="${#fields.hasErrors('*')}" class="alert alert-error">
+				<p th:each="error : ${#fields.errors('*')}" th:text="${error}">
+					Validation error</p>
+			</div>
+			<div class="pull-right">
+				<a th:href="@{/}" href="messages.html"> 已有服务 </a>
+			</div>
+			<input type="hidden" th:field="*{id}"
+				th:class="${#fields.hasErrors('id')} ? 'field-error'" /> 
+			<label for="summary">服务名称:</label> 
+			<input type="text" th:field="*{summary}"
+				th:class="${#fields.hasErrors('summary')} ? 'field-error'" /> 
+			<label for="owner">所属企业:</label>
+			<input type="text" th:field="*{owner}"
+				th:class="${#fields.hasErrors('owner')} ? 'field-error'" /> 
+			<label for="catory">所属类别:</label>
+			<input type="text" th:field="*{catagory}"
+				th:class="${#fields.hasErrors('catagory')} ? 'field-error'" />
+			<label for="filename">描述文件:</label>
+			<input type="file" id="input-folder-1"/>
+			<label for="text">服务概要:</label>
+			<textarea th:field="*{text}"
+				th:class="${#fields.hasErrors('text')} ? 'field-error'"></textarea>
+			<div class="form-actions">
+				<input type="submit" value="保存" />
+			</div>
+		</form>
+	</div>
+</body>
+<script>
+$(document).on('ready', function() {
+    $("#input-folder-1").fileinput({
+        browseLabel: '选择文件...'
+    });
+});
+</script>
+</html>

@@ -1,0 +1,280 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>订单管理</title>
+
+<!-- Bootstrap core CSS -->
+<link href="../../css/bootstrap.min.css" rel="stylesheet"
+	type="text/css" />
+
+<!-- Custom styles for this template -->
+<link href="../../css/dashboard.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse"
+				data-target="#bs-example-navbar-collapse-1">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span> <span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="/">协同制造服务管理</a>
+		</div>
+		<div class="collapse navbar-collapse"
+			id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav">
+				<li><a href="/">首页</a></li>
+				<li><a href="/services">服务</a></li>
+				<li><a href="#">服务商</a></li>
+				<li><a href="#">需求</a></li>
+				<li><a href="/orders">订单管理</a></li>
+				<li class="active"><a href="/users">个人信息</a></li>
+				<li class="dropdown"><a href="#" class="dropdown-toggle"
+					data-toggle="dropdown">分类<b class="caret"></b></a>
+					<ul class="dropdown-menu">
+						<li><a href="#">半导体制造业</a></li>
+						<li><a href="#">车辆工程</a></li>
+						<li class="divider"></li>
+						<li><a href="#">Separated link</a></li>
+						<li class="divider"></li>
+					</ul>
+				</li>
+			</ul>
+			<div class="pull-right">
+				<form class="navbar-form" role="search">
+					<div class="input-group">
+						<input type="text" class="form-control" placeholder="Search"
+							name="q" />
+						<div class="input-group-btn">
+							<button class="btn btn-default" style="height: 34px"
+								type="submit">
+								<i class="glyphicon glyphicon-search"></i>
+							</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</nav>
+	<div class="container-fluid">
+		<div class="row tab-content">
+			<div class="col-sm-2 col-md-2 sidebar">
+				<ul class="nav nav-sidebar">
+					<li class="active"><a href="#personal-info" data-toggle="tab"><b>个人信息</b><span
+							class="sr-only">(current)</span></a></li>
+					<li><a href="#personal-order-record" data-toggle="tab"><b>订单记录</b></a></li>
+					<li><a href="#own-services" data-toggle="tab"><b>我的服务</b></a></li>
+					<li><a href="#favorite-services" data-toggle="tab"><b>收藏服务</b></a></li>
+				</ul>
+			</div>
+			<div
+				class="col-sm-10 col-sm-offset-2 col-md-10 col-md-offset-2 tab-pane fade in active"
+				id="personal-info">
+				<h2>个人信息</h2>
+				<button class="btn btn-default floatRight createservice"
+					type="button" onclick="window.location.href='/users/modify/1'">
+					修改个人信息
+				</button>
+				<table class="table table-responsive">
+                	<tbody>
+                        <tr>
+                            <td width="80" height="29" class="table_td6" align="left">
+                                &nbsp;真实姓名：
+                            </td>
+                            <td width="267" align="left">
+                                <span id="ctl00_ContentPlaceHolder1_lbName">ouzhou</span>
+                            </td>
+                            <td width="80" class="table_td6" align="left">
+                                邮&nbsp;&nbsp;&nbsp;&nbsp;箱：
+                            </td>
+                            <td width="267" align="left">
+                                <span id="ctl00_ContentPlaceHolder1_lbMail">371074031@qq.com</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="30" class="table_td6" align="left">
+                                &nbsp;性&nbsp;&nbsp;&nbsp;&nbsp;别：
+                            </td>
+                            <td align="left">
+                                <span id="ctl00_ContentPlaceHolder1_lbSex">保密</span>
+                            </td>
+                            <td class="table_td6" align="left">
+                                出生日期：
+                            </td>
+                            <td align="left">
+                                <span id="ctl00_ContentPlaceHolder1_lbBDay"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="30" class="table_td6" align="left">
+                                &nbsp;所在地区：
+                            </td>
+                            <td colspan="3" align="left">
+                                <span id="ctl00_ContentPlaceHolder1_lbArea1">其它</span>&nbsp;&nbsp;&nbsp;
+                                <span id="ctl00_ContentPlaceHolder1_lbArea">其它</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="30" class="table_td6" align="left">
+                                &nbsp;单位名称：
+                            </td>
+                            <td colspan="3" align="left">
+                                <span id="ctl00_ContentPlaceHolder1_lbCom">tongji</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="30" class="table_td6" align="left">
+                                &nbsp;行业类别：
+                            </td>
+                            <td align="left">
+                                <span id="ctl00_ContentPlaceHolder1_lbIndu">装备行业</span>
+                            </td>
+                            <td class="table_td6" align="left">
+                                产业规模：
+                            </td>
+                            <td align="left">
+                                <span id="ctl00_ContentPlaceHolder1_lbSize"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="30" class="table_td6" align="left">
+                                &nbsp;所在部门：
+                            </td>
+                            <td align="left">
+                                <span id="ctl00_ContentPlaceHolder1_lbDept"></span>
+                            </td>
+                            <td class="table_td6" align="left">
+                                职&nbsp;&nbsp;&nbsp;&nbsp;务：
+                            </td>
+                            <td align="left">
+                                <span id="ctl00_ContentPlaceHolder1_lbPos"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="80" height="29" class="table_td6" align="left">
+                                &nbsp;联系电话：
+                            </td>
+                            <td width="267" align="left">
+                                <span id="ctl00_ContentPlaceHolder1_lbCall">18817366097</span>
+                            </td>
+                            <td width="80" class="table_td6" align="left">
+                                联系邮编：
+                            </td>
+                            <td width="267" align="left">
+                                <span id="ctl00_ContentPlaceHolder1_lbMailCode"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="30" class="table_td6" align="left">
+                                &nbsp;邮寄地址：
+                            </td>
+                            <td colspan="3" align="left">
+                                <span id="ctl00_ContentPlaceHolder1_lbMailAdd"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="30" class="table_td6" align="left">
+                                &nbsp;个人介绍：
+                            </td>
+                            <td colspan="3" align="left">
+                                <span id="ctl00_ContentPlaceHolder1_lbMyMemo"></span>
+                            </td>
+                        </tr>
+                    </tbody>
+            	</table>
+			</div>
+			<div
+				class="col-sm-10 col-sm-offset-2 col-md-10 col-md-offset-2 tab-pane fade"
+				id="personal-order-record">
+				<h2>订单列表</h2>
+				<button class="btn btn-default floatRight createservice"
+					type="button" onclick="window.location.href='/orders/publish'">
+					<img src="../../image/add.png" style="height: 14px;" />生成订单
+				</button>
+				<div class="table-responsive">
+					<table class="table table-striped">
+						<thead>
+							<tr>
+								<th>ID</th>
+								<th>订单名称</th>
+								<th>发布人</th>
+								<th>发布时间</th>
+								<th>所属行业</th>
+								<th>状态</th>
+								<th>规模</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr th:if="${user}==null">
+								<td colspan="3">没有用户</td>
+							</tr>
+							<tr th:each="orders: ${orders}">
+								<td th:text="${orders.id}">ID</td>
+								<td><a th:text="${orders.order_name}"
+									th:href="@{'/orders/' + ${orders.id}}">Name</a></td>
+								<td th:text="${orders.publisher}">Publisher</td>
+								<td th:text="${orders.publish_time}">Publisher</td>
+								<td th:text="${orders.field}">Field</td>
+								<td th:text="${orders.status}">Status</td>
+								<td th:text="${orders.scale}">Scale</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div
+				class="col-sm-10 col-sm-offset-2 col-md-10 col-md-offset-2 tab-pane fade"
+				id="own-services">
+				<h2>订单列表</h2>
+				<button class="btn btn-default floatRight createservice"
+					type="button" onclick="window.location.href='/orders/publish'">
+					<img src="../../image/add.png" style="height: 14px;" />生成订单
+				</button>
+				<div class="table-responsive">
+					<table class="table table-striped">
+						<thead>
+							<tr>
+								<th>ID</th>
+								<th>订单名称</th>
+								<th>发布人</th>
+								<th>发布时间</th>
+								<th>所属行业</th>
+								<th>状态</th>
+								<th>规模</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr th:if="${user}==null">
+								<td colspan="3">没有用户</td>
+							</tr>
+							<tr th:each="orders: ${orders}">
+								<td th:text="${orders.id}">ID</td>
+								<td><a th:text="${orders.order_name}"
+									th:href="@{'/orders/' + ${orders.id}}">Name</a></td>
+								<td th:text="${orders.publisher}">Publisher</td>
+								<td th:text="${orders.publish_time}">Publisher</td>
+								<td th:text="${orders.field}">Field</td>
+								<td th:text="${orders.status}">Status</td>
+								<td th:text="${orders.scale}">Scale</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Bootstrap core JavaScript -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="../../js/bootstrap.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,380 @@
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.progress-wrap {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    padding-left: 15px;
+}
+.progress-wrap .vertical-progress-resume {
+    width: 200px;
+    padding-left: 20px;
+    padding-right: 20px;
+    float: left;
+    position: absolute;
+    left: 134px;
+    top: 18px;
+}
+.progress-wrap .vertical-progress-interview {
+    width: 200px;
+    padding-left: 20px;
+    padding-right: 20px;
+    float: left;
+    position: absolute;
+    left: 338px;
+    top: 18px;
+}
+.progress-wrap .vertical-progress-offer {
+    width: 200px;
+    padding-left: 20px;
+    padding-right: 20px;
+    float: left;
+    position: relative;
+    left: 481px;
+}
+.progress-wrap .vertical-progress-item {
+    line-height: 28px;
+    height: 28px;
+}
+.progress-wrap .vertical-line1 {
+    width: 1px;
+    height: 70px;
+    border-left: 1px dashed #ccc;
+    position: absolute;
+    top: 17px;
+    left: 157px;
+}
+.progress-wrap .vertical-line2 {
+    width: 1px;
+    height: 52px;
+    border-left: 1px dashed #ccc;
+    position: absolute;
+    top: 32px;
+    left: 361px;
+}
+.progress-wrap .vertical-line3 {
+    width: 1px;
+    height: 70px;
+    border-left: 1px dashed #ccc;
+    position: absolute;
+    top: 17px;
+    left: 519px;
+}
+.progress-wrap .vertical-progress .stage {
+    font-size: 12px;
+    color: #666;
+    padding-right:5px;
+}
+.progress-wrap .vertical-progress .pass {
+    color: #f90;
+    font-family: 'HiraginoSansGB-W3', 'Hiragino Sans GB W3', 'Hiragino Sans GB';
+}
+
+.progress-wrap .vertical-progress .stage-width {
+    display: inline-block;
+    width: 60px;
+}
+
+.progress-bar .progress-item {
+    float: left;
+}
+
+.progress-wrap .vertical-progress .stage-width3 {
+    display: inline-block;
+    width: 40px;
+}
+
+.progress-wrap .interview-check-result {
+    font-size: 12px;
+    color: #09f;
+    text-decoration: none;
+    position: absolute;
+    top: 67px;
+    left: 344px;
+}
+
+.progress-wrap .vertical-progress .check-result {
+    font-size: 12px;
+    text-decoration: none;
+    color: #09f;
+}
+
+.progress-wrap .vertical-progress .toConfirm {
+    text-decoration: none;
+    background: url(https://gtms04.alicdn.com/tps/i4/TB1iDvBHXXXXXacXXXX8DnLHFXX-57-17.png) no-repeat;
+
+    color: #fff;
+    font-size: 12px;
+    margin-left: 3px;
+    display: inline-block;
+    width: 57px;
+    height: 17px;
+    line-height: 17px;
+    text-indent: 6px;
+}
+.progress-wrap .progress-bar {
+    padding-left: 15px;
+    float: left;
+}
+.progress-wrap .progress-explain {
+    float: left;
+}
+.progress-wrap .progress-item-point {
+    display: inline-block;
+    float:left;
+    width: 16px;
+    height: 16px;
+}
+.progress-wrap .point-active {
+    background: url(https://gtms03.alicdn.com/tps/i3/TB1WB6UHXXXXXa7XVXXoq9FFpXX-21-21.png) no-repeat center;
+}
+.progress-wrap .point-inactive {
+    background: url(https://gtms04.alicdn.com/tps/i4/TB1.hnKHXXXXXczapXXoq9FFpXX-21-21.png) no-repeat center;
+}
+.progress-wrap .line-item1 {
+    width: 104px;
+}
+
+.progress-wrap .line-item2 {
+    width: 187px;
+}
+.progress-wrap .line-item3 {
+    width: 142px;
+}
+.progress-wrap .line-item4 {
+    width: 198px;
+}
+.progress-wrap .line-item5 {
+    width: 154px;
+}
+.progress-wrap .desc-item1 {
+    width: 120px;
+}
+.progress-wrap .desc-item2 {
+    width: 222px;
+}
+.progress-wrap .desc-item3 {
+    width: 160px;
+}
+.progress-wrap .desc-item4 {
+    width: 222px;
+}
+.progress-wrap .desc-item5 {
+    width: 160px;
+}
+.progress-wrap .desc-item6 {
+    width: 74px;
+}
+.progress-wrap .progress-item-line {
+    display: inline-block;
+    float: left;
+    margin-top: 8px;
+}
+.progress-wrap .line-active {
+    border-bottom: 1px solid #f90;
+}
+.progress-wrap .line-inactive {
+    border-bottom: 1px solid #e4e4e4;
+}
+.progress-wrap .progress-item-desc {
+    float: left;
+    display: inline-block;
+}
+.progress-wrap .desc-zh {
+    font-size: 14px;
+    margin: 5px 0;
+}
+.progress-wrap .desc-en {
+    font-size: 12px;
+    color: #999;
+    margin: 5px 0;
+}
+.progress-wrap .active {
+    color: #666;
+}
+.progress-wrap .inactive {
+    color: #999;
+}
+.progress-wrap .no-entery {
+    background: url(https://gtms04.alicdn.com/tps/i4/TB1AsQtGVXXXXX8aFXXAz6UFXXX-16-16.png) no-repeat;
+}
+.progress-wrap .point-size {
+    width: 16px;
+    height: 16px;
+}
+.progress-wrap .progress-no-entery {
+    position: absolute;
+    background: url(https://gtms02.alicdn.com/tps/i2/TB1VInnHXXXXXcQXVXXUC3VHXXX-49-27.png) no-repeat;
+    color: #f30;
+    font-size: 12px;
+    width: 50px;
+    height: 30px;
+    top: 54px;
+    right: 220px;
+    padding-left: 6px;
+    padding-top: 1px;
+}
+.interview-tip {
+    width: 215px;
+    height: 146px;
+    border: 1px solid #e4e4e4;
+    background: rgba(0,0,0,0.05);
+    z-index: 99;
+    float: left;
+    font-size: 12px;
+    color: #666;
+    box-shadow: 6px 6px 15px #ccc;
+}
+.interview-tip .tip-title {
+    border-bottom: 1px solid #999;
+    z-index: 199;
+    width: 170px;
+    padding-left: 14px;
+    padding-bottom: 5px;
+}
+.interview-tip .tip-table-title {
+    padding: 10px 0 10px 14px;
+}
+.interview-tip .tip-table-item {
+    padding: 10px 0 10px 35px;
+}
+.interview-tip .mg-rt-20 {
+    margin-right: 20px;
+}
+.interview-tip .mg-rt-26 {
+    margin-right: 26px;
+}
+.interview-tip .mg-rt-38 {
+    margin-right: 38px;
+}
+.result-table {
+    border: none;
+    margin-top: 10px;
+}
+.result-table td,
+.result-table th {
+    border: none;
+    text-align: center;
+}
+.result-table td {
+    padding-top: 5px;
+}
+.result-table th {
+    border-bottom: 1px solid #999;
+    padding-bottom: 5px;
+}
+.resume-tip {
+    width: 80px;
+    border: 1px solid #ccc;
+    position: absolute;
+    top: 28px;
+    left: -1px;
+    padding: 10px;
+    z-index: 1;
+    background: #fff;
+    text-align: center;
+}
+.resume-tip-arrows-top {
+    width: 0;
+    height: 0;
+    border-top: 11px solid #fff;
+    border-bottom: 11px solid transparent;
+    border-left: 11px solid transparent;
+    border-right: 11px solid transparent;
+    z-index: 10;
+    position: absolute;
+    bottom: -22px;
+    left: 26px;
+}
+.resume-tip-arrows-bottom {
+    width: 0;
+    height: 0;
+    border-top: 11px solid #ccc;
+    border-bottom: 11px solid transparent;
+    border-left: 11px solid transparent;
+    border-right: 11px solid transparent;
+    position: absolute;
+    bottom: -23px;
+    left: 26px;
+}
+.tip-content {
+    color: #666;
+    font-size: 12px;
+    word-wrap: break-word;
+    word-break: normal;
+}
+
+.goWritten {
+    display: block;
+    width: 50px;
+    height: 18px;
+    line-height: 18px;
+    background: #f37327;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    font-size: 12px;
+    border-radius: 4px;
+    margin-left: 100px;
+	margin-top: -20px;
+}
+
+.disable:hover {
+  text-decoration:none;
+}
+
+.cepingSn {
+    display: block;
+    width: 50px;
+    height: 19px;
+    line-height: 18px;
+    background: #F90;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    font-size: 12px;
+    margin-left: 155px;
+    margin-top: -19px;
+    border-radius: 4px;
+}
+
+.written-score {
+    border: 1px solid #ccc;
+    position: absolute;
+    padding-right: 5px;
+	padding-left: 5px;
+	margin-left: 65px;
+	margin-top: -33px;
+}
+.score-tip-arrows-top {
+    width: 0;
+    height: 0;
+    border-right: 8px solid #fff;
+    border-bottom: 8px solid transparent;
+    border-left: 8px solid transparent;
+    border-top: 8px solid transparent;
+    z-index: 10;
+    position: absolute;
+    bottom: 4px;
+    left: -15px;
+}
+.score-tip-arrows-bottom {
+    width: 0;
+    height: 0;
+    border-right: 8px solid #ccc;
+    border-bottom: 8px solid transparent;
+    border-left: 8px solid transparent;
+    border-top: 8px solid transparent;
+    position: absolute;
+    bottom: 4px;
+    left: -16px;
+}
+.score-content {
+    color: #666;
+    font-size: 12px;
+    word-wrap: break-word;
+    word-break: normal;
+}

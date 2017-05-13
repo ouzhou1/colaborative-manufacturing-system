@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout">
+<head>
+<title>Layout</title>
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}"
+	href="../../css/bootstrap.min.css" />
+</head>
+<body>
+	<div class="container">
+		<div class="navbar" style="display:inline-block;margin: 20px 0 20px 0">
+			<div class="navbar-inner nav" style="display:inline-block;width:940px">
+				<a class="brand navbar-header header" href="#" style="margin:10px 30px 10px 0;
+					font-size:28px">
+				协同制造服务管理 
+				</a>
+				<ul class="nav navbar-nav navbar-right" style="margin:15px 12px 10px 12px;font-size:20px">
+					<li><a th:href="@{/}" href="messages.html"> 服务管理 </a></li>
+		            <li><a href="#"> 服务描述 </a></li>
+		            <li><a href="#"> 信息中心 </a></li>
+		            <li><a href="#"> 帮助 </a></li>
+		            <li><a href="#"> 关于我们 </a></li>
+		        </ul>
+		        <ul class="nav" style="float:right;font-size:12px;padding-top:15px;margin-left:12px">
+		        	<li><a href="#">登录</a></li>
+		        	<li><a href="#">注册</a></li>
+		        </ul>
+			</div>
+		</div>
+		<h2 layout:fragment="header">Layout</h2>
+		<div layout:fragment="content">Fake content</div>
+	</div>
+</body>
+</html>
