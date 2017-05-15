@@ -68,17 +68,13 @@
 				<ul class="nav nav-sidebar">
 					<li class="active"><a href="#personal-info" data-toggle="tab"><b>个人信息</b><span
 							class="sr-only">(current)</span></a></li>
-					<li><a href="#personal-order-record" data-toggle="tab"><b>订单记录</b></a></li>
 					<li><a href="#own-services" data-toggle="tab"><b>我的服务</b></a></li>
 					<li><a href="#favorite-services" data-toggle="tab"><b>收藏服务</b></a></li>
 				</ul>
 			</div>
-			<div
-				class="col-sm-10 col-sm-offset-2 col-md-10 col-md-offset-2 tab-pane fade in active"
-				id="personal-info">
+			<div class="col-sm-10 col-sm-offset-2 col-md-10 col-md-offset-2 tab-pane fade in active" id="personal-info">
 				<h2>个人信息</h2>
-				<button class="btn btn-default floatRight createservice"
-					type="button" onclick="window.location.href='/users/modify/1'">
+				<button class="btn btn-default floatRight createservice" type="button" onclick="window.location.href='/users/modify/1'">
 					修改个人信息
 				</button>
 				<table class="table table-responsive">
@@ -189,69 +185,28 @@
                     </tbody>
             	</table>
 			</div>
-			<div
-				class="col-sm-10 col-sm-offset-2 col-md-10 col-md-offset-2 tab-pane fade"
-				id="personal-order-record">
+			<div class="col-sm-10 col-sm-offset-2 col-md-10 col-md-offset-2 tab-pane fade" id="own-services">
 				<h2>订单列表</h2>
 				<button class="btn btn-default floatRight createservice"
-					type="button" onclick="window.location.href='/orders/publish'">
-					<img src="../../image/add.png" style="height: 14px;" />生成订单
+					type="button" onclick="window.location.href='/services/form'">
+					<img src="../../image/add.png" style="height: 14px;" />发布服务
 				</button>
 				<div class="table-responsive">
 					<table class="table table-striped">
 						<thead>
 							<tr>
 								<th>ID</th>
-								<th>订单名称</th>
-								<th>发布人</th>
+								<th>服务名称</th>
 								<th>发布时间</th>
 								<th>所属行业</th>
 								<th>状态</th>
-								<th>规模</th>
+								<th>在线数</th>
+								<th></th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr th:if="${user}==null">
-								<td colspan="3">没有用户</td>
-							</tr>
-							<tr th:each="orders: ${orders}">
-								<td th:text="${orders.id}">ID</td>
-								<td><a th:text="${orders.order_name}"
-									th:href="@{'/orders/' + ${orders.id}}">Name</a></td>
-								<td th:text="${orders.publisher}">Publisher</td>
-								<td th:text="${orders.publish_time}">Publisher</td>
-								<td th:text="${orders.field}">Field</td>
-								<td th:text="${orders.status}">Status</td>
-								<td th:text="${orders.scale}">Scale</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-			</div>
-			<div
-				class="col-sm-10 col-sm-offset-2 col-md-10 col-md-offset-2 tab-pane fade"
-				id="own-services">
-				<h2>订单列表</h2>
-				<button class="btn btn-default floatRight createservice"
-					type="button" onclick="window.location.href='/orders/publish'">
-					<img src="../../image/add.png" style="height: 14px;" />生成订单
-				</button>
-				<div class="table-responsive">
-					<table class="table table-striped">
-						<thead>
-							<tr>
-								<th>ID</th>
-								<th>订单名称</th>
-								<th>发布人</th>
-								<th>发布时间</th>
-								<th>所属行业</th>
-								<th>状态</th>
-								<th>规模</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr th:if="${user}==null">
-								<td colspan="3">没有用户</td>
+								<td colspan="3">没有服务</td>
 							</tr>
 							<tr th:each="orders: ${orders}">
 								<td th:text="${orders.id}">ID</td>

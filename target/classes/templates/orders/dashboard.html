@@ -90,6 +90,7 @@
 								<th>所属行业</th>
 								<th>状态</th>
 								<th>规模</th>
+								<th>原子订单数</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -97,14 +98,15 @@
 								<td colspan="3">没有订单</td>
 							</tr>
 							<tr th:each="orders: ${orders}">
-								<td th:text="${orders.id}">ID</td>
+								<td th:text="${orders.order_id}">ID</td>
 								<td><a th:text="${orders.order_name}"
-									th:href="@{'/orders/' + ${orders.id}}">Name</a></td>
+									th:href="@{'/orders/' + ${orders.order_id}}">Name</a></td>
 								<td th:text="${orders.publisher}">Publisher</td>
 								<td th:text="${orders.publish_time}">Publisher</td>
 								<td th:text="${orders.field}">Field</td>
 								<td th:text="${orders.status}">Status</td>
 								<td th:text="${orders.scale}">Scale</td>
+								<td th:text="${orders.sub_order_nums}">Numbers</td>
 							</tr>
 						</tbody>
 					</table>
@@ -129,6 +131,7 @@
 								<th>所属行业</th>
 								<th>状态</th>
 								<th>规模</th>
+								<th>原子订单数</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -136,14 +139,15 @@
 								<td colspan="3">没有订单</td>
 							</tr>
 							<tr th:each="orders: ${orders}">
-								<td th:text="${orders.id}">ID</td>
+								<td th:text="${orders.order_id}">ID</td>
 								<td><a th:text="${orders.order_name}"
-									th:href="@{'/orders/' + ${orders.id}}">Name</a></td>
+									th:href="@{'/orders/' + ${orders.order_id}}">Name</a></td>
 								<td th:text="${orders.publisher}">Publisher</td>
 								<td th:text="${orders.publish_time}">Publisher</td>
 								<td th:text="${orders.field}">Field</td>
 								<td th:text="${orders.status}">Status</td>
 								<td th:text="${orders.scale}">Scale</td>
+								<td th:text="${orders.sub_order_nums}">Numbers</td>
 							</tr>
 						</tbody>
 					</table>

@@ -50,6 +50,11 @@ public class Orders {
 	@NotEmpty(message = "Scale is required.")
 	private String scale;
 	
+	//Numbers of decomposed sub-orders
+	@Column(name = "sub_order_nums")
+	@NotEmpty(message = "The number of sub-orders is required.")
+	private String sub_order_nums;
+	
 	@Column(name = "tags")
 	//@NotEmpty(message = "Tag is required.")
 	private String tags;
@@ -60,6 +65,14 @@ public class Orders {
 
 	public void setOrder_id(Long order_id) {
 		this.order_id = order_id;
+	}
+
+	public String getOrder_name() {
+		return order_name;
+	}
+
+	public void setOrder_name(String order_name) {
+		this.order_name = order_name;
 	}
 
 	public String getPublisher() {
@@ -108,6 +121,14 @@ public class Orders {
 
 	public void setScale(String scale) {
 		this.scale = scale;
+	}
+
+	public String getSub_order_nums() {
+		return sub_order_nums;
+	}
+
+	public void setSub_order_nums(String sub_order_nums) {
+		this.sub_order_nums = sub_order_nums;
 	}
 
 	public String getTags() {

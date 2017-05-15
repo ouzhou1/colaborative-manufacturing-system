@@ -64,18 +64,7 @@
 	</nav>
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col-sm-2 col-md-2 sidebar">
-				<ul class="nav nav-sidebar">
-					<li class="active"><a href="#personal-info" data-toggle="tab"><b>个人信息</b><span
-							class="sr-only">(current)</span></a></li>
-					<li><a href="#personal-order-record" data-toggle="tab"><b>订单记录</b></a></li>
-					<li><a href="#own-services" data-toggle="tab"><b>我的服务</b></a></li>
-					<li><a href="#favorite-services" data-toggle="tab"><b>收藏服务</b></a></li>
-				</ul>
-			</div>
-			<div
-				class="col-sm-10 col-sm-offset-2 col-md-10 col-md-offset-2 tab-pane fade in active"
-				id="personal-info">
+			<div class="col-sm-offset-2 col-md-offset-2 tab-pane" id="personal-info">
 				<h2>修改个人信息</h2>
 				<table id="" width="850px" border="0" cellpadding="0" cellspacing="0" align="left">
 					<tbody>
@@ -132,7 +121,7 @@
 						</tr>
 						<tr>
 							<td height="50" align="left" class="input_group">
-					        	&nbsp;&nbsp;所在地区:</td>
+					        	&nbsp;&nbsp;所在地区：</td>
 							<td align="left" class="form-group">
 					        	<select name="list1" class="form-control"
 					        		id="list1" style="width:200px;">
@@ -271,45 +260,6 @@
 						</tr>
 					</tbody>
 				</table>
-			</div>
-			<div
-				class="col-sm-10 col-sm-offset-2 col-md-10 col-md-offset-2 tab-pane fade"
-				id="personal-order-record">
-				<h2>订单列表</h2>
-				<button class="btn btn-default floatRight createservice"
-					type="button" onclick="window.location.href='/orders/publish'">
-					<img src="../../image/add.png" style="height: 14px;" />生成订单
-				</button>
-				<div class="table-responsive">
-					<table class="table table-striped">
-						<thead>
-							<tr>
-								<th>ID</th>
-								<th>订单名称</th>
-								<th>发布人</th>
-								<th>发布时间</th>
-								<th>所属行业</th>
-								<th>状态</th>
-								<th>规模</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr th:if="${user}==null">
-								<td colspan="3">没有用户</td>
-							</tr>
-							<tr th:each="orders: ${orders}">
-								<td th:text="${orders.id}">ID</td>
-								<td><a th:text="${orders.order_name}"
-									th:href="@{'/orders/' + ${orders.id}}">Name</a></td>
-								<td th:text="${orders.publisher}">Publisher</td>
-								<td th:text="${orders.publish_time}">Publisher</td>
-								<td th:text="${orders.field}">Field</td>
-								<td th:text="${orders.status}">Status</td>
-								<td th:text="${orders.scale}">Scale</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
 			</div>
 		</div>
 	</div>
