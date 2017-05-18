@@ -1,0 +1,118 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>订单管理</title>
+
+<!-- Bootstrap core CSS -->
+<link href="../../css/bootstrap.min.css" rel="stylesheet"
+	type="text/css" />
+
+<!-- Custom styles for this template -->
+<link href="../../css/dashboard.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse"
+				data-target="#bs-example-navbar-collapse-1">
+				<span class="sr-only">Toggle navigation</span> 
+				<span class="icon-bar"></span> 
+				<span class="icon-bar"></span> 
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="/">协同制造服务管理</a>
+		</div>
+		<div class="collapse navbar-collapse"
+			id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav">
+				<li><a href="/">首页</a></li>
+				<li><a href="/services">服务</a></li>
+				<li><a href="#">服务商</a></li>
+				<li><a href="/demands">需求</a></li>
+				<li><a href="/orders">订单管理</a></li>
+				<li class="active"><a href="/users">个人信息</a></li>
+				<li class="dropdown"><a href="#" class="dropdown-toggle"
+					data-toggle="dropdown">分类<b class="caret"></b></a>
+					<ul class="dropdown-menu">
+						<li><a href="#">半导体制造业</a></li>
+						<li><a href="#">车辆工程</a></li>
+						<li class="divider"></li>
+						<li><a href="#">Separated link</a></li>
+						<li class="divider"></li>
+					</ul></li>
+			</ul>
+			<div class="pull-right">
+				<form class="navbar-form" role="search">
+					<div class="input-group">
+						<input type="text" class="form-control" placeholder="Search"
+							name="q" />
+						<div class="input-group-btn">
+							<button class="btn btn-default" style="height: 34px"
+								type="submit">
+								<i class="glyphicon glyphicon-search"></i>
+							</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</nav>
+	<div class="container-fluid">
+		<div class="row tab-content">
+			<div class="col-sm-2 col-md-2 sidebar">
+				<ul class="nav nav-sidebar">
+					<li class="active"><a href="#personal-info" data-toggle="tab"><b>所有用户</b><span
+							class="sr-only">(current)</span></a></li>
+				</ul>
+			</div>
+			<div
+				class="col-sm-10 col-sm-offset-2 col-md-10 col-md-offset-2 tab-pane fade in active"
+				id="personal-info">
+				<h2>个人信息</h2>
+				<button class="btn btn-default floatRight createservice"
+					type="button" onclick="window.location.href='/users/publish'">
+					创建用户
+				</button>
+				<div class="table-responsive">
+					<table class="table table-striped">
+						<thead>
+							<tr>
+								<th>ID</th>
+								<th>名字</th>
+								<th>所属行业</th>
+								<th>联系方式</th>
+								<th>状态</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr th:if="${users.empty}">
+								<td colspan="3">没有用户</td>
+							</tr>
+							<tr th:each="users: ${users}">
+								<td th:text="${users.id}">ID</td>
+								<td><a th:text="${users.username}"
+									th:href="@{'/users/' + ${users.id}}">Name</a></td>
+								<td th:text="${users.field}">Field</td>
+								<td th:text="${users.tel}">Tel</td>
+								<td th:text="${users.status}">Status</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Bootstrap core JavaScript -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="../../js/bootstrap.min.js"></script>
+
+</body>
+</html>

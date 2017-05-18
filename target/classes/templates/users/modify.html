@@ -1,0 +1,274 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>订单管理</title>
+
+<!-- Bootstrap core CSS -->
+<link href="../../css/bootstrap.min.css" rel="stylesheet"
+	type="text/css" />
+
+<!-- Custom styles for this template -->
+<link href="../../css/dashboard.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse"
+				data-target="#bs-example-navbar-collapse-1">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span> <span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="/">协同制造服务管理</a>
+		</div>
+		<div class="collapse navbar-collapse"
+			id="bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav">
+				<li><a href="/">首页</a></li>
+				<li><a href="/services">服务</a></li>
+				<li><a href="#">服务商</a></li>
+				<li><a href="#">需求</a></li>
+				<li><a href="/orders">订单管理</a></li>
+				<li class="active"><a href="/users">个人信息</a></li>
+				<li class="dropdown"><a href="#" class="dropdown-toggle"
+					data-toggle="dropdown">分类<b class="caret"></b></a>
+					<ul class="dropdown-menu">
+						<li><a href="#">半导体制造业</a></li>
+						<li><a href="#">车辆工程</a></li>
+						<li class="divider"></li>
+						<li><a href="#">Separated link</a></li>
+						<li class="divider"></li>
+					</ul>
+				</li>
+			</ul>
+			<div class="pull-right">
+				<form class="navbar-form" role="search">
+					<div class="input-group">
+						<input type="text" class="form-control" placeholder="Search"
+							name="q" />
+						<div class="input-group-btn">
+							<button class="btn btn-default" style="height: 34px"
+								type="submit">
+								<i class="glyphicon glyphicon-search"></i>
+							</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</nav>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-offset-2 col-md-offset-2 tab-pane" id="personal-info">
+				<h2>修改个人信息</h2>
+				<table id="" width="850px" border="0" cellpadding="0" cellspacing="0" align="left">
+					<tbody>
+						<tr>
+							<td width="110" height="50" align="left" class="input_group">&nbsp;*&nbsp;登录账号：</td>
+							<td width="220" class="input_group" align="left">
+  								<input type="text" class="form-control" 
+  									disabled="disabled" value="ouzhou" style="width:200px;"/>
+					            <label id="msg_username"></label>
+					        </td>
+							<td width="110" height="50" align="left" class="input_group">
+								&nbsp;*&nbsp;真实姓名：</td>
+							<td width="220" height="50" align="left" class="input_group">
+					        	<input type="text" class="form-control" value="ouzhou" style="width:200px;"/>
+					        </td>
+						</tr>
+						<tr>
+							<td height="50" align="left" class="border15">
+					        	&nbsp;*&nbsp;邮箱：</td>
+							<td class="input_group" align="left" colspan="3">
+					        	<input name="" type="text" id="" class="form-control" 
+					        		style="width: 200px;" disabled="disabled" value="371074031@qq.com"/>
+					            <label id="email_msg"></label>
+					        </td>
+						</tr>
+						<tr>
+							<td height="50" align="left" class="input_group">
+					        	&nbsp;&nbsp;性别：</td>
+							<td align="left" class="input_group">
+						        <table id="Sex" border="0">
+									<tbody>
+										<tr>
+											<td>
+												<input id="sex_select_male" type="radio" name="sex_select" value="1"></input>
+												<label for="sex_select_male">男</label>
+											</td>
+											<td>
+												<input id="sex_select_female" type="radio" name="sex_select" value="2"></input>
+												<label for="sex_select_female">女</label>
+											</td>
+											<td>
+												<input id="sex_select" type="radio" name="sex_select" value="0" checked="checked"></input>
+												<label for="sex_select">保密</label>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+					        </td>
+							<td height="50" align="left" class="input_group">
+					        	&nbsp;&nbsp;出生日期：</td>
+							<td align="left" class="input_group">
+					        	<input type="text" class="form-control" style="width:200px;"></input>
+					        </td>
+						</tr>
+						<tr>
+							<td height="50" align="left" class="input_group">
+					        	&nbsp;&nbsp;所在地区：</td>
+							<td align="left" class="form-group">
+					        	<select name="list1" class="form-control"
+					        		id="list1" style="width:200px;">
+									<option value="0">--请选择--</option>
+									<option value="2">北京市</option>
+									<option value="7">天津市</option>
+									<option value="10">河北省</option>
+									<option value="11">山西省</option>
+									<option value="12">内蒙古自治区</option>
+									<option value="13">辽宁省</option>
+									<option value="14">吉林省</option>
+									<option value="15">黑龙江省</option>
+									<option value="16">上海市</option>
+									<option value="17">江苏省</option>
+									<option value="18">浙江省</option>
+									<option value="19">安徽省</option>
+									<option value="20">福建省</option>
+									<option value="21">江西省</option>
+									<option value="22">山东省</option>
+									<option value="23">河南省</option>
+									<option value="24">湖北省</option>
+									<option value="25">湖南省</option>
+									<option value="26">广东省</option>
+									<option value="27">广西壮族自治区</option>
+									<option value="28">海南省</option>
+									<option value="29">重庆市</option>
+									<option value="30">四川省</option>
+									<option value="31">贵州省</option>
+									<option value="32">云南省</option>
+									<option value="33">西藏自治区</option>
+									<option value="34">陕西省</option>
+									<option value="35">甘肃省</option>
+									<option value="36">青海省</option>
+									<option value="37">宁夏回族自治区</option>
+									<option value="38">新疆维吾尔自治区</option>
+									<option value="39">台湾省</option>
+									<option value="40">香港特别行政区</option>
+									<option value="41">澳门特别行政区</option>
+									<option selected="selected" value="3570">其它</option>
+								</select>
+					        </td>
+						</tr>
+						<tr>
+							<td height="50" align="left" class="input_group">
+					        	&nbsp;&nbsp;*单位名称：</td>
+							<td class="input_group" align="left" colspan="3">
+					        	<input name="CompanyName" type="text" id="CompanyName" 
+					        		style="width:200px;" class="form-control" value="tongji"/>
+					        </td>
+						</tr>
+						<tr>
+							<td height="50" align="left" class="input_group">
+					        	&nbsp;&nbsp;行业类别：</td>
+							<td align="left" class="form-group">
+					            <select name="listIndustry" id="listIndustry" style="width:200px;" class="form-control">
+									<option selected="selected" value="1">装备行业</option>
+									<option value="2">电子电器行业</option>
+									<option value="3">国防军工行业</option>
+									<option value="4">汽车行业</option>
+									<option value="5">教育行业</option>
+									<option value="6">其他行业</option>
+									<option value="9">房屋建筑行业</option>
+									<option value="10">土木工程行业</option>
+									<option value="11">施工与装饰行业</option>
+									<option value="12">模具工装</option>
+									<option value="13">家电厨卫</option>
+									<option value="14">纺织服装</option>
+									<option value="15">发电机组</option>
+									<option value="16">机电节能</option>
+									<option value="17">工程机械</option>
+								</select>
+					        </td>
+							<td height="50" align="left" class="input_group">
+					        	&nbsp;&nbsp;产值规模：</td>
+							<td align="left" class="form-group">
+					            <select name="listSize" id="listSize" style="width:200px;" class="form-control">
+									<option selected="selected" value="1">30万以下</option>
+									<option value="2">30万-300万</option>
+									<option value="3">300万以上</option>
+								</select>
+					        </td>
+						</tr>
+						<tr>
+							<td height="50" align="left" class="input_group">
+					        	&nbsp;&nbsp;*所在部门：</td>
+							<td class="input_group" align="left">
+					        	<input name="Inwhichpart" type="text" id="Inwhichpart" class="form-control" style="width: 200px;"/>
+					        </td>
+							<td height="50" align="left" class="input_group">
+					        	&nbsp;&nbsp;*职务：</td>
+							<td class="input_group" align="left">
+					        	<input name="UserDuty" type="text" id="UserDuty" class="form-control" style="width: 200px;"/>
+					        </td>
+						</tr>
+						<tr>
+							<td height="50" align="left" class="input_group">
+					        	&nbsp;&nbsp;*联系电话：</td>
+							<td class="input_group" align="left">
+					        	<input name="mobileNumber" type="text" id="mobilNumber" 
+					        		class="form-control" style="width: 200px;" value="18817366097"/>
+					        </td>
+							<td height="50" align="left" class="input_group">
+					        	&nbsp;&nbsp;邮政邮编：
+					        </td>
+							<td class="input_group" align="left">
+					        	<input name="postCode" type="text" id="postCode" class="form-control" style="width: 200px;"/>
+					    	</td>
+						</tr>
+						<tr>
+							<td height="50" align="left" class="input_group">
+					        	&nbsp;&nbsp;邮寄地址：
+					    	</td>
+							<td class="input_group" align="left" colspan="3">
+					        	<input name="PostCodeAddress" type="text" id="PostCodeAddress" class="form-control" style="width: 450px;"/>
+					    	</td>
+						</tr>
+						<tr>
+							<td height="50" align="left" class="input_group">
+					        	&nbsp;&nbsp;个人介绍：
+					    	</td>
+							<td class="input_group" align="left" colspan="3">
+					   			<textarea name="txtMyMemo" rows="2" cols="20" 
+					   				id="txtMyMemo" class="form-control" style="height:50px;width:450px;"></textarea>
+					    	</td>
+						</tr>
+						<tr>
+							<td height="50" colspan="4" style="border-left: 1px solid #e5e5e5; border-right: 1px solid #e5e5e5;
+					                                border-bottom: 1px solid #e5e5e5; padding-bottom: 10px;" align="right">
+                                <input type="submit" name="btSubmit" value="提交" id="btSubmit" class="btn btn-info"/>
+                                <input type="submit" name="btUpdate" value="取消" id="btUpdate" 
+                                	onclick="location='/users/1'" class="btn btn-info"/>
+                            </td>
+						</tr>
+						<tr>
+							<td colspan="2" height="10px">&nbsp;</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+
+	<!-- Bootstrap core JavaScript -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="../../js/bootstrap.min.js"></script>
+
+</body>
+</html>
