@@ -1,6 +1,6 @@
 <html>
 <body>
-<jsp:useBean id="hardresource" class="edu.tongji.CMS.domain.resource.HardwareResource"> 
+<jsp:useBean id="hardresource" class="edu.tongji.CMS.domain.HardwareResource"> 
    <jsp:setProperty name="hardresource" property="deviceCode" value="170001"/>
    <jsp:setProperty name="hardresource" property="name" value="Smith"/>
    <jsp:setProperty name="hardresource" property="deviceOwner" value="tongji"/>
