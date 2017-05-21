@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import edu.tongji.CMS.dao.UsersDao;
+import edu.tongji.CMS.dao.users.UsersDao;
 import edu.tongji.CMS.domain.Services;
 import edu.tongji.CMS.domain.Users;
 

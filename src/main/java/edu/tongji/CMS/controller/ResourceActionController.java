@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import edu.tongji.CMS.Service.service.RDFService;
-import edu.tongji.CMS.dao.HardwareResourceDao;
+import edu.tongji.CMS.dao.services.HardwareResourceDao;
 import edu.tongji.CMS.domain.HardwareResource;
 
 @RestController

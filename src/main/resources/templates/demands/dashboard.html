@@ -6,46 +6,29 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
 <title>需求列表</title>
-
 <!-- Bootstrap core CSS -->
-<link href="../../css/bootstrap.min.css" rel="stylesheet"
-	type="text/css" />
-
+<link rel="stylesheet" href="../../css/bootstrap.min.css"/>
+<link rel="stylesheet" href="../../css/matrix-style.css"/>
+<link rel="stylesheet" href="../../css/bootstrap-datetimepicker.min.css" />
+<link rel="shortcut icon" href="../../images/favicon.ico"/>
+<link rel="icon" href="../../images/favicon.ico" type="image/gif"/>
 <!-- Custom styles for this template -->
-<link href="../../css/dashboard.css" rel="stylesheet" type="text/css" />
+<link href="../../css/dashboard.css" rel="stylesheet" type="text/css"/>
 </head>
 
 <body>
-	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+	<nav class="navbar navbar-fixed-top" role="navigation">
 		<div class="navbar-header">
-			<button type="button" class="navbar-toggle" data-toggle="collapse"
-				data-target="#bs-example-navbar-collapse-1">
-				<span class="sr-only">Toggle navigation</span> 
-				<span class="icon-bar"></span> 
-				<span class="icon-bar"></span> 
-				<span class="icon-bar"></span>
-			</button>
-			<a class="navbar-brand" href="/">协同制造服务管理</a>
+			<a class="navbar-brand" href="/">协同制造服务环境</a>
 		</div>
-		<div class="collapse navbar-collapse"
-			id="bs-example-navbar-collapse-1">
+		<div class="collapse navbar-collapse" id="cms-common-navbar">
 			<ul class="nav navbar-nav">
 				<li><a href="/">首页</a></li>
 				<li><a href="/services">服务</a></li>
 				<li><a href="#">服务商</a></li>
-				<li class="active"><a href="/demands">需求</a></li>
-				<li><a href="/orders">订单管理</a></li>
+				<li><a href="/demands">需求</a></li>
+				<li class="active"><a href="/orders">订单管理</a></li>
 				<li><a href="/users">个人信息</a></li>
-				<li class="dropdown"><a href="#" class="dropdown-toggle"
-					data-toggle="dropdown">分类<b class="caret"></b></a>
-					<ul class="dropdown-menu">
-						<li><a href="#">半导体制造业</a></li>
-						<li><a href="#">车辆工程</a></li>
-						<li class="divider"></li>
-						<li><a href="#">Separated link</a></li>
-						<li class="divider"></li>
-					</ul>
-				</li>
 			</ul>
 			<div class="pull-right">
 				<form class="navbar-form" role="search">
@@ -63,23 +46,93 @@
 	</nav>
 	<div class="container-fluid">
 		<div class="row tab-content">
-			<div class="col-sm-2 col-md-2 sidebar">
-				<ul class="nav nav-sidebar">
-					<li class="active"><a href="#demand-list" data-toggle="tab"><b>所有需求</b><span
-							class="sr-only">(current)</span></a></li>
+			<div class="col-sm-2 col-md-2 sidebar widget-box">
+				<a class="hidden" href="#"><span class="glyphicon glyphicon-list"></span>系统菜单</a>
+				<ul>
+					<li class="active submenu"><a href="#demands-list" data-toggle="tab">
+						<span class="glyphicon glyphicon-home" aria-hidden="true"></span><b>所有需求</b></a>
+					</li>
+					<li class="submenu"><a href="#own-demands-list" data-toggle="tab">
+						<span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span><b>我的需求</b></a>
+					</li>
+					<li class="submenu"><a href="#finished-demands-list" data-toggle="tab">
+						<span class="glyphicon glyphicon-book" aria-hidden="true"></span><b>已接单需求</b></a>
+					</li>
+					<li class="submenu"><a href="#unfinished-demands-list" data-toggle="tab">
+						<span class="glyphicon glyphicon-file" aria-hidden="true"></span><b>未接单需求</b></a>
+					</li>
 				</ul>
 			</div>
-			<div
-				class="col-sm-10 col-sm-offset-2 col-md-10 col-md-offset-2 tab-pane fade in active"
-				id="order-list">
-				<h2>需求列表</h2>
-				<button class="btn btn-default floatRight createservice"
-					type="button" onclick="window.location.href='/demands/publish'">
-					<img src="../../image/add.png" style="height: 14px;" />发布需求
-				</button>
-				<div class="table-responsive">
-					<table class="table table-striped">
-						<thead>
+			<div class="col-sm-10 col-sm-offset-2 col-md-10 col-md-offset-2 tab-pane fade in active" id="demands-list">
+				<div class="widget-box">
+					<div class="widget-title"><span class="icon"><span class="glyphicon glyphicon-th"></span></span>
+						<h5>需求列表</h5>
+						<span class="icon-add-btn glyphicon glyphicon-list-alt">
+							<button class="btn btn-success btn-xs" onclick="window.location.href='/demands/statistics'">需求统计</button>
+						</span>
+					</div>
+					<div class="widget-content nopadding">
+						<table class="table table-striped table-hover editor-table">
+							<thead>
+								<tr>
+									<th>ID</th>
+									<th>需求名称</th>
+									<th>发布人</th>
+									<th>发布时间</th>
+									<th>所属行业</th>
+									<th>状态</th>
+									<th>交货期</th>
+									<th>所属订单</th>
+									<th>订单操作</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr th:if="${demands.empty}">
+									<td colspan="3">没有需求</td>
+								</tr>
+								<tr th:each="demands: ${demands}">
+									<td th:text="${demands.demand_id}">ID</td>
+									<td><a th:text="${demands.demand_name}"
+										   th:href="@{'/demands/' + ${demands.demand_id}}">Name</a></td>
+									<td th:text="${demands.publisher}">Publisher</td>
+									<td th:text="${demands.publish_time}">Publish time</td>
+									<td th:text="${demands.field}">Field</td>
+									<td th:text="${demands.status}">Status</td>
+									<td th:text="${demands.delivery_date}">Delivery time</td>
+									<td th:text="${demands.related_order}">Order</td>
+									<td>
+										<a th:href="@{'/demands/details/' + ${demands.demand_id}}" class="badge badge-success">详细</a>
+										<a th:href="@{'/demands/details/' + ${demands.demand_id}}" class="badge badge-success">接单</a>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="pages_line">
+						<nav>
+							<ul class="pagination">
+								<li class="disabled"><a href="#">记录：<span th:text="${demands_count}"></span></a></li>
+								<li><a href="#" aria-label="Previous"><span aria-hidden="true">首页</span></a></li>
+								<li class="active"><a href="#">上一页</a></li>
+								<li><a href="#">1</a></li>
+								<li><a href="#">下一页</a></li>
+								<li><a href="#" aria-label="Next"><span aria-hidden="true">尾页</span></a></li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-10 col-sm-offset-2 col-md-10 col-md-offset-2 tab-pane fade" id="own-demands-list">
+				<div class="widget-box">
+					<div class="widget-title"><span class="icon"><span class="glyphicon glyphicon-th"></span></span>
+						<h5>个人需求</h5>
+						<span class="icon-add-btn glyphicon glyphicon-list-alt">
+							<button class="btn btn-success btn-xs" onclick="window.location.href='/demands/statistics'">需求统计</button>
+						</span>
+					</div>
+					<div class="widget-content nopadding">
+						<table class="table table-striped table-hover editor-table">
+							<thead>
 							<tr>
 								<th>ID</th>
 								<th>需求名称</th>
@@ -88,25 +141,164 @@
 								<th>所属行业</th>
 								<th>状态</th>
 								<th>交货期</th>
+								<th>所属订单</th>
+								<th>订单操作</th>
 							</tr>
-						</thead>
-						<tbody>
-							<tr th:if="${demands.empty}">
+							</thead>
+							<tbody>
+							<tr th:if="${demands_personal.empty}">
 								<td colspan="3">没有需求</td>
 							</tr>
-							<tr th:each="demands: ${demands}">
+							<tr th:each="demands: ${demands_personal}">
 								<td th:text="${demands.demand_id}">ID</td>
 								<td><a th:text="${demands.demand_name}"
-									th:href="@{'/demands/' + ${demands.demand_id}}">Name</a></td>
+									   th:href="@{'/demands/' + ${demands.demand_id}}">Name</a></td>
 								<td th:text="${demands.publisher}">Publisher</td>
 								<td th:text="${demands.publish_time}">Publish time</td>
 								<td th:text="${demands.field}">Field</td>
 								<td th:text="${demands.status}">Status</td>
 								<td th:text="${demands.delivery_date}">Delivery time</td>
-								<td th:text="${demands.scale}">Scale</td>
+								<td th:text="${demands.related_order}">Order</td>
+								<td>
+									<a th:href="@{'/demands/details/' + ${demands.demand_id}}" class="badge badge-success">详细</a>
+									<a th:href="@{'/demands/details/' + ${demands.demand_id}}" class="badge badge-success">接单</a>
+								</td>
 							</tr>
-						</tbody>
-					</table>
+							</tbody>
+						</table>
+					</div>
+					<div class="pages_line">
+						<nav>
+							<ul class="pagination">
+								<li class="disabled"><a href="#">记录：<span th:text="${demands_personal_count}"></span></a></li>
+								<li><a href="#" aria-label="Previous"><span aria-hidden="true">首页</span></a></li>
+								<li class="active"><a href="#">上一页</a></li>
+								<li><a href="#">1</a></li>
+								<li><a href="#">下一页</a></li>
+								<li><a href="#" aria-label="Next"><span aria-hidden="true">尾页</span></a></li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-sm-10 col-sm-offset-2 col-md-10 col-md-offset-2 tab-pane fade" id="finished-demands-list">
+				<div class="widget-box">
+					<div class="widget-title"><span class="icon"><span class="glyphicon glyphicon-th"></span></span>
+						<h5>已完成需求</h5>
+						<span class="icon-add-btn glyphicon glyphicon-list-alt">
+							<button class="btn btn-success btn-xs" onclick="window.location.href='/demands/statistics'">需求统计</button>
+						</span>
+					</div>
+					<div class="widget-content nopadding">
+						<table class="table table-striped table-hover editor-table">
+							<thead>
+							<tr>
+								<th>ID</th>
+								<th>需求名称</th>
+								<th>发布人</th>
+								<th>发布时间</th>
+								<th>所属行业</th>
+								<th>状态</th>
+								<th>交货期</th>
+								<th>所属订单</th>
+								<th>订单操作</th>
+							</tr>
+							</thead>
+							<tbody>
+							<tr th:if="${demands_finished.empty}">
+								<td colspan="3">没有需求</td>
+							</tr>
+							<tr th:each="demands: ${demands_finished}">
+								<td th:text="${demands.demand_id}">ID</td>
+								<td><a th:text="${demands.demand_name}"
+									   th:href="@{'/demands/' + ${demands.demand_id}}">Name</a></td>
+								<td th:text="${demands.publisher}">Publisher</td>
+								<td th:text="${demands.publish_time}">Publish time</td>
+								<td th:text="${demands.field}">Field</td>
+								<td th:text="${demands.status}">Status</td>
+								<td th:text="${demands.delivery_date}">Delivery time</td>
+								<td th:text="${demands.related_order}">Order</td>
+								<td>
+									<a th:href="@{'/demands/details/' + ${demands.demand_id}}" class="badge badge-success">详细</a>
+									<a th:href="@{'/demands/details/' + ${demands.demand_id}}" class="badge badge-success">接单</a>
+								</td>
+							</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="pages_line">
+						<nav>
+							<ul class="pagination">
+								<li class="disabled"><a href="#">记录：<span th:text="${demands_finished_count}"></span></a></li>
+								<li><a href="#" aria-label="Previous"><span aria-hidden="true">首页</span></a></li>
+								<li class="active"><a href="#">上一页</a></li>
+								<li><a href="#">1</a></li>
+								<li><a href="#">下一页</a></li>
+								<li><a href="#" aria-label="Next"><span aria-hidden="true">尾页</span></a></li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-sm-10 col-sm-offset-2 col-md-10 col-md-offset-2 tab-pane fade" id="unfinished-demands-list">
+				<div class="widget-box">
+					<div class="widget-title"><span class="icon"><span class="glyphicon glyphicon-th"></span></span>
+						<h5>未完成需求</h5>
+						<span class="icon-add-btn glyphicon glyphicon-list-alt">
+							<button class="btn btn-success btn-xs" onclick="window.location.href='/demands/statistics'">需求统计</button>
+						</span>
+					</div>
+					<div class="widget-content nopadding">
+						<table class="table table-striped table-hover editor-table">
+							<thead>
+							<tr>
+								<th>ID</th>
+								<th>需求名称</th>
+								<th>发布人</th>
+								<th>发布时间</th>
+								<th>所属行业</th>
+								<th>状态</th>
+								<th>交货期</th>
+								<th>所属订单</th>
+								<th>订单操作</th>
+							</tr>
+							</thead>
+							<tbody>
+							<tr th:if="${demands_unfinished.empty}">
+								<td colspan="3">没有需求</td>
+							</tr>
+							<tr th:each="demands: ${demands_unfinished}">
+								<td th:text="${demands.demand_id}">ID</td>
+								<td><a th:text="${demands.demand_name}"
+									   th:href="@{'/demands/' + ${demands.demand_id}}">Name</a></td>
+								<td th:text="${demands.publisher}">Publisher</td>
+								<td th:text="${demands.publish_time}">Publish time</td>
+								<td th:text="${demands.field}">Field</td>
+								<td th:text="${demands.status}">Status</td>
+								<td th:text="${demands.delivery_date}">Delivery time</td>
+								<td th:text="${demands.related_order}">Order</td>
+								<td>
+									<a th:href="@{'/demands/details/' + ${demands.demand_id}}" class="badge badge-success">详细</a>
+									<a th:href="@{'/demands/details/' + ${demands.demand_id}}" class="badge badge-success">接单</a>
+								</td>
+							</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="pages_line">
+						<nav>
+							<ul class="pagination">
+								<li class="disabled"><a href="#">记录：<span th:text="${demands_unfinished_count}"></span></a></li>
+								<li><a href="#" aria-label="Previous"><span aria-hidden="true">首页</span></a></li>
+								<li class="active"><a href="#">上一页</a></li>
+								<li><a href="#">1</a></li>
+								<li><a href="#">下一页</a></li>
+								<li><a href="#" aria-label="Next"><span aria-hidden="true">尾页</span></a></li>
+							</ul>
+						</nav>
+					</div>
 				</div>
 			</div>
 		</div>

@@ -1,17 +1,11 @@
 package edu.tongji.CMS.controller;
 
+import edu.tongji.CMS.dao.orders.OrdersDao;
+import edu.tongji.CMS.domain.Orders;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
-
-import edu.tongji.CMS.dao.OrdersDao;
-import edu.tongji.CMS.domain.Orders;
-import edu.tongji.CMS.domain.Services;
 
 @Controller
 @RequestMapping("/orders")
@@ -32,9 +26,19 @@ public class OrdersController {
 		Orders orders = ordersDao.findOne(id);
 		return orders;
 	}
-	
-	@GetMapping("/publish")
-	public ModelAndView serviceCreateForm(@ModelAttribute Services services) {
+
+	@GetMapping("/form/create")
+	public ModelAndView orderCreateForm(@ModelAttribute Orders orders) {
+		return new ModelAndView("orders/order_create");
+	}
+
+	@PostMapping("/create")
+	public ModelAndView orderCreateAction(@ModelAttribute Orders orders) {
 		return new ModelAndView("orders/publish");
+	}
+
+	@GetMapping("/status")
+	public ModelAndView orderStatus(@ModelAttribute Orders orders) {
+		return new ModelAndView("orders/status");
 	}
 }
