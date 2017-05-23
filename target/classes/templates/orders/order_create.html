@@ -1,60 +1,69 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout">
 <head>
     <meta charset="UTF-8"></meta>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
     <title>创建订单_订单管理</title>
-    <link rel="stylesheet" href="../../css/bootstrap.min.css"></link>
-    <link rel="stylesheet" href="../../css/matrix-style.css"></link>
-    <link rel="stylesheet" href="../../css/matrix-media.css"></link>
-    <link rel="shortcut icon" href="../../img/favicon.ico"></link>
-    <link rel="icon" href="../../img/favicon.ico" type="image/gif"></link>
+    <link rel="stylesheet" href="../../css/bootstrap.min.css"/>
+    <link rel="shortcut icon" href="../../img/favicon.ico"/>
+    <link rel="icon" href="../../img/favicon.ico" type="image/gif"/>
+    <!--inherit style-->
+    <link rel="stylesheet" href="../../css/order-process.css"/>
+    <link rel="stylesheet" href="../../css/matrix-style.css"/>
     <!--[if lt IE 9]>
     <script src="../../js/jshtml5shiv.min.js"></script>
     <script src="../../js/respond.min.js"></script>
     <![endif]-->
 </head>
 <body>
-    <!--sidebar-menu-->
-    <div id="sidebar"><a class="hidden" href="#"><span class="glyphicon glyphicon-list"></span>系统菜单</a>
-        <ul>
-            <li class="submenu"><a href="index.html"><span class="glyphicon glyphicon-home" aria-hidden="true"> </span><span>后台首页</span></a></li>
-            <li class="submenu"><a href="#"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"> </span><span>销售管理</span></a>
-                <ul>
-                    <li><a href="order_create.html">创建订单</a></li>
-                    <li><a href="order_details.html">订单管理</a></li>
-                </ul>
-            </li>
-            <li class="submenu"><a href="#"><span class="glyphicon glyphicon-file" aria-hidden="true"> </span><span>数据导入</span></a>
-                <ul>
-                    <li><a href="import_brush.html">刷单登记</a></li>
-                    <li><a href="import_check.html">数据验证</a></li>
-                </ul>
-            </li>
-            <li class="submenu"><a href="loading.html"><span class="glyphicon glyphicon-random" aria-hidden="true"> </span><span>加载页面</span></a></li>
-            <li class="submenu"><a href="#"><span class="glyphicon glyphicon-stats" aria-hidden="true"> </span><span>Error</span></a>
-                <ul>
-                    <li><a href="error_forbidden.html">404</a></li>
-                </ul>
-            </li>
-            <li class="submenu"><a href="#"><span class="glyphicon glyphicon-cog" aria-hidden="true"> </span><span>系统管理</span></a>
-                <ul>
-                    <li><a href="role_modify.html">角色管理</a></li>
-                </ul>
-            </li>
-            <li class="submenu"><a href="buttons_alert.html"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"> </span><span>按钮及警告框</span></a></li>
-            <li class="submenu"><a href="modal_form.html"><span class="glyphicon glyphicon-book" aria-hidden="true"> </span><span>模拟框表单</span></a>	</li>
-            <li class="submenu"><a href="bootbox_modal.html"><span class="glyphicon glyphicon-retweet" aria-hidden="true"> </span><span>提示框</span></a></li>
-            <li class="submenu"><a href="#"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"> </span><span>配置管理</span></a>	</li>
-        </ul>
+    <!--Header-part-->
+    <div id="header">
+        <h1><a href="#">协同管理系统</a></h1>
     </div>
-    <!--end-sidebar-menu-->
+    <!--close-Header-part-->
+
     <!--containt-part-->
     <div id="content">
         <div id="content-header">
-            <div id="breadcrumb"> <a href="#" title="Go to Home" class="tip-bottom"><span class="glyphicon glyphicon-home" aria-hidden="true"> </span> 首页</a> <a href="#" class="current">销售管理</a> <a href="#" class="current">创建订单</a> </div>
-            <h1>创建订单</h1>
+            <div id="breadcrumb">
+                <a href="/" title="Go to Home" class="tip-bottom"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>首页</a>
+                <a href="/orders" class="current">订单管理</a><a href="#" class="current">创建订单</a>
+            </div>
+        </div>
+
+        <!--process bar-->
+        <div class="container">
+            <ol class="progress-wrap">
+                <li class="progress-one">
+                    <div class="progress-line"></div>
+                    <div class="progress-content">
+                        <span class="progress-number active" id="start"><a href="/orders">1</a></span>
+                        <span class="progress-text">订单提交</span>
+                    </div>
+                </li>
+                <li class="progress-two">
+                    <div class="progress-line"></div>
+                    <div class="progress-content">
+                        <span class="progress-number" id="second"><a href="/partner/select">2</a></span>
+                        <span class="progress-text">伙伴匹配</span>
+                    </div>
+                </li>
+                <li class="progress-three">
+                    <div class="progress-line"></div>
+                    <div class="progress-content">
+                        <span class="progress-number" id="third"><a href="/manufacture">3</a></span>
+                        <span class="progress-text">协同制造</span>
+                    </div>
+                </li>
+                <li class="progress-four" style="width: 0px">
+                    <div class="progress-content">
+                        <span class="progress-number" id="end"><a href="/aftersale">4</a></span>
+                        <span class="progress-text">售后管理</span>
+                    </div>
+                </li>
+            </ol>
         </div>
         <!--end-alert-part-->
         <div class="container-fluid">
@@ -62,8 +71,8 @@
                 <div class="col-xs-12">
                     <div class="widget-box">
                         <div class="widget-title">
-                            <span class="icon"> <span class="glyphicon glyphicon-th"> </span></span>
-                            <h5>创建订单</h5>
+                            <span class="icon"><span class="glyphicon glyphicon-th"></span></span>
+                            <h5>订单编辑</h5>
                         </div>
                         <div class="widget-content clearfix">
                             <form id="order_create" name="order_create" method="post">
@@ -71,154 +80,73 @@
                                     <div class="widget-box">
                                         <div class="widget-title">
                                             <span class="icon"> <span class="glyphicon glyphicon-th"> </span></span>
-                                            <h5>快速发货</h5>
+                                            <h5>订单基本信息</h5>
                                         </div>
                                         <div class="widget-content nopadding">
                                             <table class="table table-hover order-table-form">
                                                 <tbody>
                                                 <tr>
-                                                    <td><span class="red">*</span>订单号：</td>
-                                                    <td><input type="text" class="form-control" id="order_number" placeholder="" value="L05050927214327" /></td>
+                                                    <td><span class="red">*</span>订单名称：</td>
+                                                    <td><input type="text" class="form-control" id="consignee" placeholder="名称" value="" /></td>
                                                 </tr>
                                                 <tr>
-                                                    <td></td>
-                                                    <td><small>尽量不要修改单号，淘宝请在原来单号前加T填入</small></td>
+                                                    <td><span class="red">*</span>行业领域：</td>
+                                                    <td>
+                                                        <select class="form-control">
+                                                            <option selected="">--请选择--</option>
+                                                            <option>车辆船舶类</option>
+                                                            <option>机械类</option>
+                                                            <option>建筑类</option>
+                                                            <option>电子设备类</option>
+                                                            <option>消费品类</option>
+                                                        </select>
+                                                    </td>
                                                 </tr>
                                                 <tr>
-                                                    <td><span class="red">*</span>支付方式：</td>
-                                                    <td><select class="form-control"> <option selected="">--请选择--</option> <option>货到付款</option> <option>邮局汇款</option> <option>在线支付</option> </select> </td>
+                                                    <td><span class="red">*</span>技术类别：</td>
+                                                    <td>
+                                                        <select class="form-control">
+                                                            <option selected="">--请选择--</option>
+                                                            <option>集成电路器件类</option>
+                                                            <option>分立器件类</option>
+                                                            <option>光电半导体类</option>
+                                                            <option>逻辑IC类</option>
+                                                            <option>模拟IC类</option>
+                                                            <option>储存器</option>
+                                                        </select>
+                                                    </td>
                                                 </tr>
                                                 <tr>
-                                                    <td></td>
-                                                    <td><small>请根据订单实际情况选择</small></td>
+                                                    <td><span class="red">*</span>工艺类别：</td>
+                                                    <td>
+                                                        <select class="form-control">
+                                                            <option selected="">--请选择--</option>
+                                                            <option>晶圆处理制程</option>
+                                                            <option>晶圆针测制程</option>
+                                                            <option>封装</option>
+                                                            <option>检测</option>
+                                                        </select>
+                                                    </td>
                                                 </tr>
                                                 <tr>
-                                                    <td><span class="red">*</span>来源：</td>
-                                                    <td><select class="form-control"> <option selected="">--请选择--</option> <option class="l-iconsbg" >天猫</option> <option class="l-iconsbg">1号店</option> <option class="l-iconsbg">京东</option> </select> </td>
+                                                    <td><span class="red">*</span>生产周期：</td>
+                                                    <td><input type="text" class="form-control" id="province"/></td>
                                                 </tr>
                                                 <tr>
-                                                    <td></td>
-                                                    <td><small>请按照实际情况选择</small></td>
-                                                </tr>
-                                                <tr>
-                                                    <td><span class="red">*</span>优惠金额：</td>
-                                                    <td><input type="text" class="form-control" id="discount" placeholder="" value="0.00" /></td>
-                                                </tr>
-                                                <tr>
-                                                    <td></td>
-                                                    <td><small>订单总优惠金额</small></td>
-                                                </tr>
-                                                <tr>
-                                                    <td><span class="red">*</span>订单运费：</td>
-                                                    <td><input type="text" class="form-control" id="delivery_price" placeholder="" value="0.00" /></td>
-                                                </tr>
-                                                <tr>
-                                                    <td></td>
-                                                    <td><small>任意输入条形码几位，确认后自动加入右侧</small></td>
-                                                </tr>
-                                                <tr>
-                                                    <td></td>
-                                                    <td><button type="button" class="btn btn-default btn-success">生成订单</button></td>
-                                                </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xs-6">
-                                    <div class="widget-box">
-                                        <div class="widget-title">
-                                            <span class="icon"> <span class="glyphicon glyphicon-th"> </span></span>
-                                            <h5>收货人信息</h5>
-                                        </div>
-                                        <div class="widget-content nopadding">
-                                            <table class="table table-hover order-table-form">
-                                                <tbody>
-                                                <tr>
-                                                    <td><span class="red">*</span>收货人：</td>
-                                                    <td><input type="text" class="form-control" id="consignee" placeholder="" value="" /></td>
-                                                </tr>
-                                                <tr>
-                                                    <td><span class="red">*</span>手 机：</td>
-                                                    <td><input type="text" class="form-control" id="cellphone" placeholder="" value="" /></td>
-                                                </tr>
-                                                <tr>
-                                                    <td><span class="red">*</span>省 份：</td>
-                                                    <td><input type="text" class="form-control" id="province" placeholder="" value="" /></td>
-                                                </tr>
-                                                <tr>
-                                                    <td><span class="red">*</span>城 市：</td>
+                                                    <td>城 市：</td>
                                                     <td><input type="text" class="form-control" id="city" placeholder="" value="" /></td>
                                                 </tr>
                                                 <tr>
-                                                    <td><span class="red">*</span>区（县）：</td>
-                                                    <td><input type="text" class="form-control" id="district" placeholder="" value="" /></td>
+                                                    <td>标签：</td>
+                                                    <td><input type="text" class="form-control" id="tag" placeholder="" value="" /></td>
                                                 </tr>
                                                 <tr>
-                                                    <td><span class="red">*</span>地 址：</td>
-                                                    <td><input type="text" class="form-control" id="address" placeholder="" value="" /></td>
+                                                    <td><span class="red">*</span>描述及备注：</td>
+                                                    <td><textarea class="form-control" id="customer_remark" placeholder="" value=""></textarea></td>
                                                 </tr>
                                                 <tr>
-                                                    <td><span class="red">*</span>买家备注：</td>
-                                                    <td><input type="text" class="form-control" id="customer_remark" placeholder="" value="" /></td>
-                                                </tr>
-                                                <tr>
-                                                    <td><span class="red">*</span>卖家备注：</td>
-                                                    <td><input type="text" class="form-control" id="seller_remark" placeholder="" value="" /></td>
-                                                </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                    <div class="widget-box">
-                                        <div class="widget-title">
-                                            <span class="icon"> <span class="glyphicon glyphicon-th"> </span></span>
-                                            <h5>添加商品</h5>
-                                        </div>
-                                        <div class="widget-content nopadding">
-                                            <table class="table table-hover order-table-form">
-                                                <tbody>
-                                                <tr>
-                                                    <td><span class="red">*</span>商品编码：</td>
-                                                    <td><input type="text" class="form-control" id="item_code" placeholder="" value="" /></td>
-                                                </tr>
-                                                <tr>
-                                                    <td><span class="red">*</span>单 价：</td>
-                                                    <td><input type="text" class="form-control" id="price" placeholder="" value="" /></td>
-                                                </tr>
-                                                <tr>
-                                                    <td><span class="red">*</span>数 量：</td>
-                                                    <td><input type="text" class="form-control" id="amount" placeholder="" value="" /></td>
-                                                </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                    <div class="widget-box">
-                                        <div class="widget-title">
-                                            <span class="icon"> <span class="glyphicon glyphicon-th"> </span></span>
-                                            <h5>订单商品</h5>
-                                        </div>
-                                        <div class="widget-content nopadding">
-                                            <table class="table table-hover order-table">
-                                                <thead>
-                                                <tr>
-                                                    <th>编号</th>
-                                                    <th>编码</th>
-                                                    <th>条码</th>
-                                                    <th>单价</th>
-                                                    <th>数量</th>
-                                                    <th>金额</th>
-                                                </tr>
-                                                </thead>
-                                                <tbody>
-                                                <tr>
-                                                    <td>107</td>
-                                                    <td>LE0001</td>
-                                                    <td>6955052900003</td>
-                                                    <td>120.00</td>
-                                                    <td>1</td>
-                                                    <td>120.00</td>
+                                                    <td></td>
+                                                    <td><button type="button" class="btn btn-default btn-success">保存</button></td>
                                                 </tr>
                                                 </tbody>
                                             </table>
@@ -226,17 +154,71 @@
                                     </div>
                                 </div>
                                 <div class="col-xs-6">
-                                    <button class="btn btn-success" type="button">生成订单</button>
+                                    <div class="widget-box">
+                                        <div class="widget-title">
+                                            <span class="icon"><span class="glyphicon glyphicon-th"></span></span>
+                                            <h5>详细需求描述</h5>
+                                        </div>
+                                        <div class="widget-content nopadding">
+                                            <table class="table table-hover order-table-form">
+                                                <tbody>
+                                                <tr>
+                                                    <td><span class="red">*</span>总体需求描述：</td>
+                                                    <td><textarea class="form-control" id="order_description" placeholder="" value=""></textarea></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="red">*</span>需求文档上传：</td>
+                                                    <td>
+                                                        <input type="button" onclick="document.getElementById('upfile').click()" value="浏览…" class="upFileBtn btn btn-default btn-info"/>
+                                                        <input type="file" onchange="document.getElementById('upfileResult').innerHTML=this.value" class="upfile" id="upfile" name="upfile"/>
+                                                    </td>
+                                                    <span id="upfileResult" class="file_tip">未选择文件</span>
+                                                </tr>
+                                                <tr>
+                                                    <td></td>
+                                                    <td><small>详细的需求文档，模板请参考<a class="red" href="#">这里</a></small></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><h7>订单需求分解：</h7></td>
+                                                    <td><span><button class="btn btn-success btn-xs add_sub_demands">添加子需求</button></span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="red">*</span>子需求1：</td>
+                                                    <td><input type="text" class="form-control" id="sub_demands" placeholder="" value="" /></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="red">*</span>子需求1描述：</td>
+                                                    <td><textarea class="form-control" id="sub_demands_description" placeholder="" value=""></textarea></td>
+                                                </tr>
+                                                <tr>
+                                                    <td></td>
+                                                    <td><small>请根据实际情况划分出原子需求</small></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>来源：</td>
+                                                    <td><select class="form-control">
+                                                        <option selected="">--请选择--</option>
+                                                        <option class="l-iconsbg" >国家863项目</option>
+                                                        <option class="l-iconsbg">自然科学基金</option>
+                                                        <option class="l-iconsbg">企业项目</option>
+                                                    </select></td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
                                 </div>
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
+            <div><button type="button" class="btn btn-default btn-success">提交订单</button></div>
         </div>
     </div>
+
     <!--end-containt-part-->
-    <script src="../../js/jquery.min.js"></script>
+    <script src="../../js/jquery-1.10.2.min.js"></script>
     <script src="../../js/bootstrap.min.js"></script>
     <script src="../../js/matrix.js"></script>
 </body>

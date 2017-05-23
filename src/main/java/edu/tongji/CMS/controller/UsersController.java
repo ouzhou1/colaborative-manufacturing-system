@@ -2,6 +2,7 @@ package edu.tongji.CMS.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,9 +21,12 @@ public class UsersController {
 	private UsersDao usersDao;
 
 	@GetMapping(value = "")
-	public ModelAndView usersList() {
-		Iterable<Users> users = usersDao.findAll();
-		return new ModelAndView("users/dashboard", "users", users);
+	public String usersList(Model model) {
+		model.addAttribute("users", usersDao.findAll());
+		model.addAttribute("users_count", usersDao.count());
+		model.addAttribute("personal_users", usersDao.findByUserCategory("personal"));
+		model.addAttribute("enterprise_users", usersDao.findByUserCategory("enterprise"));
+		return "users/dashboard";
 	}
 
 	@GetMapping("/{id}")

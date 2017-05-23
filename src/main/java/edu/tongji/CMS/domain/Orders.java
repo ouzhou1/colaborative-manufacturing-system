@@ -37,10 +37,22 @@ public class Orders {
 	@Column(name = "status")
 	@NotEmpty(message = "Status is required.")
 	private String status;
-	
+
+	@Column(name = "city")
+	@NotEmpty(message = "City is required.")
+	private String city;
+
 	@Column(name = "field")
 	@NotEmpty(message = "Field is required.")
 	private String field;
+
+	@Column(name = "tech_category")
+	@NotEmpty(message = "Tech category is required.")
+	private String tech_category;
+
+	@Column(name = "craft_category")
+	@NotEmpty(message = "Craft category is required.")
+	private String craft_category;
 	
 	@Column(name = "period")
 	@NotEmpty(message = "Period is required.")
@@ -58,6 +70,9 @@ public class Orders {
 	@Column(name = "tags")
 	//@NotEmpty(message = "Tag is required.")
 	private String tags;
+
+	@Column(name = "raw_description")
+	private String raw_description;
 	
 	public Long getOrder_id() {
 		return order_id;
@@ -91,12 +106,36 @@ public class Orders {
 		this.publish_time = publish_time;
 	}
 
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
 	public String getField() {
 		return field;
 	}
 
 	public void setField(String field) {
 		this.field = field;
+	}
+
+	public String getTech_category() {
+		return tech_category;
+	}
+
+	public void setTech_category(String tech_category) {
+		this.tech_category = tech_category;
+	}
+
+	public String getCraft_category() {
+		return craft_category;
+	}
+
+	public void setCraft_category(String craft_category) {
+		this.craft_category = craft_category;
 	}
 
 	public String getStatus() {
@@ -138,4 +177,13 @@ public class Orders {
 	public void setTags(String tags) {
 		this.tags = tags;
 	}
+
+	public String getRaw_description() {
+		return raw_description;
+	}
+
+	public void setRaw_description(String raw_description) {
+		this.raw_description = raw_description;
+	}
+
 }

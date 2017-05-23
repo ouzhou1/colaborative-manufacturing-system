@@ -41,6 +41,9 @@ public class Demands {
 	@NotEmpty(message = "Field is required.")
 	private String field;
 
+	@Column(name = "city")
+	private String city;
+
 	@Column(name = "tags")
 	//@NotEmpty(message = "Tag is required.")
 	private String tags;
@@ -107,6 +110,14 @@ public class Demands {
 
 	public void setField(String field) {
 		this.field = field;
+	}
+
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
 	}
 
 	public String getTags() {

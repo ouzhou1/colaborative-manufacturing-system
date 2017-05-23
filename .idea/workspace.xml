@@ -2,198 +2,38 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="17ee5b8d-b75f-485a-a6fb-b2b49e384a82" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/images/breadcrumb.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/images/favicon.ico" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/edu/tongji/CMS/controller/LoginController.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/edu/tongji/CMS/dao/demands/DemandsRepository.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/css/bootstrap-datetimepicker.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/css/indlog.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/css/matrix-media.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/css/matrix-style.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/js/bootbox.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/js/bootbox.prompt.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/js/bootstrap-datetimepicker.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/js/bootstrap-datetimepicker.zh-CN.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/js/html5shiv.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/js/jquery.dataTables.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/js/login.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/js/matrix.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/js/matrix.roles.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/js/matrix.tables.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/js/respond.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/templates/demands/details.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/templates/login.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/templates/orders/order_create.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/templates/register.html" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build.gradle" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/META-INF/MANIFEST.MF" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/META-INF/maven/org.springframework.boot/spring-boot-colaborative-manufacturing/pom.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/META-INF/maven/org.springframework.boot/spring-boot-colaborative-manufacturing/pom.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/edu/tongji/CMS/dao/DemandsDao.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/edu/tongji/CMS/dao/HardwareResourceDao.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/edu/tongji/CMS/dao/OrdersDao.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/edu/tongji/CMS/dao/ServicesDao.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/edu/tongji/CMS/dao/UsersDao.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/static/image/add.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/static/image/arrow.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/static/image/credit/add2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/static/image/credit/close_light.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/static/image/credit/exit.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/static/image/credit/form_light.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/static/image/credit/form_light2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/static/image/credit/gjj.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/static/image/credit/grade-level-description.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/static/image/credit/home.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/static/image/credit/id.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/static/image/credit/id2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/static/image/credit/info_fill.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/static/image/credit/logo.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/static/image/credit/people.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/static/image/credit/phone.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/static/image/credit/question_fill.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/static/image/credit/refresh.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/static/image/credit/right.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/static/image/credit/round_check_fill.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/static/image/credit/shebao.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/static/image/credit/unfold.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/static/image/credit/wrong.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/static/image/credit/xuexin.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/static/image/home.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/static/image/model.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/templates/orders/publish.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/tomcat/logs/access_log.2017-02-20.log" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/tomcat/logs/access_log.2017-02-21.log" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/tomcat/logs/access_log.2017-02-22.log" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/tomcat/logs/access_log.2017-02-25.log" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/tomcat/logs/access_log.2017-02-26.log" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/tomcat/logs/access_log.2017-02-27.log" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/tomcat/logs/access_log.2017-02-28.log" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/tomcat/logs/access_log.2017-03-06.log" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/tomcat/logs/access_log.2017-03-08.log" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/tomcat/logs/access_log.2017-03-11.log" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/tomcat/logs/access_log.2017-03-12.log" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/tomcat/logs/access_log.2017-03-13.log" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/tomcat/logs/access_log.2017-03-14.log" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/tomcat/logs/access_log.2017-03-19.log" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/tomcat/logs/access_log.2017-03-20.log" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/tomcat/logs/access_log.2017-03-21.log" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/tomcat/logs/access_log.2017-03-26.log" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/tomcat/logs/access_log.2017-03-27.log" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/tomcat/logs/access_log.2017-03-28.log" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/tomcat/logs/access_log.2017-03-30.log" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/tomcat/logs/access_log.2017-04-06.log" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/tomcat/logs/access_log.2017-04-10.log" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/tomcat/logs/access_log.2017-04-11.log" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/tomcat/logs/access_log.2017-04-21.log" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/tomcat/logs/access_log.2017-04-24.log" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/tomcat/logs/access_log.2017-04-25.log" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/tomcat/logs/access_log.2017-05-14.log" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/edu/tongji/CMS/dao/DemandsDao.java" afterPath="$PROJECT_DIR$/src/main/java/edu/tongji/CMS/dao/demands/DemandsDao.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/edu/tongji/CMS/dao/HardwareResourceDao.java" afterPath="$PROJECT_DIR$/src/main/java/edu/tongji/CMS/dao/services/HardwareResourceDao.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/edu/tongji/CMS/dao/OrdersDao.java" afterPath="$PROJECT_DIR$/src/main/java/edu/tongji/CMS/dao/orders/OrdersDao.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/edu/tongji/CMS/dao/ServicesDao.java" afterPath="$PROJECT_DIR$/src/main/java/edu/tongji/CMS/dao/services/ServicesDao.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/edu/tongji/CMS/dao/UsersDao.java" afterPath="$PROJECT_DIR$/src/main/java/edu/tongji/CMS/dao/users/UsersDao.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/resources/static/image/add.png" afterPath="$PROJECT_DIR$/src/main/resources/static/images/add.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/resources/static/image/arrow.png" afterPath="$PROJECT_DIR$/src/main/resources/static/images/arrow.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/resources/static/image/credit/add2.png" afterPath="$PROJECT_DIR$/src/main/resources/static/images/credit/add2.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/resources/static/image/credit/close_light.png" afterPath="$PROJECT_DIR$/src/main/resources/static/images/credit/close_light.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/resources/static/image/credit/exit.png" afterPath="$PROJECT_DIR$/src/main/resources/static/images/credit/exit.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/resources/static/image/credit/form_light.png" afterPath="$PROJECT_DIR$/src/main/resources/static/images/credit/form_light.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/resources/static/image/credit/form_light2.png" afterPath="$PROJECT_DIR$/src/main/resources/static/images/credit/form_light2.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/resources/static/image/credit/gjj.png" afterPath="$PROJECT_DIR$/src/main/resources/static/images/credit/gjj.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/resources/static/image/credit/grade-level-description.png" afterPath="$PROJECT_DIR$/src/main/resources/static/images/credit/grade-level-description.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/resources/static/image/credit/home.png" afterPath="$PROJECT_DIR$/src/main/resources/static/images/credit/home.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/resources/static/image/credit/id.png" afterPath="$PROJECT_DIR$/src/main/resources/static/images/credit/id.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/resources/static/image/credit/id2.png" afterPath="$PROJECT_DIR$/src/main/resources/static/images/credit/id2.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/resources/static/image/credit/info_fill.png" afterPath="$PROJECT_DIR$/src/main/resources/static/images/credit/info_fill.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/resources/static/image/credit/logo.png" afterPath="$PROJECT_DIR$/src/main/resources/static/images/credit/logo.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/resources/static/image/credit/people.png" afterPath="$PROJECT_DIR$/src/main/resources/static/images/credit/people.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/resources/static/image/credit/phone.png" afterPath="$PROJECT_DIR$/src/main/resources/static/images/credit/phone.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/resources/static/image/credit/question_fill.png" afterPath="$PROJECT_DIR$/src/main/resources/static/images/credit/question_fill.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/resources/static/image/credit/refresh.png" afterPath="$PROJECT_DIR$/src/main/resources/static/images/credit/refresh.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/resources/static/image/credit/right.png" afterPath="$PROJECT_DIR$/src/main/resources/static/images/credit/right.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/resources/static/image/credit/round_check_fill.png" afterPath="$PROJECT_DIR$/src/main/resources/static/images/credit/round_check_fill.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/resources/static/image/credit/shebao.png" afterPath="$PROJECT_DIR$/src/main/resources/static/images/credit/shebao.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/resources/static/image/credit/unfold.png" afterPath="$PROJECT_DIR$/src/main/resources/static/images/credit/unfold.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/resources/static/image/credit/wrong.png" afterPath="$PROJECT_DIR$/src/main/resources/static/images/credit/wrong.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/resources/static/image/credit/xuexin.png" afterPath="$PROJECT_DIR$/src/main/resources/static/images/credit/xuexin.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/resources/static/image/home.png" afterPath="$PROJECT_DIR$/src/main/resources/static/images/home.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/resources/static/image/model.png" afterPath="$PROJECT_DIR$/src/main/resources/static/images/model.png" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/resources/templates/orders/publish.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/orders/status.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/tongji/CMS/Application.class" afterPath="$PROJECT_DIR$/target/classes/edu/tongji/CMS/Application.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/tongji/CMS/Service/Impl/FileSystemService.class" afterPath="$PROJECT_DIR$/target/classes/edu/tongji/CMS/Service/Impl/FileSystemService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/tongji/CMS/Service/Impl/RDFServiceIml.class" afterPath="$PROJECT_DIR$/target/classes/edu/tongji/CMS/Service/Impl/RDFServiceIml.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/tongji/CMS/Service/demand/Demand.class" afterPath="$PROJECT_DIR$/target/classes/edu/tongji/CMS/Service/demand/Demand.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/tongji/CMS/Service/service/RDFService.class" afterPath="$PROJECT_DIR$/target/classes/edu/tongji/CMS/Service/service/RDFService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/tongji/CMS/Service/service/StorageService.class" afterPath="$PROJECT_DIR$/target/classes/edu/tongji/CMS/Service/service/StorageService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/tongji/CMS/controller/DemandsController.class" afterPath="$PROJECT_DIR$/target/classes/edu/tongji/CMS/controller/DemandsController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/tongji/CMS/controller/OrdersController.class" afterPath="$PROJECT_DIR$/target/classes/edu/tongji/CMS/controller/OrdersController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/tongji/CMS/controller/ResourceActionController.class" afterPath="$PROJECT_DIR$/target/classes/edu/tongji/CMS/controller/ResourceActionController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/tongji/CMS/controller/ServicesController.class" afterPath="$PROJECT_DIR$/target/classes/edu/tongji/CMS/controller/ServicesController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/tongji/CMS/controller/ServicesPublishController.class" afterPath="$PROJECT_DIR$/target/classes/edu/tongji/CMS/controller/ServicesPublishController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/tongji/CMS/controller/UsersController.class" afterPath="$PROJECT_DIR$/target/classes/edu/tongji/CMS/controller/UsersController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/tongji/CMS/domain/Demands.class" afterPath="$PROJECT_DIR$/target/classes/edu/tongji/CMS/domain/Demands.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/tongji/CMS/domain/HardwareResource.class" afterPath="$PROJECT_DIR$/target/classes/edu/tongji/CMS/domain/HardwareResource.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/edu/tongji/CMS/Service/partnerSelect/PartnerPreliminaryScreeningStrategy.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/edu/tongji/CMS/Service/partnerSelect/PartnerSelectSerivce.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/edu/tongji/CMS/Service/partnerSelect/PartnerSelectServiceImpl.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/edu/tongji/CMS/Service/partnerSelect/PartnerSelectStrategy.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/edu/tongji/CMS/controller/PartnerChooseController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/edu/tongji/CMS/dao/partners/PartnerRepository.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/edu/tongji/CMS/dao/partners/PartnersDao.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/edu/tongji/CMS/domain/Partner.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/templates/partner/select.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/tongji/CMS/domain/Orders.class" afterPath="$PROJECT_DIR$/target/classes/edu/tongji/CMS/domain/Orders.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/tongji/CMS/domain/Services.class" afterPath="$PROJECT_DIR$/target/classes/edu/tongji/CMS/domain/Services.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/tongji/CMS/domain/SoftwareResource.class" afterPath="$PROJECT_DIR$/target/classes/edu/tongji/CMS/domain/SoftwareResource.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/tongji/CMS/domain/UploadServices.class" afterPath="$PROJECT_DIR$/target/classes/edu/tongji/CMS/domain/UploadServices.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/tongji/CMS/domain/Users.class" afterPath="$PROJECT_DIR$/target/classes/edu/tongji/CMS/domain/Users.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/tongji/CMS/domain/resource/BasicProperty.class" afterPath="$PROJECT_DIR$/target/classes/edu/tongji/CMS/domain/resource/BasicProperty.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/tongji/CMS/domain/resource/FunctionProperty.class" afterPath="$PROJECT_DIR$/target/classes/edu/tongji/CMS/domain/resource/FunctionProperty.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/tongji/CMS/domain/resource/PerformanceProperty.class" afterPath="$PROJECT_DIR$/target/classes/edu/tongji/CMS/domain/resource/PerformanceProperty.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/edu/tongji/CMS/domain/resource/StatusProperty.class" afterPath="$PROJECT_DIR$/target/classes/edu/tongji/CMS/domain/resource/StatusProperty.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/sample/web/ui/ApplicationTests.class" afterPath="$PROJECT_DIR$/target/test-classes/sample/web/ui/ApplicationTests.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/sample/web/ui/CommonAncestor.class" afterPath="$PROJECT_DIR$/target/test-classes/sample/web/ui/CommonAncestor.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/sample/web/ui/Expection.class" afterPath="$PROJECT_DIR$/target/test-classes/sample/web/ui/Expection.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/sample/web/ui/Filter.class" afterPath="$PROJECT_DIR$/target/test-classes/sample/web/ui/Filter.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/sample/web/ui/FiveFortune.class" afterPath="$PROJECT_DIR$/target/test-classes/sample/web/ui/FiveFortune.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/sample/web/ui/GetTimeDiff.class" afterPath="$PROJECT_DIR$/target/test-classes/sample/web/ui/GetTimeDiff.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/sample/web/ui/JVMTest.class" afterPath="$PROJECT_DIR$/target/test-classes/sample/web/ui/JVMTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/sample/web/ui/Medal.class" afterPath="$PROJECT_DIR$/target/test-classes/sample/web/ui/Medal.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/sample/web/ui/MessageControllerWebTests$RegexMatcher.class" afterPath="$PROJECT_DIR$/target/test-classes/sample/web/ui/MessageControllerWebTests$RegexMatcher.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/sample/web/ui/MessageControllerWebTests.class" afterPath="$PROJECT_DIR$/target/test-classes/sample/web/ui/MessageControllerWebTests.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/sample/web/ui/MyQueue.class" afterPath="$PROJECT_DIR$/target/test-classes/sample/web/ui/MyQueue.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/sample/web/ui/ParseExcel.class" afterPath="$PROJECT_DIR$/target/test-classes/sample/web/ui/ParseExcel.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/sample/web/ui/Pingtu$state.class" afterPath="$PROJECT_DIR$/target/test-classes/sample/web/ui/Pingtu$state.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/sample/web/ui/Pingtu.class" afterPath="$PROJECT_DIR$/target/test-classes/sample/web/ui/Pingtu.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/sample/web/ui/Queuetest.class" afterPath="$PROJECT_DIR$/target/test-classes/sample/web/ui/Queuetest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/sample/web/ui/RDFGenerateServiceIml.class" afterPath="$PROJECT_DIR$/target/test-classes/sample/web/ui/RDFGenerateServiceIml.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/sample/web/ui/RDFModel.class" afterPath="$PROJECT_DIR$/target/test-classes/sample/web/ui/RDFModel.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/sample/web/ui/RDFServer.class" afterPath="$PROJECT_DIR$/target/test-classes/sample/web/ui/RDFServer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/sample/web/ui/RioTest.class" afterPath="$PROJECT_DIR$/target/test-classes/sample/web/ui/RioTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/sample/web/ui/SemanticWebTest.class" afterPath="$PROJECT_DIR$/target/test-classes/sample/web/ui/SemanticWebTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/sample/web/ui/Thread1.class" afterPath="$PROJECT_DIR$/target/test-classes/sample/web/ui/Thread1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/sample/web/ui/TreeNode.class" afterPath="$PROJECT_DIR$/target/test-classes/sample/web/ui/TreeNode.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/sample/web/ui/aliTest.class" afterPath="$PROJECT_DIR$/target/test-classes/sample/web/ui/aliTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/sample/web/ui/aliTest1.class" afterPath="$PROJECT_DIR$/target/test-classes/sample/web/ui/aliTest1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/sample/web/ui/findListCycle.class" afterPath="$PROJECT_DIR$/target/test-classes/sample/web/ui/findListCycle.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/sample/web/ui/queue.class" afterPath="$PROJECT_DIR$/target/test-classes/sample/web/ui/queue.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/sample/web/ui/strStr.class" afterPath="$PROJECT_DIR$/target/test-classes/sample/web/ui/strStr.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/colaborative-manufacturing-system.iml" afterPath="$PROJECT_DIR$/.idea/colaborative-manufacturing-system.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/tongji/CMS/controller/DemandsController.java" afterPath="$PROJECT_DIR$/src/main/java/edu/tongji/CMS/controller/DemandsController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/tongji/CMS/controller/OrdersController.java" afterPath="$PROJECT_DIR$/src/main/java/edu/tongji/CMS/controller/OrdersController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/tongji/CMS/controller/ResourceActionController.java" afterPath="$PROJECT_DIR$/src/main/java/edu/tongji/CMS/controller/ResourceActionController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/tongji/CMS/controller/ServicesController.java" afterPath="$PROJECT_DIR$/src/main/java/edu/tongji/CMS/controller/ServicesController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/tongji/CMS/Service/demand/Demand.java" afterPath="$PROJECT_DIR$/src/main/java/edu/tongji/CMS/Service/demand/Demand.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/tongji/CMS/Service/service/RDFService.java" afterPath="$PROJECT_DIR$/src/main/java/edu/tongji/CMS/Service/service/RDFService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/tongji/CMS/controller/UsersController.java" afterPath="$PROJECT_DIR$/src/main/java/edu/tongji/CMS/controller/UsersController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/tongji/CMS/dao/users/UsersDao.java" afterPath="$PROJECT_DIR$/src/main/java/edu/tongji/CMS/dao/users/UsersDao.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/tongji/CMS/domain/Demands.java" afterPath="$PROJECT_DIR$/src/main/java/edu/tongji/CMS/domain/Demands.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/edu/tongji/CMS/domain/Orders.java" afterPath="$PROJECT_DIR$/src/main/java/edu/tongji/CMS/domain/Orders.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/css/dashboard.css" afterPath="$PROJECT_DIR$/src/main/resources/static/css/dashboard.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/css/matrix-style.css" afterPath="$PROJECT_DIR$/src/main/resources/static/css/matrix-style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/css/order-process.css" afterPath="$PROJECT_DIR$/src/main/resources/static/css/order-process.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/demands/dashboard.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/demands/dashboard.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/orders/dashboard.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/orders/dashboard.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/orders/details.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/orders/details.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/application.properties" afterPath="$PROJECT_DIR$/target/classes/application.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/demands/details.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/demands/details.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/orders/order_create.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/orders/order_create.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/services/dashboard.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/services/dashboard.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/users/dashboard.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/users/dashboard.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/static/css/dashboard.css" afterPath="$PROJECT_DIR$/target/classes/static/css/dashboard.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/templates/demands/dashboard.html" afterPath="$PROJECT_DIR$/target/classes/templates/demands/dashboard.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/templates/orders/dashboard.html" afterPath="$PROJECT_DIR$/target/classes/templates/orders/dashboard.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/templates/orders/details.html" afterPath="$PROJECT_DIR$/target/classes/templates/orders/details.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/tomcat/logs/access_log.2017-05-19.log" afterPath="$PROJECT_DIR$/target/tomcat/logs/access_log.2017-05-19.log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/static/css/matrix-style.css" afterPath="$PROJECT_DIR$/target/classes/static/css/matrix-style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/static/css/order-process.css" afterPath="$PROJECT_DIR$/target/classes/static/css/order-process.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/templates/demands/details.html" afterPath="$PROJECT_DIR$/target/classes/templates/demands/details.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/templates/orders/order_create.html" afterPath="$PROJECT_DIR$/target/classes/templates/orders/order_create.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/templates/services/dashboard.html" afterPath="$PROJECT_DIR$/target/classes/templates/services/dashboard.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/tomcat/logs/access_log.2017-05-22.log" afterPath="$PROJECT_DIR$/target/tomcat/logs/access_log.2017-05-22.log" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -210,71 +50,94 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="dashboard.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/orders/dashboard.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="94">
-              <caret line="12" column="59" lean-forward="false" selection-start-line="12" selection-start-column="59" selection-end-line="12" selection-end-column="59" />
-              <folding>
-                <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#1;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dashboard.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/templates/demands/dashboard.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="103">
-              <caret line="12" column="59" lean-forward="false" selection-start-line="12" selection-start-column="59" selection-end-line="12" selection-end-column="59" />
-              <folding>
-                <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#1;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="details.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/orders/details.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="122">
-              <caret line="13" column="60" lean-forward="false" selection-start-line="13" selection-start-column="55" selection-end-line="13" selection-end-column="60" />
-              <folding>
-                <element signature="e#4176#4183#1" expanded="true" />
-                <element signature="e#13768#13774#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="details.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/demands/details.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="274">
-              <caret line="59" column="46" lean-forward="true" selection-start-line="59" selection-start-column="46" selection-end-line="59" selection-end-column="46" />
+            <state relative-caret-position="1037">
+              <caret line="124" column="18" lean-forward="true" selection-start-line="66" selection-start-column="12" selection-end-line="124" selection-end-column="18" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DemandsController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/tongji/CMS/controller/DemandsController.java">
+      <file leaf-file-name="dashboard.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/users/dashboard.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="47" column="5" lean-forward="false" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
+            <state relative-caret-position="212">
+              <caret line="157" column="85" lean-forward="false" selection-start-line="157" selection-start-column="85" selection-end-line="157" selection-end-column="85" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UsersController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/edu/tongji/CMS/controller/UsersController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="98">
+              <caret line="25" column="60" lean-forward="true" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="60" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1690#1691#0" expanded="true" />
-                <element signature="e#1739#1740#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DemandsDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/tongji/CMS/dao/demands/DemandsDao.java">
+      <file leaf-file-name="UsersDao.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/edu/tongji/CMS/dao/users/UsersDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+            <state relative-caret-position="136">
+              <caret line="13" column="1" lean-forward="true" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Users.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/edu/tongji/CMS/domain/Users.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="33" column="49" lean-forward="true" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="49" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="details.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/demands/details.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="19" lean-forward="false" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dashboard.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/templates/services/dashboard.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-510">
+              <caret line="9" column="57" lean-forward="true" selection-start-line="9" selection-start-column="57" selection-end-line="9" selection-end-column="57" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PartnerChooseController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/edu/tongji/CMS/controller/PartnerChooseController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="211">
+              <caret line="28" column="34" lean-forward="true" selection-start-line="28" selection-start-column="34" selection-end-line="28" selection-end-column="34" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Partner.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/edu/tongji/CMS/domain/Partner.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="25" lean-forward="true" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -285,9 +148,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
         <option value="HTML File" />
-        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -297,8 +160,6 @@
       <find>order</find>
       <find>matrix</find>
       <find>float</find>
-      <find>sidebar</find>
-      <find>text</find>
       <find>top</find>
       <find>width</find>
       <find>border</find>
@@ -311,7 +172,17 @@
       <find>margin</find>
       <find>form</find>
       <find>详细</find>
+      <find>40</find>
+      <find>sidebar</find>
+      <find>text</find>
+      <find>步骤</find>
+      <find>progress</find>
       <find>image</find>
+      <find>添加</find>
+      <find>style</find>
+      <find>partner</find>
+      <find>partner/select</find>
+      <find>user</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -334,23 +205,40 @@
         <option value="$PROJECT_DIR$/src/main/resources/templates/register.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/login.html" />
         <option value="$PROJECT_DIR$/src/main/java/edu/tongji/CMS/controller/LoginController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/services/dashboard.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/orders/order_create.html" />
         <option value="$PROJECT_DIR$/src/main/java/edu/tongji/CMS/controller/OrdersController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/index.html" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/tongji/CMS/domain/Demands.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/css/dashboard.css" />
         <option value="$PROJECT_DIR$/src/main/java/edu/tongji/CMS/dao/demands/DemandsDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/tongji/CMS/dao/services/ServicesDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/tongji/CMS/dao/orders/OrdersDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/tongji/CMS/dao/users/UsersDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/tongji/CMS/dao/demands/DemandsRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/tongji/CMS/controller/DemandsController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/static/css/matrix-style.css" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/orders/details.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/templates/demands/dashboard.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/orders/dashboard.html" />
         <option value="$PROJECT_DIR$/src/main/resources/templates/demands/details.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/css/dashboard.css" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/css/matrix-style.css" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/css/process-bar.css" />
+        <option value="$PROJECT_DIR$/src/main/resources/static/css/order-process.css" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/tongji/CMS/domain/Orders.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/tongji/CMS/dao/partners/partnersDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/tongji/CMS/dao/partners/PartnersDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/tongji/CMS/dao/partners/PartnerRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/tongji/CMS/Service/partnerSelect/PartnerChooseStrategy.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/tongji/CMS/Service/partnerSelect/PartnerSelectSerivce.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/tongji/CMS/Service/partnerSelect/PartnerSelectStrategy.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/tongji/CMS/Service/service/RDFService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/tongji/CMS/Service/demand/Demand.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/tongji/CMS/Service/partnerSelect/PartnerSelectServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/tongji/CMS/domain/Partner.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/partner/select.html" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/services/dashboard.html" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/tongji/CMS/domain/Demands.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/orders/order_create.html" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/tongji/CMS/controller/PartnerChooseController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/demands/dashboard.html" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/tongji/CMS/dao/users/UsersDao.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/templates/users/dashboard.html" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/tongji/CMS/controller/UsersController.java" />
       </list>
     </option>
   </component>
@@ -367,6 +255,9 @@
     <option name="width" value="1382" />
     <option name="height" value="744" />
   </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
@@ -382,6 +273,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -425,6 +317,18 @@
               <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="messages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -471,6 +375,36 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="colaborative-manufacturing-system" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="colaborative-manufacturing-system" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="users" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -501,6 +435,36 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="services" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="colaborative-manufacturing-system" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="colaborative-manufacturing-system" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resources" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="partner" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -646,36 +610,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="images" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="colaborative-manufacturing-system" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="colaborative-manufacturing-system" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -765,6 +699,40 @@
               <option name="myItemId" value="dao" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="users" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="colaborative-manufacturing-system" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="colaborative-manufacturing-system" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CMS" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dao" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -798,17 +766,17 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.38850576" />
-    <property name="settings.editor.selected.configurable" value="project.propCompiler" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Font" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="last_opened_file_path" value="$USER_HOME$/test/colaborative-manufacturing-system" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -1091,14 +1059,13 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.328594" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2843602" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2922591" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25475842" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1108,6 +1075,7 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1126,201 +1094,10 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/tongji/CMS/Service/Impl/RDFServiceIml.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="665">
-          <caret line="56" column="30" lean-forward="false" selection-start-line="56" selection-start-column="30" selection-end-line="56" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2432">
-          <caret line="128" column="40" lean-forward="false" selection-start-line="128" selection-start-column="40" selection-end-line="128" selection-end-column="40" />
-          <folding>
-            <element signature="e#13959#13965#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/register.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="7" lean-forward="true" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/tongji/CMS/controller/DemandsController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="14" column="11" lean-forward="true" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/tongji/CMS/controller/ServicesController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1539">
-          <caret line="81" column="5" lean-forward="true" selection-start-line="81" selection-start-column="5" selection-end-line="81" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/tongji/CMS/Application.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/tongji/CMS/controller/LoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="11" column="2" lean-forward="true" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="2" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/tongji/CMS/Service/Impl/RDFServiceIml.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1064">
-          <caret line="56" column="30" lean-forward="false" selection-start-line="56" selection-start-column="30" selection-end-line="56" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="7" lean-forward="false" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
-          <folding>
-            <element signature="e#13959#13965#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="855">
-          <caret line="45" column="32" lean-forward="true" selection-start-line="45" selection-start-column="32" selection-end-line="45" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/tongji/CMS/controller/LoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="16" column="41" lean-forward="false" selection-start-line="16" selection-start-column="41" selection-end-line="16" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/tongji/CMS/Application.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/tongji/CMS/controller/ServicesController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1159">
-          <caret line="61" column="0" lean-forward="true" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/tongji/CMS/Service/Impl/RDFServiceIml.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/tongji/CMS/Service/Impl/RDFServiceIml.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/tongji/CMS/Service/Impl/RDFServiceIml.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="665">
-          <caret line="56" column="30" lean-forward="false" selection-start-line="56" selection-start-column="30" selection-end-line="56" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/jquery.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="1" column="356" lean-forward="false" selection-start-line="1" selection-start-column="356" selection-end-line="1" selection-end-column="356" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/bootstrap-datetimepicker.zh-CN.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/bootstrap-datetimepicker.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1464">
-          <caret line="116" column="18" lean-forward="true" selection-start-line="116" selection-start-column="18" selection-end-line="116" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="105" column="49" lean-forward="true" selection-start-line="105" selection-start-column="49" selection-end-line="105" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/indlog.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="24" column="1" lean-forward="true" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/register.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
           <caret line="8" column="7" lean-forward="false" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1351,9 +1128,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="24" column="35" lean-forward="true" selection-start-line="24" selection-start-column="35" selection-end-line="24" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1361,9 +1135,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
           <caret line="616" column="0" lean-forward="false" selection-start-line="616" selection-start-column="0" selection-end-line="616" selection-end-column="0" />
-          <folding>
-            <element signature="e#25102#25103#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1371,15 +1142,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="57">
           <caret line="3" column="30" lean-forward="false" selection-start-line="3" selection-start-column="30" selection-end-line="3" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/orders/order_create.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2641">
-          <caret line="5" column="81" lean-forward="true" selection-start-line="5" selection-start-column="81" selection-end-line="5" selection-end-column="81" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1387,67 +1149,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
           <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/tongji/CMS/domain/Demands.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="126" column="0" lean-forward="true" selection-start-line="126" selection-start-column="0" selection-end-line="126" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1315#1316#0" expanded="true" />
-            <element signature="e#1338#1339#0" expanded="true" />
-            <element signature="e#1384#1385#0" expanded="true" />
-            <element signature="e#1418#1419#0" expanded="true" />
-            <element signature="e#1453#1454#0" expanded="true" />
-            <element signature="e#1478#1479#0" expanded="true" />
-            <element signature="e#1529#1530#0" expanded="true" />
-            <element signature="e#1566#1567#0" expanded="true" />
-            <element signature="e#1603#1604#0" expanded="true" />
-            <element signature="e#1630#1631#0" expanded="true" />
-            <element signature="e#1685#1686#0" expanded="true" />
-            <element signature="e#1726#1727#0" expanded="true" />
-            <element signature="e#1759#1760#0" expanded="true" />
-            <element signature="e#1782#1783#0" expanded="true" />
-            <element signature="e#1896#1897#0" expanded="true" />
-            <element signature="e#1922#1923#0" expanded="true" />
-            <element signature="e#1973#1974#0" expanded="true" />
-            <element signature="e#2012#2013#0" expanded="true" />
-            <element signature="e#2383#2384#0" expanded="true" />
-            <element signature="e#2410#2411#0" expanded="true" />
-            <element signature="e#2463#2464#0" expanded="true" />
-            <element signature="e#2504#2505#0" expanded="true" />
-            <element signature="e#2539#2540#0" expanded="true" />
-            <element signature="e#2564#2565#0" expanded="true" />
-            <element signature="e#2615#2616#0" expanded="true" />
-            <element signature="e#2652#2653#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/services/dashboard.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-408">
-          <caret line="68" column="38" lean-forward="false" selection-start-line="68" selection-start-column="24" selection-end-line="68" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/tongji/CMS/controller/OrdersController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="37" column="5" lean-forward="true" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#885#886#0" expanded="false" />
-            <element signature="e#938#939#0" expanded="false" />
-            <element signature="e#1036#1037#0" expanded="false" />
-            <element signature="e#1084#1085#0" expanded="false" />
-            <element signature="e#1175#1176#0" expanded="false" />
-            <element signature="e#1222#1223#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1455,25 +1156,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="9">
           <caret line="173" column="26" lean-forward="true" selection-start-line="173" selection-start-column="26" selection-end-line="173" selection-end-column="26" />
-          <folding>
-            <element signature="e#13959#13965#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/tongji/CMS/controller/UsersController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="16" column="13" lean-forward="false" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/dashboard.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="21" column="2" lean-forward="true" selection-start-line="21" selection-start-column="2" selection-end-line="21" selection-end-column="2" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1481,31 +1163,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
           <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/tongji/CMS/dao/services/ServicesDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/tongji/CMS/dao/users/UsersDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/tongji/CMS/dao/orders/OrdersDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1517,37 +1174,187 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/image/details.html" />
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/orders/details.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="855">
+          <caret line="45" column="39" lean-forward="false" selection-start-line="45" selection-start-column="31" selection-end-line="45" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/services/form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="79" column="37" lean-forward="true" selection-start-line="79" selection-start-column="37" selection-end-line="79" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/tongji/CMS/controller/OrdersController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="26" column="22" lean-forward="false" selection-start-line="25" selection-start-column="8" selection-end-line="26" selection-end-column="22" />
+          <folding>
+            <element signature="e#1036#1037#0" expanded="false" />
+            <element signature="e#1084#1085#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/tongji/CMS/controller/DemandsController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="47" column="5" lean-forward="false" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/tongji/CMS/dao/orders/OrdersDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="8" column="1" lean-forward="true" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/tongji/CMS/dao/demands/DemandsDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/tongji/CMS/dao/demands/DemandsRepository.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
+        <state relative-caret-position="187">
           <caret line="14" column="44" lean-forward="true" selection-start-line="14" selection-start-column="44" selection-end-line="14" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/images/home.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/tongji/CMS/dao/services/ServicesDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/tongji/CMS/dao/demands/DemandsDao.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/tongji/CMS/Service/service/StorageService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+        <state relative-caret-position="34">
+          <caret line="2" column="17" lean-forward="false" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/tongji/CMS/controller/DemandsController.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/tongji/CMS/Service/partnerSelect/PartnerSelectServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="47" column="5" lean-forward="false" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
+        <state relative-caret-position="291">
+          <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1690#1691#0" expanded="true" />
-            <element signature="e#1739#1740#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#506#507#0" expanded="false" />
+            <element signature="e#533#534#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/image/details.html">
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/tongji/CMS/Service/Impl/FileSystemService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/tongji/CMS/Service/partnerSelect/PartnerSelectSerivce.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="39" lean-forward="true" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/tongji/CMS/Service/partnerSelect/PartnerSelectStrategy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/orders/dashboard.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="19" lean-forward="true" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/tongji/CMS/Service/service/RDFService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="11" column="4" lean-forward="false" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/tongji/CMS/Service/demand/Demand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/tongji/CMS/dao/partners/PartnersDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="44" lean-forward="false" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/tongji/CMS/dao/partners/PartnerRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/tongji/CMS/Service/partnerSelect/PartnerPreliminaryScreeningStrategy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="50" lean-forward="false" selection-start-line="5" selection-start-column="50" selection-end-line="5" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/process-bar.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1462">
+          <caret line="154" column="1" lean-forward="true" selection-start-line="154" selection-start-column="1" selection-end-line="154" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/bootstrap.min.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1555,50 +1362,148 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/matrix-style.css">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/js/bootstrap.min.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="353" column="62" lean-forward="true" selection-start-line="353" selection-start-column="62" selection-end-line="353" selection-end-column="62" />
+        <state relative-caret-position="111">
+          <caret line="5" column="5332" lean-forward="false" selection-start-line="5" selection-start-column="5332" selection-end-line="5" selection-end-column="5332" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/orders/details.html">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/dashboard.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="122">
-          <caret line="13" column="60" lean-forward="false" selection-start-line="13" selection-start-column="55" selection-end-line="13" selection-end-column="60" />
+        <state relative-caret-position="150">
+          <caret line="44" column="14" lean-forward="true" selection-start-line="44" selection-start-column="14" selection-end-line="44" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/matrix-style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="356">
+          <caret line="1704" column="0" lean-forward="false" selection-start-line="1704" selection-start-column="0" selection-end-line="1704" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/static/css/order-process.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="356">
+          <caret line="47" column="30" lean-forward="true" selection-start-line="47" selection-start-column="30" selection-end-line="47" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/tongji/CMS/domain/Orders.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="43" column="0" lean-forward="true" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/tongji/CMS/domain/Demands.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="116" column="5" lean-forward="true" selection-start-line="116" selection-start-column="5" selection-end-line="116" selection-end-column="5" />
           <folding>
-            <element signature="e#4176#4183#1" expanded="true" />
-            <element signature="e#13768#13774#0" expanded="true" />
+            <element signature="e#2317#2318#0" expanded="true" />
+            <element signature="e#2335#2336#0" expanded="true" />
+            <element signature="e#2372#2373#0" expanded="true" />
+            <element signature="e#2395#2396#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/orders/order_create.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="129">
+          <caret line="46" column="53" lean-forward="true" selection-start-line="46" selection-start-column="53" selection-end-line="46" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/tongji/CMS/domain/Partner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="25" lean-forward="true" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/partner/select.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/tongji/CMS/controller/PartnerChooseController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="28" column="34" lean-forward="true" selection-start-line="28" selection-start-column="34" selection-end-line="28" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/services/dashboard.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-510">
+          <caret line="9" column="57" lean-forward="true" selection-start-line="9" selection-start-column="57" selection-end-line="9" selection-end-column="57" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/demands/dashboard.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="103">
-          <caret line="12" column="59" lean-forward="false" selection-start-line="12" selection-start-column="59" selection-end-line="12" selection-end-column="59" />
-          <folding>
-            <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#1;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="1037">
+          <caret line="124" column="18" lean-forward="true" selection-start-line="66" selection-start-column="12" selection-end-line="124" selection-end-column="18" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/orders/dashboard.html">
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/tongji/CMS/domain/Users.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="94">
-          <caret line="12" column="59" lean-forward="false" selection-start-line="12" selection-start-column="59" selection-end-line="12" selection-end-column="59" />
-          <folding>
-            <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#form#0;n#div#0;n#div#1;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="289">
+          <caret line="33" column="49" lean-forward="true" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="49" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/templates/demands/details.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="59" column="46" lean-forward="true" selection-start-line="59" selection-start-column="46" selection-end-line="59" selection-end-column="46" />
+        <state relative-caret-position="136">
+          <caret line="8" column="19" lean-forward="false" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/tongji/CMS/dao/users/UsersDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="13" column="1" lean-forward="true" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/templates/users/dashboard.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="157" column="85" lean-forward="false" selection-start-line="157" selection-start-column="85" selection-end-line="157" selection-end-column="85" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/tongji/CMS/controller/UsersController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="98">
+          <caret line="25" column="60" lean-forward="true" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="60" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

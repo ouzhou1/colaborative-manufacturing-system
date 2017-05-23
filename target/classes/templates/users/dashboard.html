@@ -8,27 +8,22 @@
 <title>订单管理</title>
 
 <!-- Bootstrap core CSS -->
-<link href="../../css/bootstrap.min.css" rel="stylesheet"
-	type="text/css" />
-
+<link rel="stylesheet" href="css/bootstrap.min.css"/>
+<link rel="stylesheet" href="css/matrix-style.css"/>
+<link rel="stylesheet" href="css/bootstrap-datetimepicker.min.css" />
+<link rel="shortcut icon" href="images/favicon.ico"/>
+<link rel="icon" href="images/favicon.ico" type="image/gif"/>
 <!-- Custom styles for this template -->
-<link href="../../css/dashboard.css" rel="stylesheet" type="text/css" />
+<link href="css/dashboard.css" rel="stylesheet" type="text/css"/>
+
 </head>
 
 <body>
-	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+	<nav class="navbar navbar-fixed-top" role="navigation">
 		<div class="navbar-header">
-			<button type="button" class="navbar-toggle" data-toggle="collapse"
-				data-target="#bs-example-navbar-collapse-1">
-				<span class="sr-only">Toggle navigation</span> 
-				<span class="icon-bar"></span> 
-				<span class="icon-bar"></span> 
-				<span class="icon-bar"></span>
-			</button>
 			<a class="navbar-brand" href="/">协同制造服务管理</a>
 		</div>
-		<div class="collapse navbar-collapse"
-			id="bs-example-navbar-collapse-1">
+		<div class="collapse navbar-collapse" id="cms-common-navbar">
 			<ul class="nav navbar-nav">
 				<li><a href="/">首页</a></li>
 				<li><a href="/services">服务</a></li>
@@ -36,24 +31,13 @@
 				<li><a href="/demands">需求</a></li>
 				<li><a href="/orders">订单管理</a></li>
 				<li class="active"><a href="/users">个人信息</a></li>
-				<li class="dropdown"><a href="#" class="dropdown-toggle"
-					data-toggle="dropdown">分类<b class="caret"></b></a>
-					<ul class="dropdown-menu">
-						<li><a href="#">半导体制造业</a></li>
-						<li><a href="#">车辆工程</a></li>
-						<li class="divider"></li>
-						<li><a href="#">Separated link</a></li>
-						<li class="divider"></li>
-					</ul></li>
 			</ul>
 			<div class="pull-right">
 				<form class="navbar-form" role="search">
 					<div class="input-group">
-						<input type="text" class="form-control" placeholder="Search"
-							name="q" />
+						<input type="text" class="form-control" placeholder="Search" name="q" />
 						<div class="input-group-btn">
-							<button class="btn btn-default" style="height: 34px"
-								type="submit">
+							<button class="btn btn-default" style="height: 34px" type="submit">
 								<i class="glyphicon glyphicon-search"></i>
 							</button>
 						</div>
@@ -64,45 +48,173 @@
 	</nav>
 	<div class="container-fluid">
 		<div class="row tab-content">
-			<div class="col-sm-2 col-md-2 sidebar">
-				<ul class="nav nav-sidebar">
-					<li class="active"><a href="#personal-info" data-toggle="tab"><b>所有用户</b><span
-							class="sr-only">(current)</span></a></li>
+			<div class="col-sm-2 col-md-2 sidebar widget-box">
+				<a class="hidden" href="#"><span class="glyphicon glyphicon-list"></span>系统菜单</a>
+				<ul>
+					<li class="submenu active">
+						<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+						<a href="#users-list" data-toggle="tab"><b>所有用户</b></a>
+					</li>
+					<li class="submenu">
+						<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+						<a href="#personal-users-list" data-toggle="tab"><b>个人用户</b></a>
+					</li>
+					<li class="submenu">
+						<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+						<a href="#enterprise-users-list" data-toggle="tab"><b>企业用户</b></a>
+					</li>
 				</ul>
 			</div>
-			<div
-				class="col-sm-10 col-sm-offset-2 col-md-10 col-md-offset-2 tab-pane fade in active"
-				id="personal-info">
-				<h2>个人信息</h2>
-				<button class="btn btn-default floatRight createservice"
-					type="button" onclick="window.location.href='/users/publish'">
-					创建用户
-				</button>
-				<div class="table-responsive">
-					<table class="table table-striped">
-						<thead>
+			<div class="col-sm-10 col-sm-offset-2 col-md-10 col-md-offset-2 tab-pane fade in active" id="users-list">
+				<div class="widget-box">
+					<div class="widget-title"><span class="icon"><span class="glyphicon glyphicon-th"></span></span>
+						<h5>需求列表</h5>
+						<span class="icon-add-btn glyphicon glyphicon-list-alt">
+							<button class="btn btn-success btn-xs" onclick="window.location.href='/users/publish'">添加用户</button>
+						</span>
+					</div>
+					<div class="widget-content nopadding">
+						<table class="table table-striped table-hover editor-table">
+							<thead>
 							<tr>
 								<th>ID</th>
 								<th>名字</th>
 								<th>所属行业</th>
 								<th>联系方式</th>
+								<th>用户类型</th>
 								<th>状态</th>
 							</tr>
-						</thead>
-						<tbody>
+							</thead>
+							<tbody>
 							<tr th:if="${users.empty}">
 								<td colspan="3">没有用户</td>
 							</tr>
 							<tr th:each="users: ${users}">
 								<td th:text="${users.id}">ID</td>
 								<td><a th:text="${users.username}"
-									th:href="@{'/users/' + ${users.id}}">Name</a></td>
+									   th:href="@{'/users/' + ${users.id}}">Name</a></td>
 								<td th:text="${users.field}">Field</td>
 								<td th:text="${users.tel}">Tel</td>
+								<td th:text="${users.user_category}">Tel</td>
 								<td th:text="${users.status}">Status</td>
 							</tr>
-						</tbody>
-					</table>
+							</tbody>
+						</table>
+					</div>
+					<div class="pages_line">
+						<nav>
+							<ul class="pagination">
+								<li class="disabled"><a href="#">记录：<span th:text="${users_count}"></span></a></li>
+								<li><a href="#" aria-label="Previous"><span aria-hidden="true">首页</span></a></li>
+								<li class="active"><a href="#">上一页</a></li>
+								<li><a href="#">1</a></li>
+								<li><a href="#">下一页</a></li>
+								<li><a href="#" aria-label="Next"><span aria-hidden="true">尾页</span></a></li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-sm-10 col-sm-offset-2 col-md-10 col-md-offset-2 tab-pane fade" id="personal-users-list">
+				<div class="widget-box">
+					<div class="widget-title"><span class="icon"><span class="glyphicon glyphicon-th"></span></span>
+						<h5>需求列表</h5>
+						<span class="icon-add-btn glyphicon glyphicon-list-alt">
+							<button class="btn btn-success btn-xs" onclick="window.location.href='/users/publish'">添加用户</button>
+						</span>
+					</div>
+					<div class="widget-content nopadding">
+						<table class="table table-striped table-hover editor-table">
+							<thead>
+							<tr>
+								<th>ID</th>
+								<th>名字</th>
+								<th>所属行业</th>
+								<th>联系方式</th>
+								<th>用户类型</th>
+								<th>状态</th>
+							</tr>
+							</thead>
+							<tbody>
+							<tr th:if="${personal_users.empty}">
+								<td colspan="3">没有用户</td>
+							</tr>
+							<tr th:each="personal_users: ${personal_users}">
+								<td th:text="${personal_users.id}">ID</td>
+								<td><a th:text="${personal_users.username}"
+									   th:href="@{'/users/' + ${personal_users.id}}">Name</a></td>
+								<td th:text="${personal_users.field}">Field</td>
+								<td th:text="${personal_users.tel}">Tel</td>
+								<td th:text="${personal_users.user_category}">Tel</td>
+								<td th:text="${personal_users.status}">Status</td>
+							</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="pages_line">
+						<nav>
+							<ul class="pagination">
+								<li class="disabled"><a href="#">记录：<span th:text="${users_count}"></span></a></li>
+								<li><a href="#" aria-label="Previous"><span aria-hidden="true">首页</span></a></li>
+								<li class="active"><a href="#">上一页</a></li>
+								<li><a href="#">1</a></li>
+								<li><a href="#">下一页</a></li>
+								<li><a href="#" aria-label="Next"><span aria-hidden="true">尾页</span></a></li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-sm-10 col-sm-offset-2 col-md-10 col-md-offset-2 tab-pane fade" id="enterprise-users-list">
+				<div class="widget-box">
+					<div class="widget-title"><span class="icon"><span class="glyphicon glyphicon-th"></span></span>
+						<h5>需求列表</h5>
+						<span class="icon-add-btn glyphicon glyphicon-list-alt">
+							<button class="btn btn-success btn-xs" onclick="window.location.href='/users/publish'">添加用户</button>
+						</span>
+					</div>
+					<div class="widget-content nopadding">
+						<table class="table table-striped table-hover editor-table">
+							<thead>
+							<tr>
+								<th>ID</th>
+								<th>名字</th>
+								<th>所属行业</th>
+								<th>联系方式</th>
+								<th>用户类型</th>
+								<th>状态</th>
+							</tr>
+							</thead>
+							<tbody>
+							<tr th:if="${enterprise_users.empty}">
+								<td colspan="3">没有用户</td>
+							</tr>
+							<tr th:each="enterprise_users: ${enterprise_users}">
+								<td th:text="${enterprise_users.id}">ID</td>
+								<td><a th:text="${enterprise_users.username}"
+									   th:href="@{'/users/' + ${enterprise_users.id}}">Name</a></td>
+								<td th:text="${enterprise_users.field}">Field</td>
+								<td th:text="${enterprise_users.tel}">Tel</td>
+								<td th:text="${enterprise_users.user_category}">Tel</td>
+								<td th:text="${enterprise_users.status}">Status</td>
+							</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="pages_line">
+						<nav>
+							<ul class="pagination">
+								<li class="disabled"><a href="#">记录：<span th:text="${users_count}"></span></a></li>
+								<li><a href="#" aria-label="Previous"><span aria-hidden="true">首页</span></a></li>
+								<li class="active"><a href="#">上一页</a></li>
+								<li><a href="#">1</a></li>
+								<li><a href="#">下一页</a></li>
+								<li><a href="#" aria-label="Next"><span aria-hidden="true">尾页</span></a></li>
+							</ul>
+						</nav>
+					</div>
 				</div>
 			</div>
 		</div>
