@@ -2,6 +2,8 @@ package edu.tongji.CMS.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -34,6 +36,7 @@ public class Orders {
 	@NotEmpty(message = "Publish time is required.")
 	private String publish_time;
 
+	@Enumerated(EnumType.STRING)
 	@Column(name = "status")
 	@NotEmpty(message = "Status is required.")
 	private String status;
@@ -54,7 +57,7 @@ public class Orders {
 	@NotEmpty(message = "Craft category is required.")
 	private String craft_category;
 	
-	@Column(name = "period")
+	@Column(name = "period", length = 5)
 	@NotEmpty(message = "Period is required.")
 	private String period;
 
