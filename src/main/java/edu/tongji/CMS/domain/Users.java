@@ -2,11 +2,14 @@ package edu.tongji.CMS.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import edu.tongji.CMS.domain.vo.UserStatus;
 import org.hibernate.validator.constraints.NotEmpty;
 
 /**
@@ -45,10 +48,11 @@ public class Users {
 	
 	@Column(name = "location")
 	private String location;
-	
+
+	@Enumerated(EnumType.STRING)
 	@Column(name = "status")
 	@NotEmpty(message = "Status is required.")
-	private String status;
+	private UserStatus status;
 	
 	@Column(name = "personal_statement")
 	private String personal_statement;
@@ -117,11 +121,11 @@ public class Users {
 		this.location = location;
 	}
 
-	public String getStatus() {
+	public UserStatus getStatus() {
 		return status;
 	}
 
-	public void setStatus(String status) {
+	public void setStatus(UserStatus status) {
 		this.status = status;
 	}
 
