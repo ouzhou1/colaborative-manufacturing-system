@@ -152,6 +152,11 @@ public class ServicesController {
 		return null;
 	}
 
+	@PostMapping(value = "/import")
+	public void servicesImportByExcel(@ModelAttribute File file) {
+        rdfService.saveByuploadExcel(file);
+    }
+
 	@GetMapping(value = "delete/{id}")
 	public void servicesDelete(@PathVariable("id") Long id) {
 		servicesDao.delete(id);
@@ -161,5 +166,4 @@ public class ServicesController {
 	public ModelAndView modifyForm(@PathVariable("id") Services message) {
 		return new ModelAndView("messages/form", "message", message);
 	}
-
 }
