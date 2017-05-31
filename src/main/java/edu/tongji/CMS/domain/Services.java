@@ -42,15 +42,15 @@ public class Services {
 	@NotEmpty(message = "Publishtime is required.")
 	private String publishtime;
 	
-	@Column(name = "service_imes")
+	@Column(name = "serviceUseTimes")
 	@NotEmpty(message = "The time of services using is required.")
-	private String service_imes;
+	private String serviceUseTimes;
 
 	@Column(name = "status")
 	@NotEmpty(message = "Status is required.")
 	private String status;
 	
-	@Column(name = "online_nums")
+	@Column(name = "onlineNums")
 	@NotEmpty(message = "Numbers of online services is required.")
 	private String online_nums;
 
@@ -106,12 +106,12 @@ public class Services {
 		this.publishtime = publishtime;
 	}
 
-	public String getService_imes() {
-		return service_imes;
+	public String getServiceUseTimes() {
+		return serviceUseTimes;
 	}
 
-	public void setService_imes(String service_imes) {
-		this.service_imes = service_imes;
+	public void setService_times(String serviceUseTimes) {
+		this.serviceUseTimes = serviceUseTimes;
 	}
 
 	public String getStatus() {
