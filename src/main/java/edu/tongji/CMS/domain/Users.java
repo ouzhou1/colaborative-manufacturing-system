@@ -2,17 +2,22 @@ package edu.tongji.CMS.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import edu.tongji.CMS.domain.vo.UserStatus;
+import lombok.Data;
 import org.hibernate.validator.constraints.NotEmpty;
 
 /**
  * @author ouzhou
  */
 
+@Data
 @Entity
 @Table(name = "user_info")
 public class Users {
@@ -45,91 +50,13 @@ public class Users {
 	
 	@Column(name = "location")
 	private String location;
-	
+
+	@Enumerated(EnumType.STRING)
 	@Column(name = "status")
 	@NotEmpty(message = "Status is required.")
-	private String status;
+	private UserStatus status;
 	
 	@Column(name = "personal_statement")
 	private String personal_statement;
 
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public String getUsername() {
-		return username;
-	}
-
-	public void setUsername(String username) {
-		this.username = username;
-	}
-
-	public String getUser_category() {
-		return user_category;
-	}
-
-	public void setUser_category(String user_category) {
-		this.user_category = user_category;
-	}
-
-	public Long getTel() {
-		return tel;
-	}
-
-	public void setTel(Long tel) {
-		this.tel = tel;
-	}
-
-	public String getU_scale() {
-		return u_scale;
-	}
-
-	public void setU_scale(String u_scale) {
-		this.u_scale = u_scale;
-	}
-
-	public String getField() {
-		return field;
-	}
-
-	public void setField(String field) {
-		this.field = field;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public String getLocation() {
-		return location;
-	}
-
-	public void setLocation(String location) {
-		this.location = location;
-	}
-
-	public String getStatus() {
-		return status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-	}
-
-	public String getPersonal_statement() {
-		return personal_statement;
-	}
-
-	public void setPersonal_statement(String personal_statement) {
-		this.personal_statement = personal_statement;
-	}
 }

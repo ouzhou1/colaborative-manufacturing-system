@@ -7,7 +7,11 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.URL;
+import java.util.List;
 
+import edu.tongji.CMS.Service.service.ExcelToList;
+import edu.tongji.CMS.dao.services.ServicesDao;
+import edu.tongji.CMS.domain.Services;
 import org.eclipse.rdf4j.RDF4JException;
 import org.eclipse.rdf4j.model.Model;
 import org.eclipse.rdf4j.model.util.ModelBuilder;
@@ -19,12 +23,19 @@ import org.eclipse.rdf4j.rio.RDFFormat;
 import org.eclipse.rdf4j.rio.RDFParseException;
 import org.eclipse.rdf4j.rio.Rio;
 import org.eclipse.rdf4j.rio.UnsupportedRDFormatException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import edu.tongji.CMS.Service.service.RDFService;
 
 @Service
 public class RDFServiceIml implements RDFService {
+
+	@Autowired
+	ExcelToList excelToList;
+
+	@Autowired
+	ServicesDao servicesDao;
 
 	@Override
 	public Model latheModelGenerator() {
@@ -89,6 +100,19 @@ public class RDFServiceIml implements RDFService {
 			e.printStackTrace();
 		} finally {
 			con.close();
+		}
+	}
+
+	@Override
+	public void saveByuploadExcel(File file) {
+		List<Services> servicesList = null;
+		try {
+			servicesList = excelToList.convertExcelToArrayList(file.getAbsolutePath());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		for(Services services : servicesList) {
+			servicesDao.save(services);
 		}
 	}
 

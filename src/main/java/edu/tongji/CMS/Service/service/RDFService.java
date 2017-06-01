@@ -8,14 +8,16 @@ import org.springframework.stereotype.Service;
 
 public interface RDFService {
 	
-	public Model latheModelGenerator();
+	Model latheModelGenerator();
 	
-	public Model latheRDFParser();
+	Model latheRDFParser();
 	
-	public Model generateRDFModel();
+	Model generateRDFModel();
 	
-	public Repository accessRDFServer();
+	Repository accessRDFServer();
 
 	void uploadRDFFiles(File file);
+
+	void saveByuploadExcel(File file);
 	
 }
