@@ -80,7 +80,7 @@ public class ExcelToList {
 
     public static void main(String[] s) {
         try {
-            List<Services> city = new ExcelToList().convertExcelToArrayList("C:\\Users\\ouzhou\\Desktop\\test.xlsx");
+            List<Services> city = new ExcelToList().convertExcelToArrayList("D:\\ouzhou\\test.xlsx");
             for(Services item : city) {
                 System.out.println(item.getId()+item.getCategory()+item.getOwner()+item.getServicename());
             }

@@ -9,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import edu.tongji.CMS.domain.vo.OrderStatus;
 import org.hibernate.validator.constraints.NotEmpty;
 
 /**
@@ -39,7 +40,7 @@ public class Orders {
 	@Enumerated(EnumType.STRING)
 	@Column(name = "status")
 	@NotEmpty(message = "Status is required.")
-	private String status;
+	private OrderStatus status;
 
 	@Column(name = "city")
 	@NotEmpty(message = "City is required.")
