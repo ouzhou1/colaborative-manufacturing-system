@@ -26,11 +26,11 @@ public class Orders {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "order_id")
 	private Long order_id;
-	
+
 	@Column(name = "order_name")
 	@NotEmpty(message = "Order name is required.")
 	private String order_name;
-	
+
 	@Column(name = "publisher")
 	@NotEmpty(message = "Publisher is required.")
 	private String publisher;
@@ -59,7 +59,7 @@ public class Orders {
 	@Column(name = "craft_category")
 	@NotEmpty(message = "Craft category is required.")
 	private String craft_category;
-	
+
 	@Column(name = "period", length = 5)
 	@NotEmpty(message = "Period is required.")
 	private String period;
@@ -67,12 +67,12 @@ public class Orders {
 	@Column(name = "scale")
 	@NotEmpty(message = "Scale is required.")
 	private String scale;
-	
+
 	//Numbers of decomposed sub-orders
 	@Column(name = "sub_order_nums")
 	@NotEmpty(message = "The number of sub-orders is required.")
 	private String sub_order_nums;
-	
+
 	@Column(name = "tags")
 	//@NotEmpty(message = "Tag is required.")
 	private String tags;
