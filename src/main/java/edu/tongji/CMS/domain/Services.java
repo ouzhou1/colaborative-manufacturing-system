@@ -7,12 +7,14 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import lombok.Data;
 import org.hibernate.validator.constraints.NotEmpty;
 
 /**
  * @author ouzhou
  */
 
+@Data
 @Entity
 @Table(name = "services")
 public class Services {
@@ -57,85 +59,5 @@ public class Services {
 	@Column(name = "summary")
 	//@NotEmpty(message = "Summary is required.")
 	private String summary;
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public String getOwner() {
-		return owner;
-	}
-
-	public void setOwner(String owner) {
-		this.owner = owner;
-	}
-
-	public String getField() {
-		return field;
-	}
-
-	public void setField(String field) {
-		this.field = field;
-	}
-
-	public String getCategory() {
-		return category;
-	}
-
-	public void setCategory(String category) {
-		this.category = category;
-	}
-
-	public String getServicename() {
-		return servicename;
-	}
-
-	public void setServicename(String text) {
-		this.servicename = text;
-	}
-
-	public String getPublishtime() {
-		return publishtime;
-	}
-
-	public void setPublishtime(String publishtime) {
-		this.publishtime = publishtime;
-	}
-
-	public String getServiceUseTimes() {
-		return serviceUseTimes;
-	}
-
-	public void setService_times(String serviceUseTimes) {
-		this.serviceUseTimes = serviceUseTimes;
-	}
-
-	public String getStatus() {
-		return status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-	}
-
-	public String getOnline_nums() {
-		return online_nums;
-	}
-
-	public void setOnline_nums(String online_nums) {
-		this.online_nums = online_nums;
-	}
-
-	public String getSummary() {
-		return summary;
-	}
-
-	public void setSummary(String summary) {
-		this.summary = summary;
-	}
 
 }

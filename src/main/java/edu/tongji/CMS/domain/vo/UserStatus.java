@@ -5,5 +5,4 @@ package edu.tongji.CMS.domain.vo;
  */
 public enum UserStatus {
     ONLINE, OFFLINE, ARCHIVED
-
 }

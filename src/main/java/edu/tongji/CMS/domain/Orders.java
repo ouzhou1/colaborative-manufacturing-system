@@ -10,12 +10,14 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 import edu.tongji.CMS.domain.vo.OrderStatus;
+import lombok.Data;
 import org.hibernate.validator.constraints.NotEmpty;
 
 /**
  * @author ouzhou
  */
 
+@Data
 @Entity
 @Table(name = "orders")
 public class Orders {
@@ -77,117 +79,5 @@ public class Orders {
 
 	@Column(name = "raw_description")
 	private String raw_description;
-	
-	public Long getOrder_id() {
-		return order_id;
-	}
-
-	public void setOrder_id(Long order_id) {
-		this.order_id = order_id;
-	}
-
-	public String getOrder_name() {
-		return order_name;
-	}
-
-	public void setOrder_name(String order_name) {
-		this.order_name = order_name;
-	}
-
-	public String getPublisher() {
-		return publisher;
-	}
-
-	public void setPublisher(String publisher) {
-		this.publisher = publisher;
-	}
-
-	public String getPublish_time() {
-		return publish_time;
-	}
-
-	public void setPublish_time(String publish_time) {
-		this.publish_time = publish_time;
-	}
-
-	public String getCity() {
-		return city;
-	}
-
-	public void setCity(String city) {
-		this.city = city;
-	}
-
-	public String getField() {
-		return field;
-	}
-
-	public void setField(String field) {
-		this.field = field;
-	}
-
-	public String getTech_category() {
-		return tech_category;
-	}
-
-	public void setTech_category(String tech_category) {
-		this.tech_category = tech_category;
-	}
-
-	public String getCraft_category() {
-		return craft_category;
-	}
-
-	public void setCraft_category(String craft_category) {
-		this.craft_category = craft_category;
-	}
-
-	public String getStatus() {
-		return status;
-	}
-
-	public void setStatus(String status) {
-		this.status = status;
-	}
-
-	public String getPeriod() {
-		return period;
-	}
-
-	public void setPeriod(String period) {
-		this.period = period;
-	}
-
-	public String getScale() {
-		return scale;
-	}
-
-	public void setScale(String scale) {
-		this.scale = scale;
-	}
-
-	public String getSub_order_nums() {
-		return sub_order_nums;
-	}
-
-	public void setSub_order_nums(String sub_order_nums) {
-		this.sub_order_nums = sub_order_nums;
-	}
-
-	public String getTags() {
-		return tags;
-	}
-
-	public void setTags(String tags) {
-		this.tags = tags;
-	}
-
-	public String getRaw_description() {
-		return raw_description;
-	}
-
-	public void setRaw_description(String raw_description) {
-		this.raw_description = raw_description;
-	}
 
 }

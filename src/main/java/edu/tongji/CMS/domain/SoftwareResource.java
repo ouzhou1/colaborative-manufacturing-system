@@ -1,5 +1,7 @@
 package edu.tongji.CMS.domain;
 
+import lombok.Data;
+
 import java.sql.Date;
 
 import javax.persistence.Column;
@@ -13,6 +15,7 @@ import javax.persistence.Table;
  * @author ouzhou
  */
 
+@Data
 @Entity
 @Table(name = "SoftwareResource")
 public class SoftwareResource {

@@ -1,5 +1,7 @@
 package edu.tongji.CMS.domain;
 
+import lombok.Data;
+
 import java.sql.Date;
 
 import javax.persistence.Column;
@@ -12,6 +14,7 @@ import javax.persistence.Table;
 /**
  * @author ouzhou
  */
+@Data
 @Entity
 @Table(name = "hardware_resource")
 public class HardwareResource {
@@ -54,99 +57,4 @@ public class HardwareResource {
 	@Column(name = "loadstatus")
 	private String loadStatus;
 
-	public long getId() {
-		return this.id;
-	}
-
-	public void setId(long id) {
-		this.id = id;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public Long getDeviceCode() {
-		return deviceCode;
-	}
-
-	public void setDeviceCode(Long deviceCode) {
-		this.deviceCode = deviceCode;
-	}
-
-	public String getDeviceCategory() {
-		return deviceCategory;
-	}
-
-	public void setDeviceCategory(String deviceCateory) {
-		this.deviceCategory = deviceCateory;
-	}
-
-	public String getDeviceOwner() {
-		return deviceOwner;
-	}
-
-	public void setDeviceOwner(String deviceOwner) {
-		this.deviceOwner = deviceOwner;
-	}
-
-	public String getDescription() {
-		return description;
-	}
-
-	public void setDescription(String description) {
-		this.description = description;
-	}
-
-	public Date getProductionDate() {
-		return productionDate;
-	}
-
-	public void setProductionDate(Date productionDate) {
-		this.productionDate = productionDate;
-	}
-
-	public String getFunctionName() {
-		return functionName;
-	}
-
-	public void setFunctionName(String functionName) {
-		this.functionName = functionName;
-	}
-
-	public String getFunctionDescription() {
-		return functionDescription;
-	}
-
-	public void setFunctionDescription(String functionDescription) {
-		this.functionDescription = functionDescription;
-	}
-
-	public String getCurrentStatus() {
-		return currentStatus;
-	}
-
-	public void setCurrentStatus(String currentStatus) {
-		this.currentStatus = currentStatus;
-	}
-
-	public Long getOperationDays() {
-		return operationDays;
-	}
-
-	public void setOperationDays(Long operationDays) {
-		this.operationDays = operationDays;
-	}
-
-	public String getLoadStatus() {
-		return loadStatus;
-	}
-
-	public void setLoadStatus(String loadStatus) {
-		this.loadStatus = loadStatus;
-	}
 }
