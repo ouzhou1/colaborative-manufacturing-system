@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"></meta>
+    <title>Notification</title>
+    <link rel="stylesheet" href="../../css/style.default.css" type="text/css" />
+    <script type="text/javascript" src="../../js/plugins/jquery-1.7.min.js"></script>
+    <script type="text/javascript" src="../../js/plugins/jquery-ui-1.8.16.custom.min.js"></script>
+    <script type="text/javascript" src="../../js/plugins/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../../js/custom/general.js"></script>
+    <script type="text/javascript" src="../../js/custom/support.js"></script>
+</head>
+<body>
+    <div class="centercontent">
+        <div class="pageheader notab">
+            <h1 class="pagetitle">用户消息面板</h1>
+            <span class="pagedesc">请在留言板上输入信息</span>
+        </div><!--pageheader-->
+
+        <div id="contentwrapper" class="contentwrapper withrightpanel">
+            <div class="subcontent chatcontent">
+                <div id="chatmessage" class="chatmessage radius2">
+                    <div id="chatmessageinner"></div><!--chatmessageinner-->
+                </div><!--chatmessage-->
+                <div class="messagebox radius2">
+                    <button>Send</button>
+                    <span class="inputbox">
+                        <input type="text" id="msgbox" name="msgbox" />
+                    </span>
+                </div>
+            </div><!--subcontent-->
+        </div><!--contentwrapper-->
+
+        <div class="rightpanel">
+            <div class="rightpanelinner">
+                <div class="widgetbox uncollapsible">
+                    <div class="title"><h4>在线用户</h4></div>
+                    <div class="widgetcontent nopadding">
+                        <div class="chatsearch">
+                            <input type="text" name="" value="Search" />
+                        </div>
+                        <ul class="contactlist">
+                            <li class="online new"><a href=""><img src="../../images/thumbs/avatar5.png" alt="" /> <span>User1 Tongji</span></a><span class="msgcount">3</span></li>
+                            <li><a href=""><img src="../../images/thumbs/avatar6.png" alt="" /> <span>User2 DaZhong</span></a></li>
+                            <li class="online"><a href=""><img src="../../images/thumbs/avatar7.png" alt="" /><span>User3 Xianjin</span></a></li>
+                            <li class="online"><a href=""><img src="../../images/thumbs/avatar8.png" alt="" /><span>User4 PussinBoots</span></a></li>
+                            <li class="online new"><a href=""><img src="../../images/thumbs/avatar9.png" alt="" /><span>Humpty Dumpty</span></a><span class="msgcount">1</span></li>
+                            <li><a href=""><img src="../../images/thumbs/avatar10.png" alt="" /> <span>Shrek</span></a></li>
+                            <li><a href=""><img src="../../images/thumbs/avatar11.png" alt="" /> <span>Princess Fiona</span></a></li>
+                        </ul>
+                    </div><!--widgetcontent-->
+                </div><!--widgetbox-->
+            </div><!--rightpanelinner-->
+        </div><!--rightpanel-->
+    </div><!-- centercontent -->
+</body>
+</html>

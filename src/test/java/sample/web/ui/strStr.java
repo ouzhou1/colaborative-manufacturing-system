@@ -2,18 +2,25 @@ package sample.web.ui;
 
 import java.util.Scanner;
 public class strStr {
-    static boolean findStr(String haystack, String needle) {
-        for(int i = 0; i < haystack.length(); i++) {
-        	if(i+needle.length() <= haystack.length() && haystack.charAt(i) == needle.charAt(0))
-        		if(haystack.substring(i, i+needle.length()).equals(needle))
-        			return true;
+    public static int maxConsequenceSum(int[] input) {
+        int res = 0, sum = 0;
+        for (int i = 0; i < input.length; i++) {
+            sum += input[i];
+            if (sum > 0) {
+                res = Math.max(sum, res);
+            } else {
+                sum = 0;
+            }
         }
-        return false;
-	}
+        return res;
+    }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        String haystack = sc.nextLine();
-        String needle = sc.nextLine();
-        System.out.println(strStr.findStr(haystack, needle));
+        int length = sc.nextInt();
+        int[] input = new int[length];
+        for (int i = 0; i < length; i++) {
+            input[i] = sc.nextInt();
+        }
+        System.out.println(strStr.maxConsequenceSum(input));
     }
 }

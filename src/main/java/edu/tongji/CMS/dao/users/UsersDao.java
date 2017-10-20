@@ -9,6 +9,11 @@ import java.util.List;
 
 public interface UsersDao extends CrudRepository<Users, Long>{
 
-    @Query("select u from Users u where u.user_category = ?")
+    @Query(value = "select u from Users u where u.user_category = ?1")
     List<Users> findByUserCategory(String category);
+
+    @Query(value = "select count(u) from Users u")
+    int getUserCount();
+
+    Users findByUsername(String username);
 }

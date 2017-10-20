@@ -3,28 +3,38 @@
       xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout">
 <head>
     <meta charset="UTF-8"></meta>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>
     <title>创建订单_订单管理</title>
-    <link rel="stylesheet" href="../../css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../../static/css/bootstrap.min.css"/>
     <link rel="shortcut icon" href="../../img/favicon.ico"/>
-    <link rel="icon" href="../../img/favicon.ico" type="image/gif"/>
     <!--inherit style-->
-    <link rel="stylesheet" href="../../css/order-process.css"/>
+    <link rel="stylesheet" href="../../static/css/style.default.css" type="text/css"/>
     <link rel="stylesheet" href="../../css/matrix-style.css"/>
+    <script type="text/javascript" src="../../js/plugins/jquery-1.7.min.js"></script>
+    <script type="text/javascript" src="../../js/plugins/jquery-ui-1.8.16.custom.min.js"></script>
+    <script type="text/javascript" src="../../js/plugins/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../../js/plugins/jquery.smartWizard-2.0.min.js"></script>
+    <script type="text/javascript" src="../../js/plugins/jquery.colorbox-min.js"></script>
     <!--[if lt IE 9]>
     <script src="../../js/jshtml5shiv.min.js"></script>
     <script src="../../js/respond.min.js"></script>
     <![endif]-->
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+            // Smart Wizard
+            jQuery('#wizard').smartWizard({onFinish: onFinishCallback});
+            jQuery('#wizard2').smartWizard({onFinish: onFinishCallback});
+            jQuery('#wizard3').smartWizard({onFinish: onFinishCallback});
+            jQuery('#wizard4').smartWizard({onFinish: onFinishCallback});
+            function onFinishCallback() {
+                alert('Finish Clicked');
+            }
+            jQuery(".inline").colorbox({inline: true, width: '60%', height: '500px'});
+            jQuery('select, input:checkbox').uniform();
+        });
+    </script>
 </head>
 <body>
-    <!--Header-part-->
-    <div id="header">
-        <h1><a href="#">协同管理系统</a></h1>
-    </div>
-    <!--close-Header-part-->
-
-    <!--containt-part-->
+    <!--content-part-->
     <div id="content">
         <div id="content-header">
             <div id="breadcrumb">
@@ -32,194 +42,192 @@
                 <a href="/orders" class="current">订单管理</a><a href="#" class="current">创建订单</a>
             </div>
         </div>
+        <div class="contentwrapper" id="contentwrapper">
+            <form class="stdform" th:action="@{/orders/publish}"
+                  th:object="${orders}" method="post">
+                <div id="wizard" class="wizard">
+                    <br/>
+                    <ul class="hormenu">
+                        <li>
+                            <a href="#wiz1step1">
+                                <span class="h2">步骤1</span>
+                                <span class="dot"><span></span></span>
+                                <span class="label">订单基本信息</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#wiz1step2">
+                                <span class="h2">步骤2</span>
+                                <span class="dot"><span></span></span>
+                                <span class="label">需求详情及分解</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#wiz1step3">
+                                <span class="h2">步骤3</span>
+                                <span class="dot"><span></span></span>
+                                <span class="label">需求具体要求</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <br clear="all"/><br/><br/>
+                    <div id="wiz1step1" class="formwiz">
+                        <h4>步骤1: 基本信息</h4>
+                        <div class="widget-content nopadding">
+                            <table class="table table-hover order-table-form">
+                                <tbody>
+                                <tr>
+                                    <td><span class="red">*</span>订单名称：</td>
+                                    <td><input type="text" class="form-control" id="consignee" th:field="*{order_name}"/></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="red">*</span>行业领域：</td>
+                                    <td>
+                                        <select class="form-control" th:field="*{field}">
+                                            <option selected="" th:value="车辆船舶类">车辆船舶类</option>
+                                            <option th:value="机械类">机械类</option>
+                                            <option th:value="建筑类">建筑类</option>
+                                            <option th:value="电子设备类">电子设备类</option>
+                                            <option th:value="消费品类">消费品类</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="red">*</span>技术类别：</td>
+                                    <td>
+                                        <select class="form-control" th:field="*{tech_category}">
+                                            <option selected="" th:value="集成电路器件类">集成电路器件类</option>
+                                            <option th:value="分立器件类">分立器件类</option>
+                                            <option th:value="光电半导体类">光电半导体类</option>
+                                            <option th:value="逻辑IC类">逻辑IC类</option>
+                                            <option th:value="模拟IC类">模拟IC类</option>
+                                            <option th:value="储存器">储存器</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="red">*</span>工艺类别：</td>
+                                    <td>
+                                        <select class="form-control" th:field="*{craft_category}">
+                                            <option selected="selected" th:value="晶圆处理制程">晶圆处理制程</option>
+                                            <option th:value="晶圆针测制程">晶圆针测制程</option>
+                                            <option th:value="封装">封装</option>
+                                            <option th:value="检测">检测</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><span class="red">*</span>生产周期：</td>
+                                    <td><input type="text" class="form-control" id="period" th:field="*{period}"/></td>
+                                </tr>
+                                <tr>
+                                    <td>城 市：</td>
+                                    <td><input type="text" class="form-control" id="city" th:field="*{city}"/></td>
+                                </tr>
+                                <tr>
+                                    <td>标 签：</td>
+                                    <td><input type="text" class="form-control" id="tags" th:field="*{tags}"/></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="red">*</span>描述及备注：</td>
+                                    <td><textarea class="form-control" id="raw_description" th:field="*{raw_description}"></textarea></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div><!--#wiz1step1-->
 
-        <!--process bar-->
-        <div class="container">
-            <ol class="progress-wrap">
-                <li class="progress-one">
-                    <div class="progress-line"></div>
-                    <div class="progress-content">
-                        <span class="progress-number active" id="start"><a href="/orders">1</a></span>
-                        <span class="progress-text">订单提交</span>
-                    </div>
-                </li>
-                <li class="progress-two">
-                    <div class="progress-line"></div>
-                    <div class="progress-content">
-                        <span class="progress-number" id="second"><a href="/partner/select">2</a></span>
-                        <span class="progress-text">伙伴匹配</span>
-                    </div>
-                </li>
-                <li class="progress-three">
-                    <div class="progress-line"></div>
-                    <div class="progress-content">
-                        <span class="progress-number" id="third"><a href="/manufacture">3</a></span>
-                        <span class="progress-text">协同制造</span>
-                    </div>
-                </li>
-                <li class="progress-four" style="width: 0px">
-                    <div class="progress-content">
-                        <span class="progress-number" id="end"><a href="/aftersale">4</a></span>
-                        <span class="progress-text">售后管理</span>
-                    </div>
-                </li>
-            </ol>
-        </div>
-        <!--end-alert-part-->
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-xs-12">
-                    <div class="widget-box">
-                        <div class="widget-title">
-                            <span class="icon"><span class="glyphicon glyphicon-th"></span></span>
-                            <h5>订单编辑</h5>
+                    <div id="wiz1step2" class="formwiz">
+                        <h4>步骤2: 详情及分解</h4>
+                        <div class="widget-content nopadding">
+                            <table class="table table-hover order-table-form">
+                                <tbody>
+                                <tr>
+                                    <td><span class="red">*</span>总体需求描述：</td>
+                                    <td><textarea class="form-control" id="order_description" placeholder="" value=""></textarea></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="red">*</span>需求文档上传：</td>
+                                    <td>
+                                        <input type="button" onclick="document.getElementById('upfile').click()" value="浏览…" class="upFileBtn btn btn-default btn-info"/>
+                                        <input type="file" onchange="document.getElementById('upfileResult').innerHTML=this.value" class="upfile" id="upfile" name="upfile"/>
+                                    </td>
+                                    <!--<span id="upfileResult" class="file_tip">未选择文件</span>-->
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td><small>详细的需求文档，模板请参考<a class="red" href="#">这里</a></small></td>
+                                </tr>
+                                <tr>
+                                    <td><h7>订单需求分解：</h7></td>
+                                    <td><span><button class="btn btn-success btn-xs add_sub_demands">添加子需求</button></span></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="red">*</span>子需求1：</td>
+                                    <td><input type="text" class="form-control" id="sub_demands" placeholder="" value="" /></td>
+                                </tr>
+                                <tr>
+                                    <td><span class="red">*</span>子需求1描述：</td>
+                                    <td><textarea class="form-control" id="sub_demands_description" placeholder="" value=""></textarea></td>
+                                </tr>
+                                <tr>
+                                    <td></td>
+                                    <td><small>请根据实际情况划分出原子需求</small></td>
+                                </tr>
+                                <tr>
+                                    <td>来源：</td>
+                                    <td><select class="form-control">
+                                        <option selected="">--请选择--</option>
+                                        <option class="l-iconsbg" >国家863项目</option>
+                                        <option class="l-iconsbg">自然科学基金</option>
+                                        <option class="l-iconsbg">企业项目</option>
+                                    </select></td>
+                                </tr>
+                                </tbody>
+                            </table>
                         </div>
-                        <div class="widget-content clearfix">
-                            <form id="order_create" name="order_create" method="post">
-                                <div class="col-xs-6">
-                                    <div class="widget-box">
-                                        <div class="widget-title">
-                                            <span class="icon"> <span class="glyphicon glyphicon-th"> </span></span>
-                                            <h5>订单基本信息</h5>
-                                        </div>
-                                        <div class="widget-content nopadding">
-                                            <table class="table table-hover order-table-form">
-                                                <tbody>
-                                                <tr>
-                                                    <td><span class="red">*</span>订单名称：</td>
-                                                    <td><input type="text" class="form-control" id="consignee" placeholder="名称" value="" /></td>
-                                                </tr>
-                                                <tr>
-                                                    <td><span class="red">*</span>行业领域：</td>
-                                                    <td>
-                                                        <select class="form-control">
-                                                            <option selected="">--请选择--</option>
-                                                            <option>车辆船舶类</option>
-                                                            <option>机械类</option>
-                                                            <option>建筑类</option>
-                                                            <option>电子设备类</option>
-                                                            <option>消费品类</option>
-                                                        </select>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td><span class="red">*</span>技术类别：</td>
-                                                    <td>
-                                                        <select class="form-control">
-                                                            <option selected="">--请选择--</option>
-                                                            <option>集成电路器件类</option>
-                                                            <option>分立器件类</option>
-                                                            <option>光电半导体类</option>
-                                                            <option>逻辑IC类</option>
-                                                            <option>模拟IC类</option>
-                                                            <option>储存器</option>
-                                                        </select>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td><span class="red">*</span>工艺类别：</td>
-                                                    <td>
-                                                        <select class="form-control">
-                                                            <option selected="">--请选择--</option>
-                                                            <option>晶圆处理制程</option>
-                                                            <option>晶圆针测制程</option>
-                                                            <option>封装</option>
-                                                            <option>检测</option>
-                                                        </select>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td><span class="red">*</span>生产周期：</td>
-                                                    <td><input type="text" class="form-control" id="province"/></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>城 市：</td>
-                                                    <td><input type="text" class="form-control" id="city" placeholder="" value="" /></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>标签：</td>
-                                                    <td><input type="text" class="form-control" id="tag" placeholder="" value="" /></td>
-                                                </tr>
-                                                <tr>
-                                                    <td><span class="red">*</span>描述及备注：</td>
-                                                    <td><textarea class="form-control" id="customer_remark" placeholder="" value=""></textarea></td>
-                                                </tr>
-                                                <tr>
-                                                    <td></td>
-                                                    <td><button type="button" class="btn btn-default btn-success">保存</button></td>
-                                                </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xs-6">
-                                    <div class="widget-box">
-                                        <div class="widget-title">
-                                            <span class="icon"><span class="glyphicon glyphicon-th"></span></span>
-                                            <h5>详细需求描述</h5>
-                                        </div>
-                                        <div class="widget-content nopadding">
-                                            <table class="table table-hover order-table-form">
-                                                <tbody>
-                                                <tr>
-                                                    <td><span class="red">*</span>总体需求描述：</td>
-                                                    <td><textarea class="form-control" id="order_description" placeholder="" value=""></textarea></td>
-                                                </tr>
-                                                <tr>
-                                                    <td><span class="red">*</span>需求文档上传：</td>
-                                                    <td>
-                                                        <input type="button" onclick="document.getElementById('upfile').click()" value="浏览…" class="upFileBtn btn btn-default btn-info"/>
-                                                        <input type="file" onchange="document.getElementById('upfileResult').innerHTML=this.value" class="upfile" id="upfile" name="upfile"/>
-                                                    </td>
-                                                    <span id="upfileResult" class="file_tip">未选择文件</span>
-                                                </tr>
-                                                <tr>
-                                                    <td></td>
-                                                    <td><small>详细的需求文档，模板请参考<a class="red" href="#">这里</a></small></td>
-                                                </tr>
-                                                <tr>
-                                                    <td><h7>订单需求分解：</h7></td>
-                                                    <td><span><button class="btn btn-success btn-xs add_sub_demands">添加子需求</button></span></td>
-                                                </tr>
-                                                <tr>
-                                                    <td><span class="red">*</span>子需求1：</td>
-                                                    <td><input type="text" class="form-control" id="sub_demands" placeholder="" value="" /></td>
-                                                </tr>
-                                                <tr>
-                                                    <td><span class="red">*</span>子需求1描述：</td>
-                                                    <td><textarea class="form-control" id="sub_demands_description" placeholder="" value=""></textarea></td>
-                                                </tr>
-                                                <tr>
-                                                    <td></td>
-                                                    <td><small>请根据实际情况划分出原子需求</small></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>来源：</td>
-                                                    <td><select class="form-control">
-                                                        <option selected="">--请选择--</option>
-                                                        <option class="l-iconsbg" >国家863项目</option>
-                                                        <option class="l-iconsbg">自然科学基金</option>
-                                                        <option class="l-iconsbg">企业项目</option>
-                                                    </select></td>
-                                                </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
+                    </div><!--#wiz1step2-->
+
+                    <div id="wiz1step3">
+                        <h4>步骤3: 要求与实施</h4>
+                        <div class="widget-content nopadding">
+                            <table class="table table-hover order-table-form">
+                                <tbody>
+                                    <tr>
+                                        <td><span class="red">*</span>项目周期：</td>
+                                        <td><input type="text" class="form-control" id="consignee1" placeholder="" value="" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="red">*</span>最迟交付日期：</td>
+                                        <td><input type="text" class="form-control" id="consignee2" placeholder="" value="" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="red">*</span>产品精度：</td>
+                                        <td><input type="text" class="form-control" id="consignee3" placeholder="" value="" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="red">*</span>生产周期：</td>
+                                        <td><input type="text" class="form-control" id="province1"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="red">*</span>生产成本：</td>
+                                        <td><input type="text" class="form-control" id="city1" placeholder="" value="" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td><span class="red">*</span>产量：</td>
+                                        <td><input type="text" class="form-control" id="tag1" placeholder="" value="" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td>描述及备注：</td>
+                                        <td><textarea class="form-control" id="customer_remark1" placeholder="" value=""></textarea></td>
+                                    </tr>
+                                </tbody>
+                            </table>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div><button type="button" class="btn btn-default btn-success">提交订单</button></div>
+                    </div><!--#wiz1step3-->
+                </div><!--#wizard-->
+            </form>
         </div>
     </div>
-
-    <!--end-containt-part-->
-    <script src="../../js/jquery-1.10.2.min.js"></script>
-    <script src="../../js/bootstrap.min.js"></script>
-    <script src="../../js/matrix.js"></script>
 </body>
 </html>

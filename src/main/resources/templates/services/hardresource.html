@@ -31,7 +31,7 @@
 					<form th:action="@{/services/hardresource/formcreate}"
 						th:object="${hardresource}" method="post">
 						<div class="form-group">
-							<label for="name">服务名称</label>
+							<label>服务名称</label>
 							<div class="input-group">
 								<input type="text" class="form-control" name="InputName"
 									id="InputName" th:field="*{name}" placeholder="Enter Name" /> <span
@@ -41,7 +41,7 @@
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="deviceowner">设备管理者</label>
+							<label>设备管理者</label>
 							<div class="input-group">
 								<input type="text" class="form-control" name="InputDeviceOwner"
 									id="InputDeviceOwner" th:field="*{deviceOwner}"
@@ -51,7 +51,7 @@
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="deviceCode">设备编号</label>
+							<label>设备编号</label>
 							<div class="input-group">
 								<input type="text" class="form-control" name="InputDevicecode"
 									id="InputDevicecode" th:field="*{deviceCode}"
@@ -62,7 +62,7 @@
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="deviceCategory">所属类别</label>
+							<label>所属类别</label>
 							<div class="input-group">
 								<input type="text" class="form-control"
 									name="InputDeviceCategory" id="InputDeviceCategory"
@@ -73,7 +73,7 @@
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="productionDate">生产日期</label>
+							<label>生产日期</label>
 							<div class="input-group">
 								<input type="date" class="form-control"
 									name="InputProductiondate" id="InputProductiondate"
@@ -85,7 +85,7 @@
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="operationDays">运营时间</label>
+							<label>运营时间</label>
 							<div class="input-group">
 								<input type="text" class="form-control"
 									name="InputOperationDays" id="InputOperationDays"
@@ -96,7 +96,7 @@
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="functionName">功能名称</label>
+							<label>功能名称</label>
 							<div class="input-group">
 								<input type="text" class="form-control" name="InputFunctionName"
 									id="InputFunctionName" th:field="*{functionName}"
@@ -107,7 +107,7 @@
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="functionDescription">功能描述</label>
+							<label>功能描述</label>
 							<div class="input-group">
 								<textarea name="InputFunctionDescription"
 									id="InputFunctionDescription" class="form-control" rows="3"
@@ -119,7 +119,7 @@
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="description">资源描述</label>
+							<label>资源描述</label>
 							<div class="input-group">
 								<textarea name="InputDescription" id="InputDescription"
 									class="form-control" rows="3" th:field="*{description}">
@@ -139,7 +139,7 @@
 					<form th:action="@{/services/filecreate}"
 							th:object="${hardresource}" method="post">
 						<div class="form-group">
-							<label for="fileCategory">选择描述文件类型</label>
+							<label>选择描述文件类型</label>
 							<div class="form-group">
 								<select class="form-control" id="fileCategory">
 									<option>rdf/xml</option>
@@ -147,7 +147,7 @@
 									<option>rdf/json</option>
 								</select>
 							</div>
-							<label for="description">描述文件</label>
+							<label>描述文件</label>
 							<input type="file" id="files" name="file"/>
 							<output id="list"></output>
 						</div>

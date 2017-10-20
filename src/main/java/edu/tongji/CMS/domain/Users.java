@@ -10,6 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 import edu.tongji.CMS.domain.vo.UserStatus;
+import org.hibernate.annotations.ColumnTransformer;
 import org.hibernate.validator.constraints.NotEmpty;
 
 /**
@@ -28,6 +29,13 @@ public class Users {
 	@Column(name = "username")
 	@NotEmpty(message = "User name is required.")
 	private String username;
+
+	@Column(name = "PASSWORD")
+//	@ColumnTransformer(
+//			read = "decrypt(PASSWORD)",
+//			write = "encrypt(nvl(?, 'null'))"
+//	)
+	private String password;
 
 	@Column(name = "user_category")
 	@NotEmpty(message = "Personal category is required.")
@@ -73,7 +81,15 @@ public class Users {
 		this.username = username;
 	}
 
-	public String getUser_category() {
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getUser_category() {
 		return user_category;
 	}
 

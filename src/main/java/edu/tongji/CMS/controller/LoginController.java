@@ -12,9 +12,9 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 @RequestMapping("/")
 public class LoginController {
-    @GetMapping(value = "index")
-    public ModelAndView homePage() {
-        return new ModelAndView("index");
+    @GetMapping(value = "")
+    public ModelAndView loginPage() {
+        return new ModelAndView("signin");
     }
 
     @GetMapping(value = "login")

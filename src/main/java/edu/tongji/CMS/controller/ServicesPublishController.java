@@ -35,7 +35,7 @@ public class ServicesPublishController {
 	public String hardResourceFileCreate(@RequestParam("file") MultipartFile file) {
 
 		JSONObject obj = new JSONObject(file);
-		List<String> list = new ArrayList<String>();
+		List<String> list = new ArrayList<>();
 
 		return "redirect:/services/hardresource/file";
 	}

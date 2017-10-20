@@ -23,9 +23,9 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import edu.tongji.CMS.Service.service.RDFService;
 import edu.tongji.CMS.dao.services.HardwareResourceDao;
 import edu.tongji.CMS.dao.services.ServicesDao;
-import edu.tongji.CMS.domain.HardwareResource;
+import edu.tongji.CMS.domain.resource.HardwareResource;
 import edu.tongji.CMS.domain.Services;
-import edu.tongji.CMS.domain.SoftwareResource;
+import edu.tongji.CMS.domain.resource.SoftwareResource;
 
 /**
  * @author ouzhou

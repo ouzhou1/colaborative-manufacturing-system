@@ -2,6 +2,7 @@ package sample.web.ui;
 
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Scanner;
 
 public class queue {
 	public static void main(String[] args) {
@@ -38,10 +39,23 @@ public class queue {
 //        for (int i = 0; i < subColors.size(); i++) {
 //            result *= (int) Math.pow(2, subColors.get(i).length() - 1);
 //        }
-		int x = 5;
-		x = ~x;
-		Queue q = new LinkedList();
-		System.out.println(x);
-        System.out.println(Math.floor(-27.2345));
+		Scanner sc = new Scanner(System.in);
+		int len = sc.nextInt();
+		int[] input = new int[len];
+		for (int i = 0; i < input.length; i++) {
+			input[i] = sc.nextInt();
+		}
+		int[] output = new int[len];
+		output[len-1] = -1;
+		for (int i = len-2; i >= 0; i--) {
+			if (input[i] < input[i+1]) {
+				output[i] = input[i+1];
+			} else {
+				output[i] = output[i+1];
+			}
+		}
+		for (int i = 0; i < len; i++) {
+			System.out.println(output[i]);
+		}
     }
 }
