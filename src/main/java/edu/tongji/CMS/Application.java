@@ -20,15 +20,23 @@ import java.util.Arrays;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.support.SpringBootServletInitializer;
 import org.springframework.context.ApplicationContext;
 
 @SpringBootApplication
-public class Application {
-	
-	public static void main(String[] args) throws Exception {
-		ApplicationContext ctx = SpringApplication.run(Application.class, args);
-        String[] beanNames = ctx.getBeanDefinitionNames();
-        Arrays.sort(beanNames);
-	}
+public class Application extends SpringBootServletInitializer {
+
+    /**
+     * Configure your application when it’s launched by the servlet container
+     */
+    @Override
+    protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+        return application.sources(Application.class);
+    }
+
+    public static void main(String[] args) {
+        SpringApplication.run(Application.class, args);
+    }
 
 }

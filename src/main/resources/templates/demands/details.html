@@ -46,15 +46,15 @@
                             <tbody>
                             <tr>
                                 <td>需求ID：</td>
-                                <td th:text="${demand.demand_id}"></td>
+                                <td th:text="${demand.demandId}"></td>
                             </tr>
                             <tr>
                                 <td>需求名称：</td>
-                                <td th:text="${demand.demand_name}"></td>
+                                <td th:text="${demand.demandName}"></td>
                             </tr>
                             <tr>
                                 <td>所属订单：</td>
-                                <td><span class="red"  th:text="${demand.related_order}"></span><a href="/orders" class="badge badge-success">详情</a></td>
+                                <td><span class="red"  th:text="${demand.relatedOrderName}"></span><a href="/orders" class="badge badge-success">详情</a></td>
                             </tr>
                             <tr>
                                 <td>客户信息：</td>

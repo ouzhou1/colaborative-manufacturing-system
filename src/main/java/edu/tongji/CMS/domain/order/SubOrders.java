@@ -32,6 +32,16 @@ public class SubOrders {
     @NotEmpty(message = "Delivery date is required.")
     private String deliberyDate;
 
+    @Column(name = "mapped_service_id")
+    private String mappedServiceId;
+
+    @Column(name = "mapped_service_name")
+    private String mappedServiceName;
+
+    @Column(name = "create_time")
+    @NotEmpty(message = "Create time is required.")
+    private String createTime;
+
     public Long getSubOrderId() {
         return subOrderId;
     }
@@ -78,5 +88,29 @@ public class SubOrders {
 
     public void setDeliberyDate(String deliberyDate) {
         this.deliberyDate = deliberyDate;
+    }
+
+    public String getMappedServiceId() {
+        return mappedServiceId;
+    }
+
+    public void setMappedServiceId(String mappedServiceId) {
+        this.mappedServiceId = mappedServiceId;
+    }
+
+    public String getMappedServiceName() {
+        return mappedServiceName;
+    }
+
+    public void setMappedServiceName(String mappedServiceName) {
+        this.mappedServiceName = mappedServiceName;
+    }
+
+    public String getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(String createTime) {
+        this.createTime = createTime;
     }
 }

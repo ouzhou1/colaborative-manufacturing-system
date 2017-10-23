@@ -1,9 +1,13 @@
 package edu.tongji.CMS.dao.demands;
 
+import edu.tongji.CMS.domain.demands.Demands;
 import org.springframework.data.repository.CrudRepository;
 
-import edu.tongji.CMS.domain.Demands;
+import java.util.List;
 
-public interface DemandsDao extends DemandsRepository {
+public interface DemandsDao extends CrudRepository<Demands, Long> {
 
+    List<Demands> findByStatus(String status);
+
+    long countByStatus(String status);
 }

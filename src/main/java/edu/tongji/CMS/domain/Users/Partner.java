@@ -1,4 +1,4 @@
-package edu.tongji.CMS.domain;
+package edu.tongji.CMS.domain.Users;
 
 import edu.tongji.CMS.domain.vo.UserLevel;
 import edu.tongji.CMS.domain.vo.UserType;

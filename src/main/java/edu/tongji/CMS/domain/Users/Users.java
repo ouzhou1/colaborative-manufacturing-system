@@ -1,4 +1,4 @@
-package edu.tongji.CMS.domain;
+package edu.tongji.CMS.domain.Users;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

@@ -87,6 +87,9 @@
                                 </tr>
                                 </thead>
                                 <tbody>
+                                <tr th:if="${orders.empty}">
+                                    <td colspan="9">没有需求</td>
+                                </tr>
                                 <tr th:each="orders: ${orders}">
                                     <td th:text="${orders.order_id}">ID</td>
                                     <td><a th:text="${orders.order_name}"

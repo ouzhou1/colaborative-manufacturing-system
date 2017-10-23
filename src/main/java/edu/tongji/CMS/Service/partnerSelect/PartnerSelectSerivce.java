@@ -1,6 +1,6 @@
 package edu.tongji.CMS.Service.partnerSelect;
 
-import edu.tongji.CMS.domain.Partner;
+import edu.tongji.CMS.domain.Users.Partner;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

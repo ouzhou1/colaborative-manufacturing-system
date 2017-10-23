@@ -8,6 +8,9 @@
     <option name="pathToConfigFileJava" value="C:/JAVA/code-style/ctrip-java-style.xml" />
     <option name="selectedJavaProfile" value="Ctrip" />
   </component>
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$" />
+  </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
       <list>

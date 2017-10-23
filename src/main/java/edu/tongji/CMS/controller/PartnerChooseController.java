@@ -1,16 +1,12 @@
 package edu.tongji.CMS.controller;
 
-import edu.tongji.CMS.Service.partnerSelect.PartnerPreliminaryScreeningStrategy;
 import edu.tongji.CMS.Service.partnerSelect.PartnerSelectSerivce;
 import edu.tongji.CMS.dao.partners.PartnersDao;
-import edu.tongji.CMS.domain.Partner;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-
-import java.util.List;
 
 /**
  * Created by ouzhou on 2017/5/23.

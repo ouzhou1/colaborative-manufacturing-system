@@ -1,6 +1,6 @@
 package edu.tongji.CMS.dao.partners;
 
-import edu.tongji.CMS.domain.Partner;
+import edu.tongji.CMS.domain.Users.Partner;
 import org.springframework.data.repository.CrudRepository;
 
 /**

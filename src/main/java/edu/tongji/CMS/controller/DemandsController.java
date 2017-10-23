@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import edu.tongji.CMS.dao.demands.DemandsDao;
-import edu.tongji.CMS.domain.Demands;
+import edu.tongji.CMS.domain.demands.Demands;
 
 @Controller
 @RequestMapping("/demands")
@@ -19,13 +19,7 @@ public class DemandsController {
 	@GetMapping(value = "")
 	public String servicesAllList(Model model) {
 		model.addAttribute("demands", demandsDao.findAll());
-		model.addAttribute("demands_personal", demandsDao.findByPublisher("同济大学"));
-		model.addAttribute("demands_finished", demandsDao.findByStatus("已接单"));
-		model.addAttribute("demands_unfinished", demandsDao.findByStatus("等待接单"));
 		model.addAttribute("demands_count", demandsDao.count());
-		model.addAttribute("demands_personal_count", demandsDao.countByPublisher("同济大学"));
-		model.addAttribute("demands_finished_count", demandsDao.countByStatus("已接单"));
-		model.addAttribute("demands_unfinished_count", demandsDao.countByStatus("等待接单"));
 		return "demands/dashboard";
 	}
 

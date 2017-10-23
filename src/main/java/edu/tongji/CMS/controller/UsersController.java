@@ -9,7 +9,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import edu.tongji.CMS.dao.users.UsersDao;
 import edu.tongji.CMS.domain.Services;
-import edu.tongji.CMS.domain.Users;
+import edu.tongji.CMS.domain.Users.Users;
 
 import java.util.HashMap;
 import java.util.Map;
