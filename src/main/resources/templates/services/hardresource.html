@@ -6,160 +6,109 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>创建硬件资源</title>
-<link rel="stylesheet" type="text/css"
-	href="../../css/bootstrap.min.css" />
-<link rel="stylesheet" type="text/css"
-	href="../../css/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="../../css/font-awesome.min.css" />
+<link rel="stylesheet" href="../../css/matrix-style.css"/>
+<link type="text/css" href="../../css/theme.css" rel="stylesheet"/>
 <script type="text/javascript" src="../../js/jquery-1.10.2.min.js"></script>
 <script type="text/javascript" src="../../js/bootstrap.min.js"></script>
 <script type="text/javascript" src="../../js/xlsx.core.min.js"></script>
 </head>
 <body>
 	<div class="container">
-		<div class="page-header">
-			<h1>硬资源发布</h1>
+		<div id="content-header">
+			<div id="breadcrumb">
+				<a href="/" title="Go to Home" class="tip-bottom"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>首页</a>
+				<a href="/services" class="current">服务管理</a><a href="#" class="current">硬资源发布</a>
+			</div>
 		</div>
-		<ul class="nav nav-tabs nav-justified">
-			<li role="presentation" class="active"><a href="#resource-form"
-				data-toggle="tab"><b>表格填写发布</b></a></li>
-			<li role="presentation"><a href="#resource-file"
-				data-toggle="tab"><b>文件上传发布</b></a></li>
-		</ul>
-		<div class="container-fuild tab-content" style="margin-top: 20px;">
-			<div class="tab-pane fade in active" id="resource-form">
-				<div class="col-sm-12 col-md-12">
-					<form th:action="@{/services/hardresource/formcreate}"
-						th:object="${hardresource}" method="post">
-						<div class="form-group">
-							<label>服务名称</label>
-							<div class="input-group">
-								<input type="text" class="form-control" name="InputName"
-									id="InputName" th:field="*{name}" placeholder="Enter Name" /> <span
-									class="input-group-addon"> <span
-									class="glyphicon glyphicon-asterisk"></span>
-								</span>
-							</div>
-						</div>
-						<div class="form-group">
-							<label>设备管理者</label>
-							<div class="input-group">
-								<input type="text" class="form-control" name="InputDeviceOwner"
-									id="InputDeviceOwner" th:field="*{deviceOwner}"
-									placeholder="Enter Owner" /> <span class="input-group-addon">
-									<span class="glyphicon glyphicon-asterisk"></span>
-								</span>
-							</div>
-						</div>
-						<div class="form-group">
-							<label>设备编号</label>
-							<div class="input-group">
-								<input type="text" class="form-control" name="InputDevicecode"
-									id="InputDevicecode" th:field="*{deviceCode}"
-									placeholder="Enter Devicecode" /> <span
-									class="input-group-addon"> <span
-									class="glyphicon glyphicon-asterisk"></span>
-								</span>
-							</div>
-						</div>
-						<div class="form-group">
-							<label>所属类别</label>
-							<div class="input-group">
-								<input type="text" class="form-control"
-									name="InputDeviceCategory" id="InputDeviceCategory"
-									th:field="*{deviceCategory}" placeholder="Enter Category" /> <span
-									class="input-group-addon"> <span
-									class="glyphicon glyphicon-asterisk"></span>
-								</span>
-							</div>
-						</div>
-						<div class="form-group">
-							<label>生产日期</label>
-							<div class="input-group">
-								<input type="date" class="form-control"
-									name="InputProductiondate" id="InputProductiondate"
-									th:field="*{productionDate}"
-									placeholder="Enter Production Date" /> <span
-									class="input-group-addon"> <span
-									class="glyphicon glyphicon-asterisk"></span>
-								</span>
-							</div>
-						</div>
-						<div class="form-group">
-							<label>运营时间</label>
-							<div class="input-group">
-								<input type="text" class="form-control"
-									name="InputOperationDays" id="InputOperationDays"
-									th:field="*{operationDays}" placeholder="Enter Operation Days" />
-								<span class="input-group-addon"> <span
-									class="glyphicon glyphicon-asterisk"></span>
-								</span>
-							</div>
-						</div>
-						<div class="form-group">
-							<label>功能名称</label>
-							<div class="input-group">
-								<input type="text" class="form-control" name="InputFunctionName"
-									id="InputFunctionName" th:field="*{functionName}"
-									placeholder="Enter Function Name" /> <span
-									class="input-group-addon"> <span
-									class="glyphicon glyphicon-asterisk"></span>
-								</span>
-							</div>
-						</div>
-						<div class="form-group">
-							<label>功能描述</label>
-							<div class="input-group">
-								<textarea name="InputFunctionDescription"
-									id="InputFunctionDescription" class="form-control" rows="3"
-									th:field="*{functionDescription}">
-								</textarea>
-								<span class="input-group-addon"> <span
-									class="glyphicon glyphicon-asterisk"></span>
-								</span>
-							</div>
-						</div>
-						<div class="form-group">
-							<label>资源描述</label>
-							<div class="input-group">
-								<textarea name="InputDescription" id="InputDescription"
-									class="form-control" rows="3" th:field="*{description}">
-								</textarea>
-								<span class="input-group-addon"> <span
-									class="glyphicon glyphicon-asterisk"></span>
-								</span>
-							</div>
-						</div>
-						<input type="submit" name="submit" id="submit" value="提交"
-							class="btn btn-lg btn-info pull-right" />
-					</form>
-				</div>
-			</div>
-			<div class="tab-pane fade" id="resource-file">
-				<div class="col-sm-12 col-md-12">
-					<form th:action="@{/services/filecreate}"
-							th:object="${hardresource}" method="post">
-						<div class="form-group">
-							<label>选择描述文件类型</label>
-							<div class="form-group">
-								<select class="form-control" id="fileCategory">
-									<option>rdf/xml</option>
-									<option>xlsx</option>
-									<option>rdf/json</option>
-								</select>
-							</div>
-							<label>描述文件</label>
-							<input type="file" id="files" name="file"/>
-							<output id="list"></output>
-						</div>
-						<div class="container" id="file_content" 
-							style="height: 200px; overflow-y: auto; overflow-x: hidden; border:1px;
-							margin-bottom:10px; border-color:#ddd;">
-						</div>
-						<input type="submit" class="btn btn-info" name="submit"
-							id="publishService" value="发布服务"/>
-					</form>
-				</div>
-			</div>
+		<div class="container-fuild tab-content" style="margin-top: 120px;">
+            <form th:action="@{/services/hardresource/formcreate}"
+                th:object="${hardresource}" method="post">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>资源名称</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" name="InputName"
+                                id="InputName" th:field="*{name}" placeholder="Enter Name" />
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-asterisk"></span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>资源编号</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" name="InputCode"
+                                   id="InputCode" th:field="*{resourceCode}" placeholder="Enter resource code"/>
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-asterisk"></span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>资源分类</label>
+                        <select class="form-control" id="select" th:field="*{category}">
+                            <option th:value="制造设备">制造设备</option>
+                            <option th:value="计算资源">计算资源</option>
+                            <option th:value="生产物料">生产物料</option>
+                            <option th:value="其他">其他</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>资源管理者</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" name="InputDeviceOwner"
+                                id="InputDeviceOwner" th:field="*{owner}"
+                                placeholder="Enter Owner" />
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-asterisk"></span>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>开始使用日期</label>
+                        <div class="input-group">
+                            <input type="date" class="form-control"
+                                name="InputProductiondate" id="InputProductiondate"
+                                th:field="*{useDate}"
+                                placeholder="Enter Production Date" />
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-asterisk"></span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label>功能名称</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" name="InputFunctionName"
+                                id="InputFunctionName" th:field="*{functionName}"
+                                placeholder="Enter Function Name" />
+                            <span class="input-group-addon"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>功能描述</label>
+                        <div class="input-group">
+                            <textarea name="InputFunctionDescription"
+                                id="InputFunctionDescription" class="form-control" rows="3"
+                                th:field="*{functionDescription}">
+                            </textarea>
+                            <span class="input-group-addon"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>资源本体描述文件</label>
+                        <div class="input-group">
+                            <input type="file" id="file" name="file"/>
+                        </div>
+                    </div>
+                    <input type="submit" name="submit" id="submit" value="提交"
+                        th:onchange="is" class="btn btn-lg btn-info pull-right" />
+                </div>
+            </form>
 		</div>
 	</div>
 </body>
@@ -237,9 +186,7 @@
             event.preventDefault();
 
             uploadFile(upload_data);
-
         });
-
     });
 </script>
 </html>

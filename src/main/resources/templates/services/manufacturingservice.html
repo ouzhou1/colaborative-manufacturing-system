@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang = "en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>创建制造服务</title>
+    <link rel="stylesheet" type="text/css"
+          href="../../css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css"
+          href="../../css/font-awesome.min.css" />
+    <script type="text/javascript" src="../../js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="page-header">
+        <h1>制造服务发布</h1>
+    </div>
+    <div class="container">
+        <div class="row">
+            <form action="#" th:action="@{/services/softresource/create}" th:object="${manufacturingService}" method="post">
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label>服务名称</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" name="InputName"
+                                   id="InputName"
+                                   th:field="*{name}" placeholder="Enter Name"/>
+                            <span class="input-group-addon">
+								<span class="glyphicon glyphicon-asterisk"></span>
+								</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>服务管理者</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" name="InputOwner"
+                                   id="InputOwner"
+                                   th:field="*{owner}" placeholder="Enter Owner"/>
+                            <span class="input-group-addon">
+								<span class="glyphicon glyphicon-asterisk"></span>
+								</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>所属类别</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" name="InputCategory"
+                                   id="InputCategory"
+                                   th:field="*{category}" placeholder="Enter Category"/>
+                            <span class="input-group-addon">
+								<span class="glyphicon glyphicon-asterisk"></span>
+								</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>服务建立日期</label>
+                        <div class="input-group">
+                            <input type="date" class="form-control" name="InputProductiondate"
+                                   id="InputProductiondate"
+                                   th:field="*{productionDate}" placeholder="Enter Production Date"/>
+                            <span class="input-group-addon">
+								<span class="glyphicon glyphicon-asterisk"></span>
+								</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>功能名称</label>
+                        <select class="form-control" id="select" th:field="*{functionName}">
+                            <option th:value="加工生产"></option>
+                            <option th:value="数据记录"></option>
+                            <option th:value="调度"></option>
+                            <option th:value="决策支持"></option>
+                            <option th:value="辅助服务"></option>
+                            <option th:value="其他"></option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="functiondescription">功能描述</label>
+                        <div class="input-group">
+								<textarea name="InputFunctiondescription" id="InputFunctiondescription"
+                                          class="form-control" rows="3" th:field="*{functionDescription}">
+								</textarea>
+                            <span class="input-group-addon">
+								<span class="glyphicon glyphicon-asterisk"></span>
+								</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="summary">资源描述</label>
+                        <div class="input-group">
+								<textarea name="InputDescription" id="InputDescription"
+                                          class="form-control" rows="3" th:field="*{description}">
+								</textarea>
+                            <span class="input-group-addon">
+								<span class="glyphicon glyphicon-asterisk"></span>
+								</span>
+                        </div>
+                    </div>
+                    <input type="submit" name="submit" id="submit" value="提交"
+                           class="btn btn-info pull-right" />
+                </div>
+            </form>
+            <div class="col-lg-5 col-md-push-1">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label>服务名称</label>
+                        <div class="input-group">
+                            <input type="file" class="form-control" name="file" id="file" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="upload" name="upload" id="upload" value="上传"
+                               class="btn btn-info pull-right" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

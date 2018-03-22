@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>服务详情</title>
+    <link type="text/css" href="../../css/bootstrap.min.css" rel="stylesheet"/>
+    <link type="text/css" href="../../css/bootstrap-responsive.min.css" rel="stylesheet"/>
+    <link type="text/css" href="../../css/theme.css" rel="stylesheet"/>
+    <link type="text/css" href="../../css/font-awesome.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../../css/matrix-style.css"/>
+    <link type="text/css" href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600' rel='stylesheet'/>
+</head>
+<body>
+<div id="content">
+    <div id="content-header">
+        <div id="breadcrumb">
+            <a href="/" title="Go to Home" class="tip-bottom"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>首页</a>
+            <a href="/users" class="current">用户管理</a><a href="#" class="current">用户评价</a>
+        </div>
+    </div>
+    <div class="container-fluid" style="padding-top: 100px;">
+        <div class="row">
+            <div class="col-xs-6">
+                <div class="widget-box">
+                    <div class="widget-title"><span class="icon"> <span class="glyphicon glyphicon-th"> </span></span>
+                        <h5><span th:text="${evaluation.userName}"></span>综合评价详情</h5>
+                    </div>
+                    <div class="widget-content">
+                        <table cellpadding="0" cellspacing="0" border="0" class="datatable-1 table table-bordered table-striped	 display" width="100%">
+                            <thead>
+                            <tr>
+                                <th>属性</th>
+                                <th>值</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr class="odd gradeX">
+                                <td>时间指标评价值</td>
+                                <td th:text="${evaluation.timeEvaluation}">单晶硅生长炉</td>
+                            </tr>
+                            <tr class="even gradeC">
+                                <td>质量指标评价值</td>
+                                <td th:text="${evaluation.qualityEvaluation}">Elina</td>
+                            </tr>
+                            <tr class="gradeU">
+                                <td>能力指标评价值</td>
+                                <td th:text="${evaluation.abilityEvaluation}">硬资源</td>
+                            </tr>
+                            <tr class="gradeU">
+                                <td>服务指标评价值</td>
+                                <td th:text="${evaluation.serviceEvaluation}">硬资源</td>
+                            </tr>
+                            <tr class="gradeU">
+                                <td>综合评价值</td>
+                                <td th:text="${evaluation.totalEvaluation}">3</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="widget-box">
+                    <div class="widget-title"><span class="icon"> <span class="glyphicon glyphicon-th"> </span></span>
+                        <h5><span th:text="${evaluation.userName}"></span>时间指标评价详情</h5>
+                    </div>
+                    <div class="widget-content nopadding">
+                        <form id="project_member" name="">
+                            <table class="table table-hover order-table">
+                                <thead>
+                                <tr>
+                                    <th>属性</th>
+                                    <th>值</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr class="odd gradeX">
+                                    <td>实时性指标评价值</td>
+                                    <td th:text="${timeEvaluation.ontimeEvaluation}">单晶硅生长炉</td>
+                                </tr>
+                                <tr class="even gradeC">
+                                    <td>服务时长指标评价值</td>
+                                    <td th:text="${timeEvaluation.durationEvaluation}">Elina</td>
+                                </tr>
+                                <tr class="gradeU">
+                                    <td>线上交互指标评价值</td>
+                                    <td th:text="${timeEvaluation.onlineEvaluation}">硬资源</td>
+                                </tr>
+                                <tr class="gradeU">
+                                    <td>综合评价值</td>
+                                    <td th:text="${timeEvaluation.totalEvaluation}">3</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </form>
+                    </div>
+                </div>
+                <div class="widget-box">
+                    <div class="widget-title"><span class="icon"> <span class="glyphicon glyphicon-th"> </span></span>
+                        <h5><span th:text="${evaluation.userName}"></span>能力指标评价详情</h5>
+                    </div>
+                    <div class="widget-content nopadding">
+                        <form id="suborders" name="">
+                            <table class="table table-hover order-table">
+                                <thead>
+                                <tr>
+                                    <th>属性</th>
+                                    <th>值</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr class="odd gradeX">
+                                    <td>制造能力指标评价值</td>
+                                    <td th:text="${abilityEvaluation.manufacturingEvaluation}">单晶硅生长炉</td>
+                                </tr>
+                                <tr class="even gradeC">
+                                    <td>服务能力指标评价值</td>
+                                    <td th:text="${abilityEvaluation.serviceEvaluation}">Elina</td>
+                                </tr>
+                                <tr class="gradeU">
+                                    <td>基础设施指标评价值</td>
+                                    <td th:text="${abilityEvaluation.infrastructureEvaluation}">硬资源</td>
+                                </tr>
+                                <tr class="gradeU">
+                                    <td>企业素质指标评价值</td>
+                                    <td th:text="${abilityEvaluation.establishmentEvaluation}">硬资源</td>
+                                </tr>
+                                <tr class="gradeU">
+                                    <td>综合评价值</td>
+                                    <td th:text="${abilityEvaluation.totalEvaluation}">3</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xs-6">
+
+                <div class="widget-box">
+                    <div class="widget-title"><span class="icon"> <span class="glyphicon glyphicon-th"> </span></span>
+                        <h5><span th:text="${evaluation.userName}"></span>质量指标评价详情</h5>
+                    </div>
+                    <div class="widget-content nopadding">
+                        <form id="oplog" name="">
+                            <table class="table table-hover order-table">
+                                <thead>
+                                <tr>
+                                    <th>属性</th>
+                                    <th>值</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr class="odd gradeX">
+                                    <td>功能性指标评价值</td>
+                                    <td th:text="${qualityEvaluation.functionEvaluation}">单晶硅生长炉</td>
+                                </tr>
+                                <tr class="even gradeC">
+                                    <td>安全程度指标评价值</td>
+                                    <td th:text="${qualityEvaluation.secureEvaluation}">Elina</td>
+                                </tr>
+                                <tr class="gradeU">
+                                    <td>可靠程度指标评价值</td>
+                                    <td th:text="${qualityEvaluation.stabilityEvaluation}">硬资源</td>
+                                </tr>
+                                <tr class="gradeU">
+                                    <td>综合评价值</td>
+                                    <td th:text="${qualityEvaluation.totalEvaluation}">3</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="widget-box">
+                    <div class="widget-title"><span class="icon"> <span class="glyphicon glyphicon-th"> </span></span>
+                        <h5><span th:text="${evaluation.userName}"></span>服务指标评价详情</h5>
+                    </div>
+                    <div class="widget-content nopadding">
+                        <form id="oplog" name="">
+                            <table class="table table-hover order-table">
+                                <thead>
+                                <tr>
+                                    <th>属性</th>
+                                    <th>值</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr class="odd gradeX">
+                                    <td>服务程度指标评价值</td>
+                                    <td th:text="${serviceEvaluation.serviceAttitudeEvaluation}">单晶硅生长炉</td>
+                                </tr>
+                                <tr class="even gradeC">
+                                    <td>生产结果指标评价值</td>
+                                    <td th:text="${serviceEvaluation.productEvaluation}">Elina</td>
+                                </tr>
+                                <tr class="gradeU">
+                                    <td>综合评价值</td>
+                                    <td th:text="${serviceEvaluation.totalEvaluation}">3</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="footer">
+    <div class="container">
+        <b class="copyright">&copy; 2018 TJCMS - cms.tongji.edu.cn </b> All rights reserved.
+    </div>
+</div>
+
+<script src="../../js/jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="../../js/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>
+<script src="../../js/bootstrap.min.js" type="text/javascript"></script>
+</body>
+</html>

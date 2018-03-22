@@ -1,7 +1,7 @@
 package edu.tongji.CMS.Service.service;
 
 import edu.tongji.CMS.dao.services.ServicesDao;
-import edu.tongji.CMS.domain.Services;
+import edu.tongji.CMS.domain.Services.Services;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;

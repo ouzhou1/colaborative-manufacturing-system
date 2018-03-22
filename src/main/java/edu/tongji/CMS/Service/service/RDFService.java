@@ -1,10 +1,9 @@
 package edu.tongji.CMS.Service.service;
 
+import org.apache.jena.rdf.model.Model;
+
 import java.io.File;
 
-import org.eclipse.rdf4j.model.Model;
-import org.eclipse.rdf4j.repository.Repository;
-import org.springframework.stereotype.Service;
 
 public interface RDFService {
 	
@@ -13,8 +12,6 @@ public interface RDFService {
 	Model latheRDFParser();
 	
 	Model generateRDFModel();
-	
-	Repository accessRDFServer();
 
 	void uploadRDFFiles(File file);
 

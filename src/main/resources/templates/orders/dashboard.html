@@ -4,10 +4,10 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>订单管理</title>
-    <link type="text/css" href="../../static/css/order-bootstrap.css" rel="stylesheet"/>
-    <link type="text/css" href="../../static/css/bootstrap-responsive.min.css" rel="stylesheet"/>
-    <link type="text/css" href="../../static/css/orderlist.css" rel="stylesheet"/>
-    <link type="text/css" href="../../static/css/font-awesome.css" rel="stylesheet"/>
+    <link type="text/css" href="/css/order-bootstrap.css" rel="stylesheet"/>
+    <link type="text/css" href="/css/bootstrap-responsive.min.css" rel="stylesheet"/>
+    <link type="text/css" href="/css/orderlist.css" rel="stylesheet"/>
+    <link type="text/css" href="/css/font-awesome.css" rel="stylesheet"/>
 </head>
 
 <body>
@@ -38,7 +38,7 @@
                 <ul class="nav pull-right">
                     <li class="nav-user dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <img src="../../static/images/user.png" class="nav-avatar"/>
+                            <img src="/images/user.png" class="nav-avatar"/>
                             <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu">
@@ -88,7 +88,7 @@
                                 </thead>
                                 <tbody>
                                 <tr th:if="${orders.empty}">
-                                    <td colspan="9">没有需求</td>
+                                    <td colspan="9">没有订单</td>
                                 </tr>
                                 <tr th:each="orders: ${orders}">
                                     <td th:text="${orders.order_id}">ID</td>
@@ -118,10 +118,10 @@
     </div><!--/.container-->
 </div><!--/.wrapper-->
 
-<script src="../../static/js/jquery-1.9.1.min.js"></script>
-<script src="../../static/js/jquery-ui-1.10.1.custom.min.js"></script>
-<script src="../../static/js/bootstrap.min.js"></script>
-<script src="../../static/js/jquery.dataTables.js"></script>
+<script src="/js/jquery-1.9.1.min.js"></script>
+<script src="/js/jquery-ui-1.10.1.custom.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/jquery.dataTables.js"></script>
 <script>
     $(document).ready(function () {
         $('.datatable-1').dataTable();

@@ -14,7 +14,8 @@ import org.springframework.web.servlet.ModelAndView;
 public class LoginController {
     @GetMapping(value = "")
     public ModelAndView loginPage() {
-        return new ModelAndView("signin");
+        // return new ModelAndView("signin");
+        return new ModelAndView("index");
     }
 
     @GetMapping(value = "login")

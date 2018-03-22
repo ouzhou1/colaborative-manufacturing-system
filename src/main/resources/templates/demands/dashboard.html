@@ -4,10 +4,10 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>需求管理</title>
-    <link type="text/css" href="../../static/css/order-bootstrap.css" rel="stylesheet"/>
-    <link type="text/css" href="../../static/css/bootstrap-responsive.min.css" rel="stylesheet"/>
-    <link type="text/css" href="../../static/css/orderlist.css" rel="stylesheet"/>
-    <link type="text/css" href="../../static/css/font-awesome.css" rel="stylesheet"/>
+    <link type="text/css" href="/css/order-bootstrap.css" rel="stylesheet"/>
+    <link type="text/css" href="/css/bootstrap-responsive.min.css" rel="stylesheet"/>
+    <link type="text/css" href="/css/orderlist.css" rel="stylesheet"/>
+    <link type="text/css" href="/css/font-awesome.css" rel="stylesheet"/>
 </head>
 
 <body>
@@ -38,7 +38,7 @@
                 <ul class="nav pull-right">
                     <li class="nav-user dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <img src="../../static/images/user.png" class="nav-avatar"/>
+                            <img src="/images/user.png" class="nav-avatar"/>
                             <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu">
@@ -62,7 +62,11 @@
                 <div class="content">
                     <div class="module">
                         <div class="module-head">
-                            <h3>用户列表</h3>
+                            <h3>需求列表<span class="icon-add-btn glyphicon glyphicon-plus">
+                                    <button type="button" class="btn btn-success btn-xs"
+                                            style="float: right; padding-top: 2px"
+                                            onclick="window.location.href='/demands/publish'">新增需求</button>
+                                </span></h3>
                         </div>
                         <div class="module-body table">
                             <table cellpadding="0" cellspacing="0" border="0"
@@ -83,20 +87,20 @@
                                 <tr th:if="${demands.empty}">
                                     <td colspan="9">没有需求</td>
                                 </tr>
-                                <tr th:each="demands: ${demands}">
-                                    <td th:text="${demands.demandId}">ID</td>
-                                    <td><a th:text="${demands.demandName}"
-                                           th:href="@{'/demands/' + ${demands.demandId}}">Name</a></td>
-                                    <td th:text="${demands.publishTime}">Publish Time</td>
-                                    <td th:text="${demands.relatedField}">Field</td>
-                                    <td th:text="${demands.status}">Status</td>
-                                    <td th:text="${demands.deliveryDate}"></td>
-                                    <td><a th:text="${demands.deliveryDate}"
-                                           th:href="@{'/orders/details/' + ${demands.relatedOrderId}}"></a></td>
+                                <tr th:each="demand: ${demands}">
+                                    <td th:text="${demand.demandId}">ID</td>
+                                    <td><a th:text="${demand.demandName}"
+                                           th:href="@{'/demands/' + ${demand.demandId}}">Name</a></td>
+                                    <td th:text="${demand.publishTime}">Publish Time</td>
+                                    <td th:text="${demand.relatedField}">Field</td>
+                                    <td th:text="${demand.status}">Status</td>
+                                    <td th:text="${demand.deliveryDate}"></td>
+                                    <td><a th:text="${demand.relatedOrderName}"
+                                           th:href="@{'/orders/details/' + ${demand.relatedOrderId}}"></a></td>
                                     <td>
-                                        <a th:href="@{'/demands/details/' + ${demands.demandId}}"
-                                           class="badge badge-success">详细</a>
-                                        <a th:href="@{'/demands/details/' + ${demands.demandId}}"
+                                        <a onclick="demandNew(this)" th:attr="demandStatus=${demand.status}, demandId=${demand.demandId}"
+                                           class="badge badge-success">详情</a>
+                                        <a onclick="demandProcess(this)" th:attr="demandStatus=${demand.status}"
                                            class="badge badge-success">接单</a>
                                     </td>
                                 </tr>
@@ -111,10 +115,10 @@
     </div><!--/.container-->
 </div><!--/.wrapper-->
 
-<script src="../../static/js/jquery-1.9.1.min.js"></script>
-<script src="../../static/js/jquery-ui-1.10.1.custom.min.js"></script>
-<script src="../../static/js/bootstrap.min.js"></script>
-<script src="../../static/js/jquery.dataTables.js"></script>
+<script src="/js/jquery-1.9.1.min.js"></script>
+<script src="/js/jquery-ui-1.10.1.custom.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/jquery.dataTables.js"></script>
 <script>
     $(document).ready(function () {
         $('.datatable-1').dataTable();
@@ -123,6 +127,31 @@
         $('.dataTables_paginate > a:first-child').append('<i class="icon-chevron-left shaded"></i>');
         $('.dataTables_paginate > a:last-child').append('<i class="icon-chevron-right shaded"></i>');
     });
+    function demandProcess(obj) {
+        var demandStatus = $(obj).attr("demandStatus");
+        if("NEW" == demandStatus) {
+            alert("创建订单！");
+            $.ajax({
+                url: "/orders/create/",
+                type: "get",
+                dataType: "text",
+                success: function() {
+                    setTimeout("location.href='/orders/create'", 0);
+                }
+            });
+        } else {
+            alert("只能选择新创建的需求！")
+        }
+    }
+    function demandNew(obj) {
+        var demandStatus = $(obj).attr("demandStatus");
+        var demandId = $(obj).attr("demandId");
+        if("NEW" == demandStatus) {
+            alert("新建的需求不存在详情！")
+        } else {
+            window.location.href="/demands/details/" + demandId;
+        }
+    }
 </script>
 </body>
 </html>

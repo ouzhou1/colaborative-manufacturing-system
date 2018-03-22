@@ -2,9 +2,11 @@ package edu.tongji.CMS.domain.Users;
 
 import edu.tongji.CMS.domain.vo.UserLevel;
 import edu.tongji.CMS.domain.vo.UserType;
+import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 /**
@@ -19,40 +21,41 @@ public class Partner {
     private Long id;
 
     @Column
-    @NotEmpty(message = "Partner or user id is required!")
-    private Long parter_id;
+    @NotNull(message = "Partner or user id is required!")
+    private Long userId;
 
     @Column
-    @NotEmpty(message = "Partner or user name is required!")
-    private String partner_name;
+    @NotBlank(message = "Partner or user name is required!")
+    private String userName;
 
     @Column
-    @NotEmpty(message = "Partner contact is required!")
-    private String tel;
+    // @NotEmpty(message = "Sub order id that partner or user belongs is required!")
+    private String subOrderId;
 
     @Column
-    @NotEmpty(message = "Sub order id that partner or user belongs is required!")
-    private String sub_order_id;
+    // @NotEmpty(message = "Sub order name that partner or user belongs is required!")
+    private String subOrderName;
 
     @Column
-    @NotEmpty(message = "Sub order name that partner or user belongs is required!")
-    private String sub_order_name;
-
-    @Column
-    @NotEmpty(message = "Partner's role is required!")
+    // @NotEmpty(message = "Partner's role is required!")
     private String role;
 
     @Column
-    @NotEmpty(message = "Partner type is required!")
+    // @NotEmpty(message = "Partner type is required!")
     private UserType type;
 
     @Column
-    @NotEmpty(message = "Partner or user level is required!")
+    //@NotEmpty(message = "Partner or user level is required!")
     private UserLevel level;
 
     @Column
-    @NotEmpty(message = "The date that partner or user create is required!")
-    private Date create_time;
+    @Temporal(TemporalType.DATE)
+    @NotNull(message = "The date that partner or user create is required!")
+    private Date createTime;
+
+    @Column
+    @NotBlank(message = "The date that partner or user create is required!")
+    private String status;
 
     @Column
     private String mark;
@@ -65,44 +68,36 @@ public class Partner {
         this.id = id;
     }
 
-    public Long getParter_id() {
-        return parter_id;
+    public Long getUserId() {
+        return userId;
     }
 
-    public void setParter_id(Long parter_id) {
-        this.parter_id = parter_id;
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
 
-    public String getPartner_name() {
-        return partner_name;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setPartner_name(String partner_name) {
-        this.partner_name = partner_name;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
-    public String getTel() {
-        return tel;
+    public String getSubOrderId() {
+        return subOrderId;
     }
 
-    public void setTel(String tel) {
-        this.tel = tel;
+    public void setSubOrderId(String subOrderId) {
+        this.subOrderId = subOrderId;
     }
 
-    public String getSub_order_id() {
-        return sub_order_id;
+    public String getSubOrderName() {
+        return subOrderName;
     }
 
-    public void setSub_order_id(String sub_order_id) {
-        this.sub_order_id = sub_order_id;
-    }
-
-    public String getSub_order_name() {
-        return sub_order_name;
-    }
-
-    public void setSub_order_name(String sub_order_name) {
-        this.sub_order_name = sub_order_name;
+    public void setSubOrderName(String subOrderName) {
+        this.subOrderName = subOrderName;
     }
 
     public String getRole() {
@@ -129,12 +124,20 @@ public class Partner {
         this.level = level;
     }
 
-    public Date getCreate_time() {
-        return create_time;
+    public Date getCreateTime() {
+        return createTime;
     }
 
-    public void setCreate_time(Date create_time) {
-        this.create_time = create_time;
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public String getMark() {

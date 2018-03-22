@@ -1,228 +1,91 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org"
-      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout">
+<html lang="en">
 <head>
-<meta charset="utf-8"></meta>
-<meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
-<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
-
-<title>需求详情</title>
-<link rel="stylesheet" href="../../css/bootstrap.min.css" />
-<link rel="stylesheet" href="../../css/matrix-style.css" />
-<link rel="shortcut icon" href="../../images/favicon.ico" />
-<link rel="icon" href="../../images/favicon.ico" type="image/gif" />
-<!--[if lt IE 9]>
-<script src="../../js/jshtml5shiv.min.js"></script>
-<script src="../../js/respond.min.js"></script>
-<![endif]-->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>需求详情</title>
+    <link type="text/css" href="../../css/bootstrap.min.css" rel="stylesheet"/>
+    <link type="text/css" href="../../css/bootstrap-responsive.min.css" rel="stylesheet"/>
+    <link type="text/css" href="../../css/theme.css" rel="stylesheet"/>
+    <link type="text/css" href="../../css/font-awesome.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../../css/matrix-style.css"/>
+    <link type="text/css" href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600' rel='stylesheet'/>
 </head>
 <body>
-
-<!--Header-part-->
-<div id="header">
-    <h1><a href="#">协同管理系统</a></h1>
-</div>
-<!--close-Header-part-->
-
-<!--containt-part-->
 <div id="content">
     <div id="content-header">
         <div id="breadcrumb">
-            <a href="/" title="Go to Home" class="tip-bottom"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> 首页</a>
-            <a href="/demands" class="current">需求管理</a>
-            <a href="#" class="current">需求详情</a>
+            <a href="/" title="Go to Home" class="tip-bottom"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>首页</a>
+            <a href="/demands" class="current">需求管理</a><a href="#" class="current">需求详情</a>
         </div>
-        <h1>需求详情</h1>
     </div>
-    <div class="container-fluid">
+    <div class="container" style="padding-top: 100px">
         <div class="row">
-            <div class="col-xs-6">
-                <div class="widget-box">
-                    <div class="widget-title"> <span class="icon"> <span class="glyphicon glyphicon-th"> </span></span>
-                        <h5>订单信息</h5>
+            <div class="content">
+                <div class="module">
+                    <div class="module-head">
+                        <h3>需求详情</h3>
                     </div>
-                    <div class="widget-content">
-                        <table class="table table-hover order-table">
+                    <div class="module-body table">
+                        <table cellpadding="0" cellspacing="0" border="0" class="datatable-1 table table-bordered table-striped	 display" width="100%">
+                            <thead>
+                                <tr>
+                                    <th>属性</th>
+                                    <th>值</th>
+                                </tr>
+                            </thead>
                             <tbody>
-                            <tr>
-                                <td>需求ID：</td>
-                                <td th:text="${demand.demandId}"></td>
-                            </tr>
-                            <tr>
-                                <td>需求名称：</td>
-                                <td th:text="${demand.demandName}"></td>
-                            </tr>
-                            <tr>
-                                <td>所属订单：</td>
-                                <td><span class="red"  th:text="${demand.relatedOrderName}"></span><a href="/orders" class="badge badge-success">详情</a></td>
-                            </tr>
-                            <tr>
-                                <td>客户信息：</td>
-                                <td><span th:text="${demand.publisher}" class="red"></span><a href="/users" class="badge badge-success">详情</a></td>
-                            </tr>
-                            <tr>
-                                <td>所属行业：</td>
-                                <td th:text="${demand.field}"></td>
-                            </tr>
+                                <tr class="odd gradeX">
+                                    <td>需求ID</td>
+                                    <td th:text="${demand.demandId}">单晶硅生长炉</td>
+                                </tr>
+                                <tr class="even gradeC">
+                                    <td>需求名称</td>
+                                    <td th:text="${demand.demandName}">Elina</td>
+                                </tr>
+                                <tr class="gradeU">
+                                    <td>相关订单ID</td>
+                                    <td th:text="${demand.relatedOrderId}"></td>
+                                </tr>
+                                <tr class="gradeU">
+                                    <td>相关订单名称</td>
+                                    <td th:text="${demand.relatedOrderName}">
+                                        <a th:href="@{'/orders/details/'+${demand.relatedOrderId}">硬资源</a>
+                                    </td>
+                                </tr>
+                                <tr class="gradeU">
+                                    <td>发布时间</td>
+                                    <td th:text="${demand.publishTime}">3</td>
+                                </tr>
+                                <tr class="gradeU">
+                                    <td>当前状态</td>
+                                    <td th:text="${demand.status}">3</td>
+                                </tr>
+                                <tr class="gradeU">
+                                    <td>截止日期</td>
+                                    <td th:text="${demand.deliveryDate}">1</td>
+                                </tr>
+                                <tr class="gradeU">
+                                    <td>描述</td>
+                                    <td th:text="${demand.description}">NEW</td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
-                </div>
-                <div class="widget-box">
-                    <div class="widget-title"> <span class="icon"> <span class="glyphicon glyphicon-th"> </span></span>
-                        <h5>订单备注</h5>
-                    </div>
-                    <div class="widget-content nopadding">
-                        <form id="remark" name="">
-                            <table class="table table-hover order-table-form">
-                                <tbody>
-                                <tr>
-                                    <td><span class="red">*</span>买家备注：</td>
-                                    <td><input type="text" class="form-control" id="buyer_remark" placeholder="" value=""/>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td><small>买家备注无法修改。</small></td>
-                                </tr>
-                                <tr>
-                                    <td><span class="red">*</span>卖家备注：</td>
-                                    <td><input type="text" class="form-control" id="seller_remark" placeholder="" value=""/></td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td><small>更新后自动同步到第三方平台。</small></td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td><button type="button" class="btn btn-default btn-success">更改备注</button></td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </form>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-xs-6">
-                <div class="widget-box">
-                    <div class="widget-title"> <span class="icon"> <span class="glyphicon glyphicon-th"> </span></span>
-                        <h5>订单商品</h5>
-                    </div>
-                    <div class="widget-content nopadding">
-                        <form id="order" name="">
-                            <table class="table table-hover order-table">
-                                <thead>
-                                <tr>
-                                    <th class="hidden-phone">编号</th>
-                                    <th>编码</th>
-                                    <th class="hidden-phone">条码</th>
-                                    <th class="hidden-phone">优惠</th>
-                                    <th>单价</th>
-                                    <th class="hidden-phone">库存</th>
-                                    <th>数量</th>
-                                    <th>金额</th>
-                                    <th>管理</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td class="hidden-phone">161</td>
-                                    <td><span class="green">LA0824</span></td>
-                                    <td class="hidden-phone"><span class="green">6945554252311</span></td>
-                                    <td class="hidden-phone">0.00</td>
-                                    <td>27.50</td>
-                                    <td class="hidden-phone">178</td>
-                                    <td>2</td>
-                                    <td>55.00</td>
-                                    <td><a href="#"><span class="badge badge-success">变更</span></a></td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </form>
-                    </div>
-                </div>
-                <div class="widget-box">
-                    <div class="widget-title"> <span class="icon"> <span class="glyphicon glyphicon-th"> </span></span>
-                        <h5>操作日志</h5>
-                        <span class="icon-add-btn"><button type="button" class="btn btn-success btn-xs">浏览更多</button></span>
-                    </div>
-                    <div class="widget-content nopadding">
-                        <form id="oplog" name="">
-                            <table class="table table-hover order-table">
-                                <thead>
-                                <tr>
-                                    <th>编号</th>
-                                    <th>用户</th>
-                                    <th>状态</th>
-                                    <th>日志</th>
-                                    <th>时间</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td>18530</td>
-                                    <td>1号店@发网</td>
-                                    <td>已付款</td>
-                                    <td>订单状态变更[已发货]</td>
-                                    <td>04-24 10:34</td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </form>
-                    </div>
-                </div>
-                <div class="widget-box">
-                    <div class="widget-title"><span class="icon"><span class="glyphicon glyphicon-th"> </span></span>
-                        <h5>配送地址</h5>
-                    </div>
-                    <div class="widget-content nopadding">
-                        <form id="address" name="">
-                            <table class="table table-hover order-table-form">
-                                <tbody>
-                                <tr>
-                                    <td><span class="red">*</span>收货人：</td>
-                                    <td><input type="text" class="form-control" id="buyer" placeholder="" value="张三"/></td>
-                                </tr>
-                                <tr>
-                                    <td><span class="red">*</span>手 机：</td>
-                                    <td><input type="text" class="form-control" id="cellphone" placeholder="" value="13912345678"/></td>
-                                </tr>
-                                <tr>
-                                    <td><span class="red">*</span>收货人：</td>
-                                    <td><input type="text" class="form-control" id="" placeholder="" value="张三"/></td>
-                                </tr>
-                                <tr>
-                                    <td><span class="red">*</span>地 址：</td>
-                                    <td><input type="text" class="form-control" id="add" placeholder="" value="上海市闵行区XX小区xx号xx室"/></td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td><small>发货后修改，地址仅保存到系统。</small></td>
-                                </tr>
-                                <tr>
-                                    <td></td>
-                                    <td><button type="button" class="btn btn-default btn-success">保存操作</button></td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </form>
-                    </div>
-                </div>
-            </div>
+                </div><!--/.module-->
+            </div><!--/.content-->
         </div>
+    </div><!--/.container-->
+</div>
+
+<div class="footer">
+    <div class="container">
+        <b class="copyright">&copy; 2018 TJCMS - cms.tongji.edu.cn </b> All rights reserved.
     </div>
 </div>
-<!--end-containt-part-->
 
-<!--Footer-part-->
-<div class="row-fluid">
-    <div id="footer" class="span12"> Copyright &copy; Goonic All rights reserved.</div>
-</div>
-<!--end-Footer-part-->
-<script src="../../js/jquery-1.10.2.min.js"></script>
-<script src="../../js/bootstrap.min.js"></script>
-<script src="../../js/matrix.js"></script>
-
+<script src="../../js/jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="../../js/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>
+<script src="../../js/bootstrap.min.js" type="text/javascript"></script>
 </body>
 </html>

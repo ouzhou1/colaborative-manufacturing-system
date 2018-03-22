@@ -3,29 +3,31 @@ package edu.tongji.CMS.controller;
 import java.io.File;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
 import javax.validation.Valid;
 
+import edu.tongji.CMS.dao.orders.OrdersDao;
+import edu.tongji.CMS.dao.services.ServiceOrderBindingDao;
+import edu.tongji.CMS.domain.Services.ServiceOrderBinding;
+import edu.tongji.CMS.domain.order.Orders;
+import edu.tongji.CMS.domain.Resource.ManufacturingService;
+import edu.tongji.CMS.domain.vo.OrderStatus;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import edu.tongji.CMS.Service.service.RDFService;
 import edu.tongji.CMS.dao.services.HardwareResourceDao;
 import edu.tongji.CMS.dao.services.ServicesDao;
-import edu.tongji.CMS.domain.resource.HardwareResource;
-import edu.tongji.CMS.domain.Services;
-import edu.tongji.CMS.domain.resource.SoftwareResource;
+import edu.tongji.CMS.domain.Resource.HardwareResource;
+import edu.tongji.CMS.domain.Services.Services;
+import edu.tongji.CMS.domain.Resource.SoftwareResource;
 
 /**
  * @author ouzhou
@@ -35,10 +37,19 @@ import edu.tongji.CMS.domain.resource.SoftwareResource;
 public class ServicesController {
 
 	private final Path rootLocation = Paths.get("/home/ouzhou");
+
 	@Autowired
 	private ServicesDao servicesDao;
+
+	@Autowired
+    private OrdersDao ordersDao;
+
+	@Autowired
+    private ServiceOrderBindingDao serviceOrderBindingDao;
+
 	@Autowired
 	private HardwareResourceDao hardResourceDao;
+
 	@Autowired
 	private RDFService rdfService;
 
@@ -61,23 +72,27 @@ public class ServicesController {
 	}
 
 	@PostMapping("/create")
-	public String serviceCreate(Services services) {
+	public String serviceCreate(@ModelAttribute Services services) {
+	    // Save service
+        String url = "services/%s";
 		Services newService = new Services();
-		String url = "services/%s";
 		newService.setServicename(services.getServicename());
-		newService.setOwner(services.getOwner());
+		newService.setOwner("Tongji");
 		newService.setCategory(services.getCategory());
 		newService.setSummary(services.getSummary());
 		newService.setField(services.getField());
-		newService.setPublishtime(new Date().toString());
-		newService.setStatus("运行中");
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+		newService.setPublishtime(simpleDateFormat.format(new Date()));
+		newService.setStatus("NEW");
+		newService.setCapacity(services.getCapacity());
+        servicesDao.save(newService);
+        // Redirect direction
 		if ("硬件资源类".equals(services.getCategory()))
 			url = String.format(url, "hardresource");
 		else if ("软件资源类".equals(services.getCategory()))
 			url = String.format(url, "softresource");
 		else
 			url = String.format(url, "manufacturingservice");
-		servicesDao.save(newService);
 		return String.format("redirect:/%s/form", url);
 	}
 
@@ -90,15 +105,15 @@ public class ServicesController {
 	public String hardResourceFormCreate(@ModelAttribute HardwareResource hardresource) {
 		HardwareResource newService = new HardwareResource();
 		newService.setName(hardresource.getName());
-		newService.setDeviceOwner(hardresource.getDeviceOwner());
-		newService.setDeviceCategory(hardresource.getDeviceCategory());
+		newService.setOwner(hardresource.getOwner());
+		newService.setCategory(hardresource.getCategory());
 		newService.setFunctionDescription(hardresource.getFunctionDescription());
 		newService.setFunctionName(hardresource.getFunctionName());
-		newService.setCurrentStatus("运行中");
+		newService.setCurrentStatus("NEW");
 		newService.setOperationDays(hardresource.getOperationDays());
-		newService.setProductionDate(hardresource.getProductionDate());
+		newService.setUseDate(hardresource.getUseDate());
 		newService.setDescription(hardresource.getDescription());
-		newService.setDeviceCode(hardresource.getDeviceCode());
+		newService.setResourceCode(hardresource.getResourceCode());
 		newService.setLoadStatus("");
 		hardResourceDao.save(newService);
 		return "redirect:/services";
@@ -130,8 +145,8 @@ public class ServicesController {
 	}
 
 	@GetMapping("/manufacturingservice/form")
-	public ModelAndView manufacturingService(@ModelAttribute Services services) {
-		return new ModelAndView("services/manufacturingservice");
+	public ModelAndView manufacturingService(@ModelAttribute ManufacturingService manufacturingService) {
+		return new ModelAndView("services/manufacturingservice", "manufacturingService", manufacturingService);
 	}
 
 	@PostMapping("/manufacturingservice/create")
@@ -152,7 +167,7 @@ public class ServicesController {
 		return null;
 	}
 
-	@PostMapping(value = "/import")
+	@PostMapping(value = "import")
 	public void servicesImportByExcel(@ModelAttribute File file) {
         rdfService.saveByuploadExcel(file);
     }
@@ -166,4 +181,49 @@ public class ServicesController {
 	public ModelAndView modifyForm(@PathVariable("id") Services message) {
 		return new ModelAndView("messages/form", "message", message);
 	}
+
+	// Detail Page of Services with ID
+	@GetMapping("/details/{id}")
+	public ModelAndView serviceDetails(@PathVariable("id") long id) {
+		Services service = servicesDao.findOne(id);
+		return new ModelAndView("services/details", "service", service);
+	}
+
+    @GetMapping("/request/{serviceid}")
+    public ModelAndView serviceRequest(@PathVariable("serviceid") Long id, @ModelAttribute Services services) {
+        List<Orders> activeOrders = ordersDao.findActiveOrders(OrderStatus.PROCESSING, OrderStatus.ESTABLISHED);
+        ModelAndView modelAndView = new ModelAndView("services/binding", "orders", activeOrders);
+        modelAndView.addObject("serviceid", id);
+        return modelAndView;
+    }
+
+    @RequestMapping(value = "/request/binding/{serviceid}/{orderid}", method = RequestMethod.POST)
+    public ModelAndView serviceOrderBinding(@PathVariable("serviceid") long serviceId, @PathVariable("orderid") long orderId) {
+        ServiceOrderBinding serviceOrderBinding = new ServiceOrderBinding();
+        serviceOrderBinding.setOrderId(orderId);
+        serviceOrderBinding.setServiceId(serviceId);
+        serviceOrderBinding.setStatus("ACTIVE");
+        serviceOrderBindingDao.save(serviceOrderBinding);
+        return new ModelAndView("redirect:/services", "orders",
+                ordersDao.findActiveOrders(OrderStatus.PROCESSING, OrderStatus.ESTABLISHED));
+    }
+
+    @GetMapping("/search")
+    public ModelAndView serviceSearch(@ModelAttribute Services services) {
+        Iterable<Services> activeServices = servicesDao.findAll();
+        return new ModelAndView("services/search", "services", activeServices);
+    }
+
+    @GetMapping("/search/result")
+    public String serviceSearchResult(@ModelAttribute Services services) {
+        return "services/searchresult";
+    }
+
+    @GetMapping("/{orderid}/searchservices")
+    public ModelAndView actviceServices(@PathVariable Long orderid) {
+	    List<Services> activeServices = servicesDao.findActiveServices("NEW", "PROCESSING");
+        ModelAndView modelAndView = new ModelAndView("services/searchservices", "activeservices", activeServices);
+        modelAndView.addObject("orderid", orderid);
+        return modelAndView;
+    }
 }

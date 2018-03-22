@@ -4,10 +4,10 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 	<title>用户管理</title>
-	<link type="text/css" href="../../static/css/order-bootstrap.css" rel="stylesheet"/>
-	<link type="text/css" href="../../static/css/bootstrap-responsive.min.css" rel="stylesheet"/>
-	<link type="text/css" href="../../static/css/orderlist.css" rel="stylesheet"/>
-	<link type="text/css" href="../../static/css/font-awesome.css" rel="stylesheet"/>
+	<link type="text/css" href="/css/order-bootstrap.css" rel="stylesheet"/>
+	<link type="text/css" href="/css/bootstrap-responsive.min.css" rel="stylesheet"/>
+	<link type="text/css" href="/css/orderlist.css" rel="stylesheet"/>
+	<link type="text/css" href="/css/font-awesome.css" rel="stylesheet"/>
 </head>
 
 <body>
@@ -38,7 +38,7 @@
 				<ul class="nav pull-right">
 					<li class="nav-user dropdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-							<img src="../../static/images/user.png" class="nav-avatar"/>
+							<img src="/images/user.png" class="nav-avatar"/>
 							<b class="caret"></b>
 						</a>
 						<ul class="dropdown-menu">
@@ -83,15 +83,15 @@
 								</tr>
 								<tr th:each="users: ${users}">
 									<td><a th:text="${users.username}"
-										   th:href="@{'/users/' + ${users.id}}">Name</a></td>
+										   th:href="@{'/users/details/' + ${users.id}}">Name</a></td>
 									<td th:text="${users.field}">Field</td>
 									<td th:text="${users.tel}">Tel</td>
 									<td th:text="${users.user_category}">Tel</td>
 									<td th:text="${users.status}">Status</td>
 									<td>
-										<a th:href="@{'/users/details/' + ${users.id}}"
-										   class="badge badge-success">详情</a>
-										<a th:href="@{'/users/' + ${users.id}}"
+										<a th:href="@{'/users/profile/' + ${users.id}}"
+										   class="badge badge-success">用户主页</a>
+										<a th:href="@{'/users/modify/' + ${users.id}}"
 										   class="badge badge-success">修改</a>
 									</td>
 								</tr>
@@ -106,10 +106,10 @@
 	</div><!--/.container-->
 </div><!--/.wrapper-->
 
-<script src="../../static/js/jquery-1.9.1.min.js"></script>
-<script src="../../static/js/jquery-ui-1.10.1.custom.min.js"></script>
-<script src="../../static/js/bootstrap.min.js"></script>
-<script src="../../static/js/jquery.dataTables.js"></script>
+<script src="/js/jquery-1.9.1.min.js"></script>
+<script src="/js/jquery-ui-1.10.1.custom.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/jquery.dataTables.js"></script>
 <script>
     $(document).ready(function () {
         $('.datatable-1').dataTable();

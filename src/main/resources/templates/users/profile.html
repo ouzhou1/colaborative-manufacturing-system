@@ -1,0 +1,431 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<title>用户管理</title>
+
+<!-- Bootstrap core CSS -->
+<link href="../../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+
+<!-- Custom styles for this template -->
+<link type="text/css" href="../../css/bootstrap-responsive.min.css" rel="stylesheet" />
+<link type="text/css" href="../../css/theme.css" rel="stylesheet" />
+<link rel="stylesheet" href="/static/css/matrix-style.css" />
+<link type="text/css" href="../../css/font-awesome.css" rel="stylesheet" />
+<link type="text/css" href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600' rel='stylesheet' />
+</head>
+
+<body>
+<div id="content">
+	<div id="content-header">
+		<div id="breadcrumb">
+			<a href="/" title="Go to Home" class="tip-bottom">
+                <span class="glyphicon glyphicon-home" aria-hidden="true"></span>首页</a>
+			<a href="/users" class="current">用户管理</a><a href="#" class="current">用户主页</a>
+		</div>
+	</div>
+    <div class="container">
+        <div class="container-fluid">
+            <div class="row tab-content">
+                <div class="row" style="margin-top: 100px">
+                    <div class="span12">
+                        <div class="content">
+                            <div class="module">
+                                <div class="module-body">
+                                    <div class="profile-head media">
+                                        <a th:href="@{'/users/details/'+${user.id}}" class="media-avatar pull-left">
+                                            <img src="/images/user.png" />
+                                        </a>
+                                        <div class="media-body">
+                                            <h4 th:text="${user.username}">
+                                                John Donga <small th:text="${user.status}">Offline</small>
+                                            </h4>
+                                            <p class="profile-brief" th:text="${user.personal_statement}"></p>
+                                            <div class="profile-details muted">
+                                                <button onclick="friendRequest(this)" class="btn"><i class="icon-plus shaded"></i>发送好友请求</button>
+                                                <button onclick="sendMessage(this)" class="btn" id="sendMessage"><i class="icon-envelope-alt shaded"></i>发送消息 </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="messagebox" style="display: none; margin: 20px 10px 0px 10px;">
+                                        <div class="input-group">
+                                            <textarea name="InputSummary" id="InputSummary" class="form-control" rows="12" cols="150" style="width: 90%"></textarea>
+                                        </div>
+                                        <input type="submit" name="submit" id="submit" value="发送" class="btn btn-info pull-right" />
+                                    </div>
+                                    <ul class="profile-tab nav nav-tabs">
+                                        <li class="active"><a href="#activity" data-toggle="tab">动态</a></li>
+                                        <li><a href="#friends" data-toggle="tab">好友</a></li>
+                                    </ul>
+                                    <div class="profile-tab-content tab-content">
+                                        <div class="tab-pane fade active in" id="activity">
+                                            <div class="stream-list">
+                                                <div class="media stream">
+                                                    <a href="#" class="media-avatar medium pull-left">
+                                                        <img src="/images/user.png" />
+                                                    </a>
+                                                    <div class="media-body">
+                                                        <div class="stream-headline">
+                                                            <h5 class="stream-author" th:text="${user.username}">
+                                                                John Donga <small>13 Mar, 2018</small>
+                                                            </h5>
+                                                            <div class="stream-text">
+                                                                半导体科研院所改革取得新突破。启动了×××技术产业，由×××等发起设立工作。
+                                                            </div>
+                                                            <div class="stream-attachment photo">
+                                                                <div class="responsive-photo">
+                                                                    <img src="/images/img_demo.jpeg" alt="" />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!--/.stream-headline-->
+                                                        <div class="stream-options">
+                                                            <a href="#" class="btn btn-small"><i class="icon-thumbs-up shaded"></i>喜欢 </a>
+                                                            <a href="#" class="btn btn-small"><i class="icon-reply shaded"></i>回复 </a>
+                                                            <a href="#" class="btn btn-small"><i class="icon-retweet shaded"></i>转发 </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="media stream">
+                                                    <a href="#" class="media-avatar medium pull-left">
+                                                        <img src="/images/user.png" />
+                                                    </a>
+                                                    <div class="media-body">
+                                                        <div class="stream-headline">
+                                                            <h5 class="stream-author" th:text="${user.username}">
+                                                                John Donga <small>13 Mar, 2018</small>
+                                                            </h5>
+                                                            <div class="stream-text">
+                                                                公司拥有国内一流的设计研发团队，所设计研发产品技术水平国内领先，IGBT及FRD产品均填补国内空白。
+                                                                建有国内领先的功率器件设计中心，性能测试实验室和可靠性实验室，拥有省级设计中心，省级功率半导体工程中心。
+                                                                公司拥有自主知识产权，是国内第一家有能力批量提供IGBT、FRD等先进功率半导体芯片及器件的厂家。
+                                                                公司产品广泛应用于电磁炉、小功率变频器、逆变焊机、无刷马达控制器、UPS、开关电源、液晶电视及显示器、太阳能应用等领域。
+                                                            </div>
+                                                        </div>
+                                                        <!--/.stream-headline-->
+                                                        <div class="stream-options">
+                                                            <a href="#" class="btn btn-small"><i class="icon-thumbs-up shaded"></i>喜欢 </a>
+                                                            <a href="#" class="btn btn-small"><i class="icon-reply shaded"></i>回复 </a>
+                                                            <a href="#" class="btn btn-small"><i class="icon-retweet shaded"></i>转发 </a>
+                                                        </div>
+                                                        <div class="stream-respond">
+                                                            <div class="media stream">
+                                                                <a href="#" class="media-avatar small pull-left">
+                                                                    <img src="/images/user.png" />
+                                                                </a>
+                                                                <div class="media-body">
+                                                                    <div class="stream-headline">
+                                                                        <h5 class="stream-author" th:text="${user.username}">
+                                                                            John Donga <small>12 Mar, 2018</small>
+                                                                        </h5>
+                                                                        <div class="stream-text">
+                                                                           公司详细见 http://shop59293365.taobao.com/?
+                                                                        </div>
+                                                                    </div>
+                                                                    <!--/.stream-headline-->
+                                                                </div>
+                                                            </div>
+                                                            <!--/.media .stream-->
+                                                            <div class="media stream">
+                                                                <a href="#" class="media-avatar small pull-left">
+                                                                    <img src="/images/user.png" />
+                                                                </a>
+                                                                <div class="media-body">
+                                                                    <div class="stream-headline">
+                                                                        <h5 class="stream-author">
+                                                                            John Donga <small>12 Mar 18</small>
+                                                                        </h5>
+                                                                        <div class="stream-text">
+                                                                            非常棒！
+                                                                        </div>
+                                                                    </div>
+                                                                    <!--/.stream-headline-->
+                                                                </div>
+                                                            </div>
+                                                            <!--/.media .stream-->
+                                                        </div>
+                                                        <!--/.stream-respond-->
+                                                    </div>
+                                                </div>
+                                                <!--/.media .stream-->
+                                                <div class="media stream">
+                                                    <a href="#" class="media-avatar medium pull-left">
+                                                        <img src="/images/user.png" />
+                                                    </a>
+                                                    <div class="media-body">
+                                                        <div class="stream-headline">
+                                                            <h5 class="stream-author" th:text="${user.username}">
+                                                                John Donga <small>13 Mar, 2018</small>
+                                                            </h5>
+                                                            <div class="stream-text">
+                                                                ×××半导体实验室研究所进口热租蒸发薄膜沉积真空镀膜系统
+                                                            </div>
+                                                        </div>
+                                                        <!--/.stream-headline-->
+                                                        <div class="stream-options">
+                                                            <a href="#" class="btn btn-small"><i class="icon-thumbs-up shaded"></i>喜欢 </a>
+                                                            <a href="#" class="btn btn-small"><i class="icon-reply shaded"></i>回复 </a>
+                                                            <a href="#" class="btn btn-small"><i class="icon-retweet shaded"></i>转发 </a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--/.media .stream-->
+                                                <div class="media stream load-more">
+                                                    <a href="#"><i class="icon-refresh shaded"></i>Load more... </a>
+                                                </div>
+                                            </div>
+                                            <!--/.stream-list-->
+                                        </div>
+                                        <div class="tab-pane fade" id="friends">
+                                            <div class="module-option clearfix">
+                                                <form>
+                                                    <div class="input-append pull-left">
+                                                        <input type="text" class="span3" placeholder="Filter by name..." />
+                                                        <button type="submit" class="btn">
+                                                            <i class="icon-search"></i>
+                                                        </button>
+                                                    </div>
+                                                </form>
+                                                <div class="btn-group pull-right" data-toggle="buttons-radio">
+                                                    <button type="button" class="btn">
+                                                        All</button>
+                                                    <button type="button" class="btn">
+                                                        Male</button>
+                                                    <button type="button" class="btn">
+                                                        Female</button>
+                                                </div>
+                                            </div>
+                                            <div class="module-body">
+                                                <div class="row-fluid">
+                                                    <div class="span6">
+                                                        <div class="media user">
+                                                            <a class="media-avatar pull-left" href="#">
+                                                                <img src="/images/user.png" />
+                                                            </a>
+                                                            <div class="media-body">
+                                                                <h3 class="media-title">
+                                                                    John Donga
+                                                                </h3>
+                                                                <p>
+                                                                    <small class="muted">Pakistan</small></p>
+                                                                <div class="media-option btn-group shaded-icon">
+                                                                    <button class="btn btn-small">
+                                                                        <i class="icon-envelope"></i>
+                                                                    </button>
+                                                                    <button class="btn btn-small">
+                                                                        <i class="icon-share-alt"></i>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="span6">
+                                                        <div class="media user">
+                                                            <a class="media-avatar pull-left" href="#">
+                                                                <img src="/images/user.png" />
+                                                            </a>
+                                                            <div class="media-body">
+                                                                <h3 class="media-title">
+                                                                    Donga John</h3>
+                                                                <p>
+                                                                    <small class="muted">Pakistan</small></p>
+                                                                <div class="media-option btn-group shaded-icon">
+                                                                    <button class="btn btn-small">
+                                                                        <i class="icon-envelope"></i>
+                                                                    </button>
+                                                                    <button class="btn btn-small">
+                                                                        <i class="icon-share-alt"></i>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--/.row-fluid-->
+                                                <br />
+                                                <div class="row-fluid">
+                                                    <div class="span6">
+                                                        <div class="media user">
+                                                            <a class="media-avatar pull-left" href="#">
+                                                                <img src="/images/user.png" />
+                                                            </a>
+                                                            <div class="media-body">
+                                                                <h3 class="media-title">
+                                                                    John Donga</h3>
+                                                                <p>
+                                                                    <small class="muted">Pakistan</small></p>
+                                                                <div class="media-option btn-group shaded-icon">
+                                                                    <button class="btn btn-small">
+                                                                        <i class="icon-envelope"></i>
+                                                                    </button>
+                                                                    <button class="btn btn-small">
+                                                                        <i class="icon-share-alt"></i>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="span6">
+                                                        <div class="media user">
+                                                            <a class="media-avatar pull-left" href="#">
+                                                                <img src="/images/user.png" />
+                                                            </a>
+                                                            <div class="media-body">
+                                                                <h3 class="media-title">
+                                                                    Donga John</h3>
+                                                                <p>
+                                                                    <small class="muted">Pakistan</small></p>
+                                                                <div class="media-option btn-group shaded-icon">
+                                                                    <button class="btn btn-small">
+                                                                        <i class="icon-envelope"></i>
+                                                                    </button>
+                                                                    <button class="btn btn-small">
+                                                                        <i class="icon-share-alt"></i>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--/.row-fluid-->
+                                                <br />
+                                                <div class="row-fluid">
+                                                    <div class="span6">
+                                                        <div class="media user">
+                                                            <a class="media-avatar pull-left" href="#">
+                                                                <img src="/images/user.png" />
+                                                            </a>
+                                                            <div class="media-body">
+                                                                <h3 class="media-title">
+                                                                    John Donga</h3>
+                                                                <p>
+                                                                    <small class="muted">Pakistan</small></p>
+                                                                <div class="media-option btn-group shaded-icon">
+                                                                    <button class="btn btn-small">
+                                                                        <i class="icon-envelope"></i>
+                                                                    </button>
+                                                                    <button class="btn btn-small">
+                                                                        <i class="icon-share-alt"></i>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="span6">
+                                                        <div class="media user">
+                                                            <a class="media-avatar pull-left" href="#">
+                                                                <img src="/images/user.png" />
+                                                            </a>
+                                                            <div class="media-body">
+                                                                <h3 class="media-title">
+                                                                    Donga John</h3>
+                                                                <p>
+                                                                    <small class="muted">Pakistan</small></p>
+                                                                <div class="media-option btn-group shaded-icon">
+                                                                    <button class="btn btn-small">
+                                                                        <i class="icon-envelope"></i>
+                                                                    </button>
+                                                                    <button class="btn btn-small">
+                                                                        <i class="icon-share-alt"></i>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--/.row-fluid-->
+                                                <br />
+                                                <div class="row-fluid">
+                                                    <div class="span6">
+                                                        <div class="media user">
+                                                            <a class="media-avatar pull-left" href="#">
+                                                                <img src="/images/user.png" />
+                                                            </a>
+                                                            <div class="media-body">
+                                                                <h3 class="media-title">
+                                                                    John Donga</h3>
+                                                                <p>
+                                                                    <small class="muted">Pakistan</small></p>
+                                                                <div class="media-option btn-group shaded-icon">
+                                                                    <button class="btn btn-small">
+                                                                        <i class="icon-envelope"></i>
+                                                                    </button>
+                                                                    <button class="btn btn-small">
+                                                                        <i class="icon-share-alt"></i>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="span6">
+                                                        <div class="media user">
+                                                            <a class="media-avatar pull-left" href="#">
+                                                                <img src="/images/user.png" />
+                                                            </a>
+                                                            <div class="media-body">
+                                                                <h3 class="media-title">
+                                                                    Donga John</h3>
+                                                                <p>
+                                                                    <small class="muted">Pakistan</small></p>
+                                                                <div class="media-option btn-group shaded-icon">
+                                                                    <button class="btn btn-small">
+                                                                        <i class="icon-envelope"></i>
+                                                                    </button>
+                                                                    <button class="btn btn-small">
+                                                                        <i class="icon-share-alt"></i>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--/.row-fluid-->
+                                                <br />
+                                                <div class="pagination pagination-centered">
+                                                    <ul>
+                                                        <li><a href="#"><i class="icon-double-angle-left"></i></a></li>
+                                                        <li><a href="#">1</a></li>
+                                                        <li><a href="#">2</a></li>
+                                                        <li><a href="#">3</a></li>
+                                                        <li><a href="#">4</a></li>
+                                                        <li><a href="#"><i class="icon-double-angle-right"></i></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> <!--/.module-body-->
+                            </div> <!--/.module-->
+                        </div> <!--/.content-->
+                    </div> <!--/.span12-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap core JavaScript -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script>
+    function friendRequest(obj) {
+        alert("添加成功！")
+    }
+    function sendMessage(obj) {
+        var btn = document.getElementById("sendMessage");
+        btn.onclick = function() {
+            var textarea = document.getElementById("messagebox");
+
+            var mstyle = window.getComputedStyle(textarea);
+            textarea.style.display = mstyle.display == "none" ? "block":"block";
+        }
+    }
+</script>
+<script src="../../js/bootstrap.min.js"></script>
+<script src="../../js/jquery-1.9.1.min.js" type="text/javascript"></script>
+<script src="../../js/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>
+<script src="../../js/jquery.dataTables.js" type="text/javascript"></script>
+</body>
+</html>

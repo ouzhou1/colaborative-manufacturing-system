@@ -6,11 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
     <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
     <title>订单详情</title>
-    <link rel="stylesheet" href="../../static/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="../../static/css/matrix-style.css"/>
-    <link rel="shortcut icon" href="../../static/images/favicon.ico"/>
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/static/css/matrix-style.css"/>
+    <link rel="shortcut icon" href="/static/images/favicon.ico"/>
     <!--[if lt IE 9]>
-    <script src="../../static/js/respond.min.js"></script>
+    <script src="/static/js/respond.min.js"></script>
     <![endif]-->
 </head>
 <body>
@@ -23,14 +23,15 @@
             <a href="/orders" class="current">订单管理</a><a href="#" class="current">订单详情</a>
         </div>
     </div>
-    <div class="container-fluid" style="padding-top: 70px;">
+    <div class="container-fluid" style="padding-top: 100px;">
         <div class="row">
             <div class="col-xs-6">
                 <div class="widget-box">
                     <div class="widget-title"><span class="icon"> <span class="glyphicon glyphicon-th"> </span></span>
                         <h5>订单信息</h5>
-                        <span class="icon-add-btn"><a th:href="@{/orders}" type="button"
-                                                      class="btn btn-success btn-xs">其他订单</a></span>
+                        <span class="icon-add-btn">
+                            <a th:href="@{/orders}" type="button" class="btn btn-success btn-xs">其他订单</a>
+                        </span>
                     </div>
                     <div class="widget-content">
                         <table class="table table-hover order-table">
@@ -63,6 +64,12 @@
                                 <td><b>订单状态</b></td>
                                 <td th:text="${order.status}"><span class="red">*{order_status}</span></td>
                             </tr>
+                            <tr>
+                                <td><b>所属需求</b></td>
+                                <a th:href="@{'/demands/details/'+${order.demand_id}}">
+                                    <td th:text="${order.demand_name}"><span class="red">*{order_status}</span></td>
+                                </a>
+                            </tr>
                             </tbody>
                         </table>
                     </div>
@@ -70,30 +77,32 @@
                 <div class="widget-box">
                     <div class="widget-title"><span class="icon"> <span class="glyphicon glyphicon-th"> </span></span>
                         <h5>项目成员</h5>
+                        <span class="icon-add-btn">
+                            <a th:href="@{'/users/'+${order.order_id} + '/binding'}" type="button" class="btn btn-success btn-xs">添加成员</a>
+                        </span>
                     </div>
                     <div class="widget-content nopadding">
                         <form id="project_member" name="">
-                            <table th:each="partner : ${partners}" class="table table-hover order-table">
+                            <table class="table table-hover order-table">
                                 <thead>
                                 <tr>
                                     <th>ID</th>
                                     <th>名称</th>
-                                    <th>联系方式</th>
-                                    <th>所属子订单</th>
                                     <th>角色</th>
-                                    <th>交货期</th>
+                                    <th>状态</th>
+                                    <th>子订单名称</th>
                                     <th>操作</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <td th:text="${partner.partner_id}"></td>
-                                    <td th:text="${partner.partner_name}"><span class="green"></span></td>
-                                    <td th:text="${partner.tel}"></td>
-                                    <td th:text="${partner.sub_order_name}"></td>
+                                <tr th:each="partner : ${partners}">
+                                    <td th:text="${partner.userId}"></td>
+                                    <td th:text="${partner.userName}"><span class="green"></span></td>
                                     <td th:text="${partner.role}"></td>
-                                    <td><a th:href="@{'/orders/details/partner/' + ${partner.id}}"><span
-                                            class="badge badge-success">详情</span></a></td>
+                                    <td th:text="${partner.status}"></td>
+                                    <td th:text="${partner.subOrderName}"></td>
+                                    <td><a th:href="@{'/users/details/' + ${partner.userId}}"><span
+                                            class="badge badge-success">用户详情</span></a></td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -103,30 +112,33 @@
                 <div class="widget-box">
                     <div class="widget-title"><span class="icon"><span class="glyphicon glyphicon-th"></span></span>
                         <h5>原子订单</h5>
+                        <span class="icon-add-btn">
+                            <a th:href="@{/orders}" type="button" class="btn btn-success btn-xs">修改</a>
+                        </span>
                     </div>
                     <div class="widget-content nopadding">
                         <form id="suborders" name="">
-                            <table th:each="suborder : ${suborders}" class="table table-hover order-table">
+                            <table class="table table-hover order-table">
                                 <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>名称</th>
-                                    <th>状态</th>
-                                    <th>交货期</th>
-                                    <th>操作</th>
-                                </tr>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>名称</th>
+                                        <th>状态</th>
+                                        <th>交货期</th>
+                                        <th>操作</th>
+                                    </tr>
                                 </thead>
                                 <tbody>
-                                <tr>
-                                    <td th:text="${suborder.subOrderId}"></td>
-                                    <td th:text="${suborder.subOrderName}"><span class="green"></span></td>
-                                    <td th:text="${suborder.subOrderStatus}"></td>
-                                    <td th:text="${suborder.DeliveryDate}"></td>
-                                    <td>
-                                        <a th:href="@{'/orders/details/suborders/' + ${suborder.subOrderId}}"><span
-                                                class="
-                                           badge badge-success">详情</span></a></td>
-                                </tr>
+                                    <tr th:each="suborder : ${suborders}">
+                                        <td th:text="${suborder.subOrderId}"></td>
+                                        <td th:text="${suborder.subOrderName}"><span class="green"></span></td>
+                                        <td th:text="${suborder.subOrderStatus}"></td>
+                                        <td th:text="${suborder.DeliveryDate}"></td>
+                                        <td>
+                                            <a th:href="@{'/orders/details/suborders/' + ${suborder.subOrderId}}"><span
+                                                    class="badge badge-success">详情</span></a>
+                                        </td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </form>
@@ -135,6 +147,41 @@
             </div>
 
             <div class="col-xs-6">
+
+                <div class="widget-box">
+                    <div class="widget-title"><span class="icon"> <span class="glyphicon glyphicon-th"> </span></span>
+                        <h5>已有资源服务</h5>
+                        <span class="icon-add-btn">
+                            <a type="button" class="btn btn-success btn-xs"
+                                    th:href="@{'/services/' + ${order.order_id} + '/searchservices'}">添加资源</a>
+                        </span>
+                    </div>
+                    <div class="widget-content nopadding">
+                        <form id="oplog" name="">
+                            <table class="table table-hover order-table">
+                                <thead>
+                                    <tr>
+                                        <th>资源服务ID</th>
+                                        <th>名称</th>
+                                        <th>状态</th>
+                                        <th>类型</th>
+                                        <th>子类型</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr th:each="service : ${currentservices}">
+                                        <td th:text="${service.id}">18530</td>
+                                        <td th:text="${service.servicename}">同济大学</td>
+                                        <td th:text="${service.status}">订单已接收</td>
+                                        <td th:text="${service.category}">晶圆制造</td>
+                                        <td th:text="${service.field}">晶圆制造</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </form>
+                    </div>
+                </div>
+
                 <div class="widget-box">
                     <div class="widget-title"><span class="icon"> <span class="glyphicon glyphicon-th"> </span></span>
                         <h5>操作日志</h5>
@@ -157,11 +204,70 @@
                                 <tbody>
                                 <tr>
                                     <td>18530</td>
-                                    <td>同济大学</td>
+                                    <td>Tongji</td>
                                     <td>订单已接收</td>
                                     <td>晶圆制造</td>
                                     <td>订单状态变更[已接收]</td>
                                     <td>2017 10-14 10:34</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </form>
+                    </div>
+                </div>
+                <div class="widget-box">
+                    <div class="widget-title"><span class="icon"> <span class="glyphicon glyphicon-th"> </span></span>
+                        <h5>评价情况</h5>
+                        <span class="icon-add-btn">
+                            <button onclick="isFinished(this)" th:attr="orderstatus=${order.status}"
+                                    type="button" class="btn btn-success btn-xs">评价企业</button>
+                        </span>
+                    </div>
+                    <div class="widget-content nopadding">
+                        <form id="oplog" name="">
+                            <table class="table table-hover order-table">
+                                <thead>
+                                <tr>
+                                    <th>编号</th>
+                                    <th>评价名称</th>
+                                    <th>资源服务类型</th>
+                                    <th>被评价企业ID</th>
+                                    <th>被评价企业名称</th>
+                                    <th>评价企业</th>
+                                    <th>评价时间</th>
+                                    <th>操作</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>晶棒&nbsp;评价</td>
+                                    <td>资源</td>
+                                    <td>2</td>
+                                    <td>elk</td>
+                                    <td>Tongji</td>
+                                    <td>2018 02-14 10:34</td>
+                                    <td><a th:href="@{/users/evaluation/2}">详情</a></td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>半导体晶圆封装&nbsp;评价</td>
+                                    <td>资源</td>
+                                    <td>5</td>
+                                    <td>LamResearch</td>
+                                    <td>Tongji</td>
+                                    <td>2018 02-15 09:51</td>
+                                    <td><a th:href="@{/users/evaluation/5}">详情</a></td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>晶棒&nbsp;评价</td>
+                                    <td>资源</td>
+                                    <td>6</td>
+                                    <td>KLA-Tencor</td>
+                                    <td>Tongji</td>
+                                    <td>2018 03-14 19:19</td>
+                                    <td><a th:href="@{/users/evaluation/6}">详情</a></td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -173,10 +279,27 @@
     </div>
 </div>
 <!--end-containt-part-->
-
-<script src="../../static/js/jquery.js"></script>
-<script src="../../static/js/bootstrap.min.js"></script>
-<script src="../../static/js/matrix.js"></script>
+<script>
+    function isFinished(obj) {
+        var orderstatus = $(obj).attr("orderstatus");
+        if (orderstatus == "FINISHED") {
+            $.ajax({
+                url: "/users/evaluation/form",
+                type: "get",
+                dataType: "text",
+                success: function() {
+                    alert("订单评价开始！");
+                    setTimeout("location.href='/users/evaluation/form'", 0);
+                }
+            });
+        } else {
+            alert("已完成的订单才能评价！")
+        }
+    }
+</script>
+<script src="/static/js/jquery.js"></script>
+<script src="/static/js/bootstrap.min.js"></script>
+<script src="/static/js/matrix.js"></script>
 
 </body>
 </html>

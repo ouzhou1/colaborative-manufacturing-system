@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8"></meta>
+    <title>创建订单_订单管理</title>
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css"/>
+    <link rel="shortcut icon" href="/img/favicon.ico"/>
+    <!--inherit style-->
+    <link rel="stylesheet" href="/static/css/style.default.css" type="text/css"/>
+    <link rel="stylesheet" href="/css/matrix-style.css"/>
+    <script type="text/javascript" src="/js/plugins/jquery-1.7.min.js"></script>
+    <script type="text/javascript" src="/js/plugins/jquery-ui-1.8.16.custom.min.js"></script>
+    <script type="text/javascript" src="/js/plugins/jquery.cookie.js"></script>
+    <script type="text/javascript" src="/js/plugins/jquery.smartWizard-2.0.min.js"></script>
+    <script type="text/javascript" src="/js/plugins/jquery.colorbox-min.js"></script>
+    <!--[if lt IE 9]>
+    <script src="/js/jshtml5shiv.min.js"></script>
+    <script src="/js/respond.min.js"></script>
+    <![endif]-->
+    <script type="text/javascript" th:inline="javascript">
+        var orderId = [[${orderId}]];
+        jQuery(document).ready(function () {
+            // Smart Wizard
+            jQuery('#wizard').smartWizard({onFinish: onFinishCallback});
+            jQuery('#wizard2').smartWizard({onFinish: onFinishCallback});
+            jQuery('#wizard3').smartWizard({onFinish: onFinishCallback});
+            jQuery('#wizard4').smartWizard({onFinish: onFinishCallback});
+            function onFinishCallback() {
+                alert("参数配置完成！");
+                window.location.href = "/orders/candidates/"+orderId;
+            }
+            jQuery(".inline").colorbox({inline: true, width: '60%', height: '500px'});
+            jQuery('select, input:checkbox').uniform();
+        });
+    </script>
+</head>
+<body>
+<!--content-part-->
+<div id="content">
+    <div id="content-header">
+        <div id="breadcrumb">
+            <a href="/" title="Go to Home" class="tip-bottom"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>首页</a>
+            <a href="/orders" class="current">订单管理</a><a href="#" class="current">协同制造团队组建</a>
+        </div>
+    </div>
+    <div class="contentwrapper" id="contentwrapper">
+        <form class="stdform">
+            <div id="wizard" class="wizard">
+                <br/>
+                <ul class="hormenu">
+                    <li style="width: 50%">
+                        <a href="#wiz1step1">
+                            <span class="h2">步骤1</span>
+                            <span class="dot"><span></span></span>
+                            <span class="label">资源服务匹配</span>
+                        </a>
+                    </li>
+                    <li style="width: 50%">
+                        <a href="#wiz1step2">
+                            <span class="h2">步骤2</span>
+                            <span class="dot"><span></span></span>
+                            <span class="label">企业评价指标</span>
+                        </a>
+                    </li>
+                </ul>
+                <br clear="all"/><br/><br/>
+                <div id="wiz1step1" class="formwiz">
+                    <h4>步骤1: 资源服务参数</h4>
+                    <div class="widget-content nopadding">
+                        <table class="table table-hover order-table-form">
+                            <tbody>
+                            <tr>
+                                <td><span class="red">*</span>基本属性：</td>
+                                <td>
+                                    <select class="form-control">
+                                        <option value="">选择</option>
+                                        <option value="Category 1">名称</option>
+                                        <option value="Category 2">所在地</option>
+                                        <option value="Category 3">提供方</option>
+                                        <option value="Category 4">资源类型</option>
+                                        <option value="Category 4">运行时长(小时)</option>
+                                        <option value="Category 5">主要工序</option>
+                                    </select>
+                                </td>
+                                <td><input type="text" class="form-control" id="consignee" /></td>
+                                <td><button type="button" class="btn btn-success btn-xs">添加更多</button></td>
+                            </tr>
+                            <tr>
+                                <td><span class="red">*</span>状态属性：</td>
+                                <td>
+                                    <select class="form-control">
+                                        <option value="">选择</option>
+                                        <option value="Category 1">当前状态</option>
+                                        <option value="Category 2">负载状态</option>
+                                        <option value="Category 3">是否可用</option>
+                                        <option value="Category 4">任务次数</option>
+                                    </select>
+                                </td>
+                                <td><input type="text" class="form-control" /></td>
+                                <td><button type="button" class="btn btn-success btn-xs">添加更多</button></td>
+                            </tr>
+                            <tr>
+                                <td><span class="red">*</span>功能属性：</td>
+                                <td>
+                                    <select class="form-control">
+                                        <option value="">选择</option>
+                                        <option value="Category 1">出片量</option>
+                                        <option value="Category 2">加工周期</option>
+                                        <option value="Category 3">性能参数("params:value")</option>
+                                        <option value="Category 4">精度</option>
+                                    </select>
+                                </td>
+                                <td><input type="text" class="form-control" /></td>
+                                <td><button type="button" class="btn btn-success btn-xs">添加更多</button></td>
+                            </tr>
+                            <tr>
+                                <td><span class="red">*</span>服务属性：</td>
+                                <td>
+                                    <select class="form-control">
+                                        <option value="">选择</option>
+                                        <option value="Category 1">产品合格率</option>
+                                        <option value="Category 2">准时交货率</option>
+                                        <option value="Category 3">评价综合得分</option>
+                                        <option value="Category 4">专家得分</option>
+                                    </select>
+                                </td>
+                                <td><input type="text" class="form-control" /></td>
+                                <td><button type="button" class="btn btn-success btn-xs">添加更多</button></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div><!--#wiz1step1-->
+
+                <div id="wiz1step2" class="formwiz">
+                    <h4>步骤2: 合作伙伴评价指标权重</h4>
+                    <div class="widget-content nopadding">
+                        <table class="table table-hover order-table-form">
+                            <thead>
+                                <tr>
+                                    <td>时间</td>
+                                    <td></td>
+                                    <td>质量</td>
+                                    <td></td>
+                                    <td>能力</td>
+                                    <td></td>
+                                    <td>服务</td>
+                                    <td></td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            <tr class="gradeX">
+                                <td>实时性权重值</td>
+                                <td><input type="text" class="form-control" /></td>
+                                <td>功能性权重值</td>
+                                <td><input type="text" class="form-control" /></td>
+                                <td>制造能力权重值</td>
+                                <td><input type="text" class="form-control" /></td>
+                                <td>服务程度权重值</td>
+                                <td><input type="text" class="form-control" /></td>
+                            </tr>
+                            <tr class="gradeC">
+                                <td>服务时长权重值</td>
+                                <td><input type="text" class="form-control" /></td>
+                                <td>安全程度权重值</td>
+                                <td><input type="text" class="form-control" /></td>
+                                <td>服务能力权重值</td>
+                                <td><input type="text" class="form-control" /></td>
+                                <td>生产结果权重值</td>
+                                <td><input type="text" class="form-control" /></td>
+                            </tr>
+                            <tr class="gradeU">
+                                <td>线上交互权重值</td>
+                                <td><input type="text" class="form-control" /></td>
+                                <td>可靠程度权重值</td>
+                                <td><input type="text" class="form-control" /></td>
+                                <td>基础设施权重值</td>
+                                <td><input type="text" class="form-control" /></td>
+                                <td></td>
+                            </tr>
+                            <tr class="gradeU">
+                                <td></td>
+                                <td></td>
+                                <td>企业素质权重值</td>
+                                <td><input type="text" class="form-control" /></td>
+                                <td></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div><!--#wiz1step2-->
+            </div><!--#wizard-->
+        </form>
+    </div>
+</div>
+</body>
+</html>

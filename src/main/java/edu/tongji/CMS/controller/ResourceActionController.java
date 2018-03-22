@@ -11,7 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import edu.tongji.CMS.Service.service.RDFService;
 import edu.tongji.CMS.dao.services.HardwareResourceDao;
-import edu.tongji.CMS.domain.resource.HardwareResource;
+import edu.tongji.CMS.domain.Resource.HardwareResource;
 
 @RestController
 public class ResourceActionController {

@@ -5,5 +5,4 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
 public interface SubOrdersDao extends CrudRepository<SubOrders, Long> {
-    Iterable<SubOrders> findSubOrdersByParentOrderId(Long id);
 }

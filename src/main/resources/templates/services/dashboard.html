@@ -3,11 +3,11 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>服务列表</title>
-    <link type="text/css" href="../../static/css/order-bootstrap.css" rel="stylesheet"/>
-    <link type="text/css" href="../../static/css/bootstrap-responsive.min.css" rel="stylesheet"/>
-    <link type="text/css" href="../../static/css/orderlist.css" rel="stylesheet"/>
-    <link type="text/css" href="../../static/css/font-awesome.css" rel="stylesheet"/>
+    <title>资源服务列表</title>
+    <link type="text/css" href="/css/order-bootstrap.css" rel="stylesheet"/>
+    <link type="text/css" href="/css/bootstrap-responsive.min.css" rel="stylesheet"/>
+    <link type="text/css" href="/css/orderlist.css" rel="stylesheet"/>
+    <link type="text/css" href="/css/font-awesome.css" rel="stylesheet"/>
 </head>
 
 <body>
@@ -38,16 +38,16 @@
                 <ul class="nav pull-right">
                     <li class="nav-user dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <img src="../../static/images/user.png" class="nav-avatar"/>
+                            <img src="/images/user.png" class="nav-avatar"/>
                             <b class="caret"></b>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">个人中心</a></li>
+                                <li><a href="#">Edit Profile</a></li>
+                                <li><a href="#">Account Settings</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">登出</a></li>
+                            </ul>
                         </a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">个人中心</a></li>
-                            <li><a href="#">Edit Profile</a></li>
-                            <li><a href="#">Account Settings</a></li>
-                            <li class="divider"></li>
-                            <li><a href="#">登出</a></li>
-                        </ul>
                     </li>
                 </ul>
             </div><!-- /.nav-collapse -->
@@ -62,14 +62,16 @@
                 <div class="content">
                     <div class="module">
                         <div class="module-head">
-                            <h3>用户列表
+                            <h3>资源服务列表
                                 <span class="icon-add-btn glyphicon glyphicon-plus">
                                     <button type="button" class="btn btn-success btn-xs"
-                                            style="float: right; padding-top: 2px"
+                                            style="float: right; padding: 2px 7px 0px 7px; margin: 0px 7px 0px 7px"
+                                            onclick="window.location.href='/services/search'">检索服务</button>
+                                    <button type="button" class="btn btn-success btn-xs"
+                                            style="float: right; padding: 2px 7px 0px 7px; margin: 0px 7px 0px 7px;"
                                             onclick="window.location.href='/services/form'">发布服务</button>
                                 </span>
                             </h3>
-
                         </div>
                         <div class="module-body table">
                             <table cellpadding="0" cellspacing="0" border="0"
@@ -99,9 +101,9 @@
                                     <td th:text="${services.status}">Status</td>
                                     <td>
                                         <a th:href="@{'/services/details/' + ${services.id}}"
-                                           class="badge badge-success">详细</a>
-                                        <a th:href="@{'/demands/details/' + ${services.id}}"
-                                           class="badge badge-success">接单</a>
+                                           class="badge badge-success">详情</a>
+                                        <a th:href="@{'/services/request/' + ${services.id}}"
+                                           class="badge badge-success">使用</a>
                                     </td>
                                 </tr>
                                 </tbody>
@@ -115,10 +117,10 @@
     </div><!--/.container-->
 </div><!--/.wrapper-->
 
-<script src="../../static/js/jquery-1.9.1.min.js"></script>
-<script src="../../static/js/jquery-ui-1.10.1.custom.min.js"></script>
-<script src="../../static/js/bootstrap.min.js"></script>
-<script src="../../static/js/jquery.dataTables.js"></script>
+<script src="/js/jquery-1.9.1.min.js"></script>
+<script src="/js/jquery-ui-1.10.1.custom.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+<script src="/js/jquery.dataTables.js"></script>
 <script>
     $(document).ready(function () {
         $('.datatable-1').dataTable();

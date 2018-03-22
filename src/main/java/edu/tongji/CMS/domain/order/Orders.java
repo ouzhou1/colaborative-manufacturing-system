@@ -8,8 +8,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 import edu.tongji.CMS.domain.vo.OrderStatus;
+import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.NotEmpty;
 
 /**
@@ -39,7 +41,6 @@ public class Orders {
 
     @Enumerated(EnumType.STRING)
     @Column(name = "status")
-    @NotEmpty(message = "Status is required.")
     private OrderStatus status;
 
     @Column(name = "city")
@@ -65,6 +66,14 @@ public class Orders {
     @Column(name = "scale")
     @NotEmpty(message = "Scale is required.")
     private String scale;
+
+    @Column(name = "demand_name")
+    @NotEmpty(message = "Demand name is required.")
+    private String demand_name;
+
+    @Column(name = "demand_id")
+    @NotEmpty(message = "Demand id is required.")
+    private String demand_id;
 
     //Numbers of decomposed sub-orders
     @Column(name = "sub_order_nums")
@@ -173,6 +182,22 @@ public class Orders {
 
     public void setScale(String scale) {
         this.scale = scale;
+    }
+
+    public String getDemand_name() {
+        return demand_name;
+    }
+
+    public void setDemand_name(String demand_name) {
+        this.demand_name = demand_name;
+    }
+
+    public String getDemand_id() {
+        return demand_id;
+    }
+
+    public void setDemand_id(String demand_id) {
+        this.demand_id = demand_id;
     }
 
     public String getSub_order_nums() {

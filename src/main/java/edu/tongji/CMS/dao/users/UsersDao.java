@@ -1,5 +1,6 @@
 package edu.tongji.CMS.dao.users;
 
+import edu.tongji.CMS.domain.vo.UserStatus;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
@@ -16,4 +17,6 @@ public interface UsersDao extends CrudRepository<Users, Long>{
     int getUserCount();
 
     Users findByUsername(String username);
+
+    List<Users> findByStatus(String status);
 }

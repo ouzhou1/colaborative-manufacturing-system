@@ -2,21 +2,27 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org"
 	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout">
 <head>
-<meta charset="utf-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>需求描述及发布</title>
-<link rel="stylesheet" type="text/css"
-	href="../../css/bootstrap.min.css" />
-<link rel="stylesheet" type="text/css"
-	href="../../css/font-awesome.min.css" />
-<script type="text/javascript" src="../../js/jquery-1.10.2.min.js"></script>
-<script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>需求描述及发布</title>
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/font-awesome.min.css" />
+    <link rel="stylesheet" href="../../css/matrix-style.css"/>
+    <script type="text/javascript" src="../../js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="../../js/bootstrap.min.js"></script>
 </head>
 <body>
-	<div class="container">
+<div id="content">
+	<div id="content-header">
+		<div id="breadcrumb">
+			<a href="/" title="Go to Home" class="tip-bottom"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>首页</a>
+			<a href="/demands" class="current">需求管理</a><a href="#" class="current">需求描述及发布</a>
+		</div>
+	</div>
+	<div class="container" style="padding-top: 50px">
 		<div class="page-header">
-			<h1>需求描述及发布</h1>
+			<h3>需求描述及发布</h3>
 		</div>
 		<div class="container-fluid">
 			<table>
@@ -58,7 +64,7 @@
 								}
 							}
 						</script>
-							<div id="ctl00_ContentPlaceHolder1_LodFile_UpdatePanel1">
+							<div id="ctl00_ContentPlaceHolder1_LodFile_UpdatePanel1" style="width: 1170px;">
 								<div style="text-align: center">
 									<table width="100%" border="1" cellpadding="0" cellspacing="0"
 										align="center">
@@ -91,7 +97,7 @@
 													</table>
 												</td>
 											</tr>
-											<tr style="display: none;">
+											<tr>
 												<td height="25" align="left" width="100px" valign="top"
 													style="padding-top: 8px;">产品：</td>
 												<td valign="top" align="left">
@@ -111,7 +117,7 @@
 																	name="ctl00$ContentPlaceHolder1$LodFile$rbZyProd"
 																	value="2"
 																	onclick="setTimeout('__doPostBack(\'ctl00$ContentPlaceHolder1$LodFile$rbZyProd$1\',\'\')', 0)"/><label
-																	for="ctl00_ContentPlaceHolder1_LodFile_rbZyProd_1">实体设计</label></td>
+																	for="ctl00_ContentPlaceHolder1_LodFile_rbZyProd_1">半导体设计</label></td>
 																<td><input
 																	id="ctl00_ContentPlaceHolder1_LodFile_rbZyProd_2"
 																	type="radio"
@@ -125,28 +131,28 @@
 																	name="ctl00$ContentPlaceHolder1$LodFile$rbZyProd"
 																	value="4"
 																	onclick="setTimeout('__doPostBack(\'ctl00$ContentPlaceHolder1$LodFile$rbZyProd$3\',\'\')', 0)"/><label
-																	for="ctl00_ContentPlaceHolder1_LodFile_rbZyProd_3">制造工程师</label></td>
+																	for="ctl00_ContentPlaceHolder1_LodFile_rbZyProd_3">半导体制造工程</label></td>
 																<td><input
 																	id="ctl00_ContentPlaceHolder1_LodFile_rbZyProd_4"
 																	type="radio"
 																	name="ctl00$ContentPlaceHolder1$LodFile$rbZyProd"
 																	value="5"
 																	onclick="setTimeout('__doPostBack(\'ctl00$ContentPlaceHolder1$LodFile$rbZyProd$4\',\'\')', 0)"/><label
-																	for="ctl00_ContentPlaceHolder1_LodFile_rbZyProd_4">网络DNC</label></td>
+																	for="ctl00_ContentPlaceHolder1_LodFile_rbZyProd_4">半导体调度模型</label></td>
 																<td><input
 																	id="ctl00_ContentPlaceHolder1_LodFile_rbZyProd_5"
 																	type="radio"
 																	name="ctl00$ContentPlaceHolder1$LodFile$rbZyProd"
 																	value="6"
 																	onclick="setTimeout('__doPostBack(\'ctl00$ContentPlaceHolder1$LodFile$rbZyProd$5\',\'\')', 0)"/><label
-																	for="ctl00_ContentPlaceHolder1_LodFile_rbZyProd_5">数控车</label></td>
+																	for="ctl00_ContentPlaceHolder1_LodFile_rbZyProd_5">半导体测试</label></td>
 																<td><input
 																	id="ctl00_ContentPlaceHolder1_LodFile_rbZyProd_6"
 																	type="radio"
 																	name="ctl00$ContentPlaceHolder1$LodFile$rbZyProd"
 																	value="7"
 																	onclick="setTimeout('__doPostBack(\'ctl00$ContentPlaceHolder1$LodFile$rbZyProd$6\',\'\')', 0)"/><label
-																	for="ctl00_ContentPlaceHolder1_LodFile_rbZyProd_6">线切割</label></td>
+																	for="ctl00_ContentPlaceHolder1_LodFile_rbZyProd_6">辅助加工</label></td>
 																<td><input
 																	id="ctl00_ContentPlaceHolder1_LodFile_rbZyProd_7"
 																	type="radio"
@@ -162,49 +168,56 @@
 																	name="ctl00$ContentPlaceHolder1$LodFile$rbZyProd"
 																	value="11"
 																	onclick="setTimeout('__doPostBack(\'ctl00$ContentPlaceHolder1$LodFile$rbZyProd$8\',\'\')', 0)"/><label
-																	for="ctl00_ContentPlaceHolder1_LodFile_rbZyProd_8">PLM整体</label></td>
+																	for="ctl00_ContentPlaceHolder1_LodFile_rbZyProd_8">氧化</label></td>
 																<td><input
 																	id="ctl00_ContentPlaceHolder1_LodFile_rbZyProd_9"
 																	type="radio"
 																	name="ctl00$ContentPlaceHolder1$LodFile$rbZyProd"
 																	value="12"
 																	onclick="setTimeout('__doPostBack(\'ctl00$ContentPlaceHolder1$LodFile$rbZyProd$9\',\'\')', 0)"/><label
-																	for="ctl00_ContentPlaceHolder1_LodFile_rbZyProd_9">教学</label></td>
+																	for="ctl00_ContentPlaceHolder1_LodFile_rbZyProd_9">提纯</label></td>
 																<td><input
 																	id="ctl00_ContentPlaceHolder1_LodFile_rbZyProd_10"
 																	type="radio"
 																	name="ctl00$ContentPlaceHolder1$LodFile$rbZyProd"
 																	value="13"
 																	onclick="setTimeout('__doPostBack(\'ctl00$ContentPlaceHolder1$LodFile$rbZyProd$10\',\'\')', 0)"/><label
-																	for="ctl00_ContentPlaceHolder1_LodFile_rbZyProd_10">题库</label></td>
+																	for="ctl00_ContentPlaceHolder1_LodFile_rbZyProd_10">光刻</label></td>
 																<td><input
-																	id="ctl00_ContentPlaceHolder1_LodFile_rbZyProd_11"
-																	type="radio"
-																	name="ctl00$ContentPlaceHolder1$LodFile$rbZyProd"
-																	value="14"
-																	onclick="setTimeout('__doPostBack(\'ctl00$ContentPlaceHolder1$LodFile$rbZyProd$11\',\'\')', 0)"/><label
-																	for="ctl00_ContentPlaceHolder1_LodFile_rbZyProd_11">三维切割</label></td>
+                                                                    id="ctl00_ContentPlaceHolder1_LodFile_rbZyProd_11"
+                                                                    type="radio"
+                                                                    name="ctl00$ContentPlaceHolder1$LodFile$rbZyProd"
+                                                                    value="14"
+                                                                    onclick="setTimeout('__doPostBack(\'ctl00$ContentPlaceHolder1$LodFile$rbZyProd$11\',\'\')', 0)"/><label
+                                                                    for="ctl00_ContentPlaceHolder1_LodFile_rbZyProd_11">切片</label></td>
 																<td><input
 																	id="ctl00_ContentPlaceHolder1_LodFile_rbZyProd_12"
 																	type="radio"
 																	name="ctl00$ContentPlaceHolder1$LodFile$rbZyProd"
 																	value="15"
 																	onclick="setTimeout('__doPostBack(\'ctl00$ContentPlaceHolder1$LodFile$rbZyProd$12\',\'\')', 0)"/><label
-																	for="ctl00_ContentPlaceHolder1_LodFile_rbZyProd_12">刻字</label></td>
+																	for="ctl00_ContentPlaceHolder1_LodFile_rbZyProd_12">刻蚀</label></td>
 																<td><input
 																	id="ctl00_ContentPlaceHolder1_LodFile_rbZyProd_13"
 																	type="radio"
 																	name="ctl00$ContentPlaceHolder1$LodFile$rbZyProd"
 																	value="16"
 																	onclick="setTimeout('__doPostBack(\'ctl00$ContentPlaceHolder1$LodFile$rbZyProd$13\',\'\')', 0)"/><label
-																	for="ctl00_ContentPlaceHolder1_LodFile_rbZyProd_13">激光和等离子切割</label></td>
+																	for="ctl00_ContentPlaceHolder1_LodFile_rbZyProd_13">离子注射</label></td>
+                                                                <td><input
+                                                                        id="ctl00_ContentPlaceHolder1_LodFile_rbZyProd_14"
+                                                                        type="radio"
+                                                                        name="ctl00$ContentPlaceHolder1$LodFile$rbZyProd"
+                                                                        value="14"
+                                                                        onclick="setTimeout('__doPostBack(\'ctl00$ContentPlaceHolder1$LodFile$rbZyProd$14\',\'\')', 0)"/><label
+                                                                        for="ctl00_ContentPlaceHolder1_LodFile_rbZyProd_14">电镀</label></td>
 																<td><input
-																	id="ctl00_ContentPlaceHolder1_LodFile_rbZyProd_14"
+																	id="ctl00_ContentPlaceHolder1_LodFile_rbZyProd_15"
 																	type="radio"
 																	name="ctl00$ContentPlaceHolder1$LodFile$rbZyProd"
 																	value="8"
-																	onclick="setTimeout('__doPostBack(\'ctl00$ContentPlaceHolder1$LodFile$rbZyProd$14\',\'\')', 0)"/><label
-																	for="ctl00_ContentPlaceHolder1_LodFile_rbZyProd_14">其它</label></td>
+																	onclick="setTimeout('__doPostBack(\'ctl00$ContentPlaceHolder1$LodFile$rbZyProd$15\',\'\')', 0)"/><label
+																	for="ctl00_ContentPlaceHolder1_LodFile_rbZyProd_15">其它</label></td>
 																<td></td>
 															</tr>
 														</tbody>
@@ -794,6 +807,7 @@
 			</table>
 		</div>
 	</div>
+</div>
 </body>
 <style>
 .main-content {

@@ -8,10 +8,14 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 import edu.tongji.CMS.domain.vo.UserStatus;
 import org.hibernate.annotations.ColumnTransformer;
+import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.NotEmpty;
+
+import java.util.Date;
 
 /**
  * @author ouzhou
@@ -27,7 +31,7 @@ public class Users {
 	private Long id;
 	
 	@Column(name = "username")
-	@NotEmpty(message = "User name is required.")
+	@NotBlank(message = "User name is required.")
 	private String username;
 
 	@Column(name = "PASSWORD")
@@ -38,11 +42,11 @@ public class Users {
 	private String password;
 
 	@Column(name = "user_category")
-	@NotEmpty(message = "Personal category is required.")
+	@NotBlank(message = "Personal category is required.")
 	private String user_category;
 	
 	@Column(name = "tel")
-	@NotEmpty(message = "Telephone is required.")
+	@NotNull(message = "Telephone is required.")
 	private Long tel;
 	
 	@Column(name = "u_scale")
@@ -57,13 +61,18 @@ public class Users {
 	@Column(name = "location")
 	private String location;
 
-	@Enumerated(EnumType.STRING)
 	@Column(name = "status")
-	@NotEmpty(message = "Status is required.")
-	private UserStatus status;
+	@NotBlank(message = "Status is required.")
+	private String status;
 	
 	@Column(name = "personal_statement")
 	private String personal_statement;
+
+	@Column(name = "relative_evaluation")
+	private Double relativeEvaluation;
+
+	@Column(name = "create_time")
+	private Date createTime;
 
 	public Long getId() {
 		return id;
@@ -137,11 +146,11 @@ public class Users {
 		this.location = location;
 	}
 
-	public UserStatus getStatus() {
+	public String getStatus() {
 		return status;
 	}
 
-	public void setStatus(UserStatus status) {
+	public void setStatus(String status) {
 		this.status = status;
 	}
 
@@ -151,5 +160,21 @@ public class Users {
 
 	public void setPersonal_statement(String personal_statement) {
 		this.personal_statement = personal_statement;
+	}
+
+    public Double getRelativeEvaluation() {
+        return relativeEvaluation;
+    }
+
+    public void setRelativeEvaluation(Double relativeEvaluation) {
+        this.relativeEvaluation = relativeEvaluation;
+    }
+
+    public Date getCreateTime() {
+		return createTime;
+	}
+
+	public void setCreateTime(Date createTime) {
+		this.createTime = createTime;
 	}
 }
